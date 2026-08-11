@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terminal & Linux básico — academia devops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --k8s-blue: #4d8fe6;
+    --status-green: #4ade80;
+    --amber: #e6b34d;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'Inter', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { color-scheme: dark; }
+  a { color: inherit; text-decoration: none; }
+  body {
+    background-color: #0b1120;
+    background: #0b1120;
+    background-image:
+      linear-gradient(rgba(77,143,230,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(77,143,230,0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+    color: #e8edf5;
+    font-family: var(--sans);
+    min-height: 100vh;
+  }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 32px; border-bottom: 1px solid #23304a;
+  }
+  .logo { font-family: var(--mono); font-weight: 700; font-size: 18px; }
+  .logo span { color: var(--k8s-blue); }
+  .back { font-family: var(--mono); font-size: 13px; color: #9aa8c7; }
+  .back:hover { color: #e8edf5; }
+
+  main { max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; }
+
+  .course-tag {
+    display: inline-block;
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--status-green); background: rgba(74,222,128,0.08);
+    border: 1px solid rgba(74,222,128,0.25); padding: 4px 12px; border-radius: 20px; margin-bottom: 20px;
+  }
+  h1 { font-family: var(--mono); font-size: 32px; margin-bottom: 12px; }
+  h1 span { color: var(--k8s-blue); }
+  .subtitle { color: #9aa8c7; font-size: 15px; max-width: 480px; margin-bottom: 40px; line-height: 1.6; }
+
+  .lesson-list { display: flex; flex-direction: column; gap: 12px; }
+  .lesson-row {
+    display: flex; align-items: center; gap: 16px;
+    background: #121a2e; border: 1px solid #23304a; border-left: 3px solid var(--k8s-blue);
+    border-radius: 10px; padding: 16px 18px;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  }
+  .lesson-row:hover { background: #182238; border-left-color: var(--status-green); transform: translateX(2px); }
+  .lesson-num { font-family: var(--mono); font-size: 13px; color: #9aa8c7; width: 28px; flex-shrink: 0; }
+  .lesson-info { flex: 1; }
+  .lesson-title { font-family: var(--mono); font-size: 16px; font-weight: 600; }
+  .lesson-desc { font-family: var(--mono); font-size: 12px; color: #9aa8c7; margin-top: 2px; }
+  .lesson-arrow { font-family: var(--mono); color: #9aa8c7; font-size: 15px; }
+
+  footer { text-align: center; margin-top: 48px; font-family: var(--mono); font-size: 12px; color: #9aa8c7; }
+  footer a { color: var(--k8s-blue); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">academia<span>devops</span></div>
+  <a class="back" href="index.html">← Volver</a>
+</nav>
+
+<main>
+  <div class="course-tag">● 8 lecciones · disponible ahora</div>
+  <h1>Terminal &amp; <span>Linux básico</span></h1>
+  <p class="subtitle">Fundamentos de la terminal Linux en 8 lecciones interactivas, con comandos reales en cada una. Empieza por la Lección 1.</p>
+
+  <div class="lesson-list">
+    <a class="lesson-row" href="linux-leccion-navegacion.html">
+      <span class="lesson-num">01</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Navegación básica</span>
+        <span class="lesson-desc">pwd, cd, ls</span>
+      </span>
+      <span class="lesson-arrow">→</span>
+    </a>
+    <a class="lesson-row" href="linux-leccion-archivos.html">
+      <span class="lesson-num">02</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Archivos y carpetas</span>
+        <span class="lesson-desc">mkdir, touch, cp, mv, rm</span>
+      </span>
+      <span class="lesson-arrow">→</span>
+    </a>
+    <a class="lesson-row" href="linux-leccion-ver-contenido.html">
+      <span class="lesson-num">03</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Ver contenido de archivos</span>
+        <span class="lesson-desc">cat, less, head, tail</span>
+      </span>
+      <span class="lesson-arrow">→</span>
+    </a>
+    <a class="lesson-row" href="linux-leccion-permisos.html">
+      <span class="lesson-num">04</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Permisos</span>
+        <span class="lesson-desc">chmod, chown, rwx</span>
+      </span>
+      <span class="lesson-arrow">→</span>
+    </a>
+    <a class="lesson-row" href="linux-leccion-procesos.html">
+      <span class="lesson-num">05</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Procesos</span>
+        <span class="lesson-desc">ps, top, kill</span>
+      </span>
+      <span class="lesson-arrow">→</span>
+    </a>
+    <a class="lesson-row" href="linux-leccion-redireccion.html">
+      <span class="lesson-num">06</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Redirección y pipes</span>
+        <span class="lesson-desc">&gt;, &gt;&gt;, |, grep</span>
+      </span>
+      <span class="lesson-arrow">→</span>
+    </a>
+    <a class="lesson-row" href="linux-leccion-variables-entorno.html">
+      <span class="lesson-num">07</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Variables de entorno</span>
+        <span class="lesson-desc">export, $PATH, .bashrc</span>
+      </span>
+      <span class="lesson-arrow">→</span>
+    </a>
+    <a class="lesson-row" href="linux-leccion-usuarios-sudo.html">
+      <span class="lesson-num">08</span>
+      <span class="lesson-info">
+        <span class="lesson-title">Usuarios y sudo</span>
+        <span class="lesson-desc">whoami, sudo, su</span>
+      </span>
+      <span class="lesson-arrow">→</span>
+    </a>
+  </div>
+
+  <footer>academia-devops · <a href="https://instagram.com/carlosabramweb" target="_blank" rel="noopener">@carlosabramweb</a></footer>
+</main>
+
+</body>
+</html>

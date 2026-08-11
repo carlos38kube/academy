@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lección: Usuarios y sudo — academia devops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --k8s-blue: #4d8fe6;
+    --status-green: #4ade80;
+    --status-red: #f87171;
+    --amber: #e6b34d;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'Inter', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { color-scheme: dark; }
+  body {
+    background-color: #0b1120;
+    background: #0b1120;
+    background-image:
+      linear-gradient(rgba(77,143,230,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(77,143,230,0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+    color: #e8edf5;
+    font-family: var(--sans);
+    min-height: 100vh;
+  }
+  .topbar {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px 20px; border-bottom: 1px solid #23304a;
+    position: sticky; top: 0; background: rgba(11,17,32,0.95); z-index: 10;
+  }
+  .progress-track { flex: 1; height: 10px; background: #121a2e; border-radius: 20px; overflow: hidden; border: 1px solid #23304a; }
+  .progress-fill { height: 100%; background: var(--k8s-blue); width: 0%; transition: width 0.4s ease; border-radius: 20px; }
+  .stat { display: flex; align-items: center; gap: 4px; font-family: var(--mono); font-size: 14px; font-weight: 600; }
+  .hearts { color: var(--status-red); }
+  .xp { color: var(--amber); }
+  main { max-width: 640px; margin: 0 auto; padding: 40px 20px 100px; }
+  .lesson-label { font-family: var(--mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #6ea3ec; margin-bottom: 8px; }
+  .exercise { display: none; }
+  .exercise.active { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .prompt { font-family: var(--mono); font-size: 21px; font-weight: 700; line-height: 1.4; margin-bottom: 24px; color: #6ea3ec; }
+  .hint { color: #9aa8c7; font-size: 13px; margin-bottom: 20px; line-height: 1.6; }
+  .code-block {
+    background: #121a2e; border: 1px solid #23304a; border-radius: 10px;
+    padding: 18px; font-family: var(--mono); font-size: 14px; margin-bottom: 24px;
+    color: #e8edf5; white-space: pre; overflow-x: auto;
+  }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option {
+    background: #121a2e; border: 1px solid #23304a; border-radius: 10px;
+    padding: 14px 18px; font-family: var(--mono); font-size: 15px; color: #e8edf5; cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .option:hover { border-color: var(--k8s-blue); }
+  .option.selected { border-color: var(--k8s-blue); background: rgba(77,143,230,0.1); }
+  .option.correct { border-color: var(--status-green); background: rgba(74,222,128,0.1); }
+  .option.incorrect { border-color: var(--status-red); background: rgba(248,113,113,0.1); }
+  .fill-input {
+    font-family: var(--mono); font-size: 15px; background: #121a2e;
+    border: 1px solid #23304a; color: #e8edf5; padding: 4px 8px;
+    border-radius: 6px; width: 110px;
+  }
+  .fill-input:focus { outline: none; border-color: var(--k8s-blue); }
+  textarea.code-input {
+    width: 100%; background: #121a2e; border: 1px solid #23304a;
+    border-radius: 10px; color: #e8edf5; font-family: var(--mono); font-size: 14px;
+    padding: 16px; min-height: 90px; resize: vertical;
+  }
+  textarea.code-input:focus { outline: none; border-color: var(--k8s-blue); }
+  .feedback { margin-top: 20px; padding: 14px 16px; border-radius: 10px; font-family: var(--mono); font-size: 14px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.correct { background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.3); color: var(--status-green); }
+  .feedback.incorrect { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.3); color: var(--status-red); }
+  .bottombar {
+    position: fixed; bottom: 0; left: 0; right: 0; background: #121a2e;
+    border-top: 1px solid #23304a; padding: 16px 20px; display: flex; justify-content: center;
+  }
+  .btn {
+    font-family: var(--mono); font-size: 15px; font-weight: 700; padding: 14px 40px;
+    border-radius: 10px; border: none; cursor: pointer; transition: opacity 0.15s ease;
+  }
+  .btn:disabled { opacity: 0.35; cursor: not-allowed; }
+  .btn-check { background: var(--k8s-blue); color: #fff; }
+  .btn-continue { background: var(--status-green); color: #06240f; }
+  .complete-screen { display: none; text-align: center; padding-top: 60px; }
+  .complete-screen.show { display: block; }
+  .complete-screen .glyph { font-family: var(--mono); font-size: 56px; color: var(--status-green); margin-bottom: 16px; }
+  .complete-screen h2 { font-family: var(--mono); font-size: 26px; margin-bottom: 8px; color: #ffffff; }
+  .complete-screen p { color: #9aa8c7; }
+  .complete-stats { display: flex; justify-content: center; gap: 24px; margin-top: 28px; font-family: var(--mono); }
+  .complete-stats div { background: #121a2e; border: 1px solid #23304a; border-radius: 10px; padding: 16px 24px; }
+  .complete-stats .num { font-size: 22px; font-weight: 700; color: #ffffff; }
+  .complete-stats .lbl { font-size: 11px; color: #9aa8c7; text-transform: uppercase; letter-spacing: 0.08em; }
+  .complete-screen .course-done { margin-top: 32px; font-family: var(--mono); font-size: 13px; color: var(--status-green); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="stat hearts">♥ <span id="hearts-count">3</span></div>
+  <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+  <div class="stat xp">⚡ <span id="xp-count">0</span></div>
+</div>
+
+<main>
+  <div class="lesson-label">Terminal &amp; Linux básico · Lección 8</div>
+
+  <!-- EXERCISE 0: MULTIPLE CHOICE - whoami -->
+  <div class="exercise active" data-index="0">
+    <div class="prompt">¿Qué comando muestra el nombre del usuario con el que has iniciado sesión?</div>
+    <div class="options">
+      <div class="option" data-correct="false"><code>iam</code></div>
+      <div class="option" data-correct="true"><code>whoami</code></div>
+      <div class="option" data-correct="false"><code>myuser</code></div>
+      <div class="option" data-correct="false"><code>getuser</code></div>
+    </div>
+    <div class="feedback"></div>
+  </div>
+
+  <!-- EXERCISE 1: FILL IN THE BLANK - sudo -->
+  <div class="exercise" data-index="1">
+    <div class="prompt">Completa el comando para ejecutar algo con permisos de administrador (superusuario).</div>
+    <div class="code-block"><span class="blank"></span> apt install nginx</div>
+    <input type="text" class="fill-input" id="fill-answer" placeholder="?" autocomplete="off">
+    <div class="feedback"></div>
+  </div>
+
+  <!-- EXERCISE 2: MULTIPLE CHOICE - por qué no usar root siempre -->
+  <div class="exercise" data-index="2">
+    <div class="prompt">¿Por qué se recomienda usar <code>sudo</code> en vez de iniciar sesión como root siempre?</div>
+    <div class="options">
+      <div class="option" data-correct="false">sudo es más lento</div>
+      <div class="option" data-correct="true">Limita los privilegios elevados solo al comando puntual, reduciendo el riesgo de errores graves</div>
+      <div class="option" data-correct="false">root no existe en Linux</div>
+      <div class="option" data-correct="false">No hay ninguna razón real</div>
+    </div>
+    <div class="feedback"></div>
+  </div>
+
+  <!-- EXERCISE 3: WRITE CODE FROM SCRATCH -->
+  <div class="exercise" data-index="3">
+    <div class="prompt">Escribe el comando para cambiar al usuario <code>root</code> desde tu sesión actual.</div>
+    <div class="hint">Un comando de 2 letras seguido del nombre de usuario.</div>
+    <textarea class="code-input" id="write-answer" placeholder="su root"></textarea>
+    <div class="feedback"></div>
+  </div>
+
+  <!-- COMPLETE SCREEN -->
+  <div class="complete-screen" id="complete-screen">
+    <div class="glyph">✓</div>
+    <h2>¡Lección completada!</h2>
+    <p>Ya sabes manejar usuarios y permisos de administrador en Linux.</p>
+    <div class="complete-stats">
+      <div><div class="num" id="final-xp">0</div><div class="lbl">XP ganado</div></div>
+      <div><div class="num" id="final-hearts">3</div><div class="lbl">Vidas restantes</div></div>
+    </div>
+    <div class="course-done">✓ Curso "Terminal &amp; Linux básico" completado</div>
+  </div>
+</main>
+
+<div class="bottombar">
+  <button class="btn btn-check" id="action-btn">Comprobar</button>
+</div>
+
+<script>
+  const exercises = document.querySelectorAll('.exercise');
+  const totalExercises = exercises.length;
+  let currentIndex = 0;
+  let xp = 0;
+  let hearts = 3;
+  let answered = false;
+
+  const progressFill = document.getElementById('progress-fill');
+  const xpCount = document.getElementById('xp-count');
+  const heartsCount = document.getElementById('hearts-count');
+  const actionBtn = document.getElementById('action-btn');
+  const completeScreen = document.getElementById('complete-screen');
+  const mainEl = document.querySelector('main');
+
+  function updateProgress() {
+    progressFill.style.width = ((currentIndex) / totalExercises * 100) + '%';
+    xpCount.textContent = xp;
+    heartsCount.textContent = hearts;
+  }
+
+  function showFeedback(exerciseEl, correct, msg) {
+    const fb = exerciseEl.querySelector('.feedback');
+    fb.textContent = msg;
+    fb.className = 'feedback show ' + (correct ? 'correct' : 'incorrect');
+  }
+
+  function setupMultipleChoice(exerciseEl) {
+    const options = exerciseEl.querySelectorAll('.option');
+    let selected = null;
+    options.forEach(opt => {
+      opt.addEventListener('click', () => {
+        if (answered) return;
+        options.forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        selected = opt;
+      });
+    });
+    return {
+      check: (msgCorrect, msgIncorrect) => {
+        if (!selected) return null;
+        const correct = selected.dataset.correct === 'true';
+        options.forEach(o => {
+          o.classList.remove('selected');
+          if (o.dataset.correct === 'true') o.classList.add('correct');
+          else if (o === selected) o.classList.add('incorrect');
+        });
+        showFeedback(exerciseEl, correct, correct ? msgCorrect : msgIncorrect);
+        return correct;
+      }
+    };
+  }
+
+  const mc0 = setupMultipleChoice(exercises[0]);
+  const mc2 = setupMultipleChoice(exercises[2]);
+
+  function checkExercise0() {
+    return mc0.check('¡Correcto! whoami ("who am I") muestra tu usuario actual.', 'No es así. El comando es whoami.');
+  }
+
+  function checkExercise1() {
+    const val = document.getElementById('fill-answer').value.trim();
+    const correct = val === 'sudo';
+    showFeedback(exercises[1], correct, correct ? '¡Correcto! sudo ejecuta el comando con privilegios de administrador.' : 'Casi. El comando es sudo — sudo apt install nginx.');
+    return correct;
+  }
+
+  function checkExercise2() {
+    return mc2.check('¡Correcto! sudo eleva privilegios solo para ese comando puntual, en vez de operar siempre como root.', 'No es así. sudo limita el riesgo: solo eleva privilegios para el comando puntual, no toda la sesión.');
+  }
+
+  function checkExercise3() {
+    const val = document.getElementById('write-answer').value.trim();
+    const correct = /^su\s+root$/.test(val) || /^su$/.test(val);
+    showFeedback(exercises[3], correct, correct ? '¡Correcto! su root (o solo su) cambia tu sesión al usuario root.' : 'Revisa: debe ser "su root" (o simplemente "su").');
+    return correct;
+  }
+
+  const checkers = [checkExercise0, checkExercise1, checkExercise2, checkExercise3];
+
+  actionBtn.addEventListener('click', () => {
+    if (!answered) {
+      const correct = checkers[currentIndex]();
+      if (correct === null) return;
+      answered = true;
+      if (!correct) hearts = Math.max(0, hearts - 1);
+      else xp += 10;
+      updateProgress();
+      actionBtn.textContent = 'Continuar';
+      actionBtn.className = 'btn btn-continue';
+    } else {
+      currentIndex++;
+      answered = false;
+      if (currentIndex >= totalExercises) {
+        exercises.forEach(e => e.classList.remove('active'));
+        mainEl.querySelector('.lesson-label').style.display = 'none';
+        completeScreen.classList.add('show');
+        document.getElementById('final-xp').textContent = xp;
+        document.getElementById('final-hearts').textContent = hearts;
+        document.querySelector('.bottombar').style.display = 'none';
+        progressFill.style.width = '100%';
+      } else {
+        exercises.forEach(e => e.classList.remove('active'));
+        exercises[currentIndex].classList.add('active');
+        actionBtn.textContent = 'Comprobar';
+        actionBtn.className = 'btn btn-check';
+        updateProgress();
+      }
+    }
+  });
+
+  updateProgress();
+</script>
+
+</body>
+</html>
