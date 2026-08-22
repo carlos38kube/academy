@@ -245,7 +245,7 @@
   <button class="close-btn" onclick="document.getElementById('advSidebar').classList.remove('open');document.getElementById('advOverlay').classList.remove('open')">&times;</button>
   <h3>Contenido avanzado</h3>
   <div class="adv-course">
-    <div class="adv-course-title">Kubernetes en Producción</div>
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Kubernetes en Producción <span class="arrow">▶</span></div><div class="adv-lessons">
     <a href="k8s-prod-leccion-01.html">01. Introducción a RBAC</a>
     <a href="k8s-prod-leccion-02.html">02. Roles y RoleBindings</a>
     <a href="k8s-prod-leccion-03.html">03. ClusterRoles y ClusterRoleBindings</a>
@@ -276,7 +276,7 @@
     <a href="k8s-prod-leccion-28.html">28. Disaster Recovery</a>
     <a href="k8s-prod-leccion-29.html">29. Políticas de seguridad con Kyverno</a>
     <a href="k8s-prod-leccion-30.html">30. Proyecto final: app completa en producción</a>
-    <a href="Kubernetes_en_Produccion.pdf">📄 PDF completo</a>
+    <a href="Kubernetes_en_Produccion.pdf">📄 PDF completo</a></div>
   </div>
 </div>
 
