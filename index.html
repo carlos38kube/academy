@@ -7,6 +7,49 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  .adv-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  margin-left: 20px;
+}
+.adv-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+.adv-overlay.open { display: block; }
+.adv-sidebar {
+  position: fixed;
+  top: 0; left: -320px;
+  width: 300px; height: 100%;
+  background: #121a2e;
+  border-right: 1px solid #23304a;
+  z-index: 1000;
+  transition: left .25s ease;
+  padding: 24px;
+  overflow-y: auto;
+}
+.adv-sidebar.open { left: 0; }
+.adv-sidebar h3 { color: #4d8fe6; font-size: 16px; margin: 0 0 20px; }
+.adv-sidebar .close-btn {
+  background: none; border: none; color: #7c8aab;
+  font-size: 20px; cursor: pointer; float: right;
+}
+.adv-course { margin-bottom: 16px; }
+.adv-course-title { color: #e8edf5; font-weight: bold; margin-bottom: 8px; }
+.adv-course a {
+  display: block; color: #7c8aab; text-decoration: none;
+  padding: 8px 0; font-size: 14px; border-bottom: 1px solid #1a2333;
+}
+.adv-course a:hover { color: #4d8fe6; }
   :root {
     --bg: #0b1120;
     --surface: #121a2e;
@@ -186,9 +229,20 @@
     Jivops
   </div>
   <div class="nav-links">
-    <a href="#cursos">Cursos</a><a href="login.html">Iniciar sesión</a>
+    <a href="#cursos">Cursos</a><button class="adv-toggle" onclick="document.getElementById('advSidebar').classList.add('open');document.getElementById('advOverlay').classList.add('open')">Contenido avanzado</button><a href="login.html">Iniciar sesión</a>
   </div>
 </nav>
+  <div class="adv-overlay" id="advOverlay" onclick="this.classList.remove('open');document.getElementById('advSidebar').classList.remove('open')"></div>
+<div class="adv-sidebar" id="advSidebar">
+  <button class="close-btn" onclick="document.getElementById('advSidebar').classList.remove('open');document.getElementById('advOverlay').classList.remove('open')">&times;</button>
+  <h3>Contenido avanzado</h3>
+  <div class="adv-course">
+    <div class="adv-course-title">Kubernetes en Producción</div>
+    <a href="k8s-prod-leccion-01.html">01. Introducción a RBAC</a>
+    <a href="k8s-prod-leccion-02.html">02. Roles y RoleBindings</a>
+    <a href="Kubernetes_en_Produccion.pdf">📄 PDF completo</a>
+  </div>
+</div>
 
 <section class="hero">
   <h1>Conviértete en <span>DevOps Engineer</span></h1>
