@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Jivops - Acceso</title>
+<style>
+  body { background:#0a0e1a; color:#e2e8f0; font-family: monospace; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
+  .box { background:#131824; padding:40px; border-radius:12px; width:320px; }
+  h1 { color:#5b8def; font-size:22px; }
+  input { width:100%; padding:10px; margin:8px 0; background:#0a0e1a; border:1px solid #2a3244; color:#e2e8f0; border-radius:6px; box-sizing:border-box; }
+  button { width:100%; padding:10px; margin-top:10px; background:#5b8def; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:bold; }
+  #msg { margin-top:10px; font-size:13px; color:#ff6b6b; }
+  .toggle { text-align:center; margin-top:12px; font-size:13px; color:#8899aa; cursor:pointer; }
+</style>
+</head>
+<body>
+<div class="box">
+  <h1 id="title">Iniciar sesión</h1>
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Contraseña">
+  <button onclick="submitForm()">Entrar</button>
+  <div id="msg"></div>
+  <div class="toggle" onclick="toggleMode()">¿No tienes cuenta? Regístrate</div>
+</div>
+
+<script>
+const API_URL = "https://api.jivops.com";
+let mode = "login";
+
+function toggleMode() {
+  mode = mode === "login" ? "register" : "login";
+  document.getElementById("title").innerText = mode === "login" ? "Iniciar sesión" : "Crear cuenta";
+  document.querySelector(".toggle").innerText = mode === "login" ? "¿No tienes cuenta? Regístrate" : "¿Ya tienes cuenta? Inicia sesión";
+}
+
+async function submitForm() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const msg = document.getElementById("msg");
+  msg.innerText = "";
+
+  if (mode === "register") {
+    const res = await fetch(`${API_URL}/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    });
+    if (res.ok) {
+      mode = "login";
+      document.getElementById("title").innerText = "Iniciar sesión";
+      msg.style.color = "#5be97d";
+      msg.innerText = "Cuenta creada. Ahora inicia sesión.";
+    } else {
+      const err = await res.json();
+      msg.innerText = err.detail || "Error al registrar";
+    }
+  } else {
+    const form = new URLSearchParams();
+    form.append("username", email);
+    form.append("password", password);
+    const res = await fetch(`${API_URL}/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: form
+    });
+    if (res.ok) {
+      const data = await res.json();
+      localStorage.setItem("jivops_token", data.access_token);
+      window.location.href = "index.html";
+    } else {
+      msg.innerText = "Email o contraseña incorrectos";
+    }
+  }
+}
+</script>
+</body>
+</html>
