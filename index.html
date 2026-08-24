@@ -1341,6 +1341,120 @@
       <a href="Longhorn_en_Produccion.pdf">📄 PDF completo</a>
     </div>
   </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Podman en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="podman-prod-leccion-01.html">01. Qué es Podman y diferencias con Docker (daemonless)</a>
+      <a href="podman-prod-leccion-02.html">02. Arquitectura de Podman — rootless containers</a>
+      <a href="podman-prod-leccion-03.html">03. Instalación de Podman</a>
+      <a href="podman-prod-leccion-04.html">04. Podman CLI — comandos básicos compatibles con Docker</a>
+      <a href="podman-prod-leccion-05.html">05. Podman vs Docker vs containerd — cuándo usar cada uno</a>
+      <a href="podman-prod-leccion-06.html">06. Rootless containers — cómo funciona</a>
+      <a href="podman-prod-leccion-07.html">07. User namespaces y mapeo de UIDs</a>
+      <a href="podman-prod-leccion-08.html">08. Seguridad por defecto de Podman vs Docker</a>
+      <a href="podman-prod-leccion-09.html">09. SELinux y Podman</a>
+      <a href="podman-prod-leccion-10.html">10. Capabilities y hardening de contenedores</a>
+      <a href="podman-prod-leccion-11.html">11. Concepto de Pod en Podman (similar a Kubernetes)</a>
+      <a href="podman-prod-leccion-12.html">12. Gestión de volúmenes en Podman</a>
+      <a href="podman-prod-leccion-13.html">13. Redes en Podman — modos de networking</a>
+      <a href="podman-prod-leccion-14.html">14. Generación de Kubernetes YAML desde Podman (podman generate kube)</a>
+      <a href="podman-prod-leccion-15.html">15. Podman Compose — equivalente a docker-compose</a>
+      <a href="podman-prod-leccion-16.html">16. Podman y systemd — Quadlet</a>
+      <a href="podman-prod-leccion-17.html">17. Generación de unidades systemd para contenedores</a>
+      <a href="podman-prod-leccion-18.html">18. Auto-start de contenedores al arrancar el sistema</a>
+      <a href="podman-prod-leccion-19.html">19. Healthchecks en Podman</a>
+      <a href="podman-prod-leccion-20.html">20. Logging y gestión de logs de contenedores</a>
+      <a href="podman-prod-leccion-21.html">21. Buildah — construcción de imágenes sin daemon</a>
+      <a href="podman-prod-leccion-22.html">22. Podman build — Dockerfile compatible</a>
+      <a href="podman-prod-leccion-23.html">23. Gestión de registries con Podman</a>
+      <a href="podman-prod-leccion-24.html">24. Firma de imágenes con Podman (Skopeo, Sigstore)</a>
+      <a href="podman-prod-leccion-25.html">25. Migración de Docker a Podman</a>
+      <a href="podman-prod-leccion-26.html">26. Podman en CI/CD pipelines</a>
+      <a href="podman-prod-leccion-27.html">27. Podman machine — uso en macOS/Windows</a>
+      <a href="podman-prod-leccion-28.html">28. Monitoreo de contenedores Podman</a>
+      <a href="podman-prod-leccion-29.html">29. Troubleshooting de contenedores rootless</a>
+      <a href="podman-prod-leccion-30.html">30. Proyecto final: entorno de contenedores completo con Podman listo para producción</a>
+      <a href="Podman_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Containerd en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="containerd-prod-leccion-01.html">01. Qué es containerd y su rol como runtime de bajo nivel</a>
+      <a href="containerd-prod-leccion-02.html">02. Arquitectura de containerd — núcleo y plugins</a>
+      <a href="containerd-prod-leccion-03.html">03. containerd vs Docker vs CRI-O — el panorama de runtimes</a>
+      <a href="containerd-prod-leccion-04.html">04. Instalación y configuración de containerd</a>
+      <a href="containerd-prod-leccion-05.html">05. Namespaces internos de containerd (distinto de namespaces de Linux)</a>
+      <a href="containerd-prod-leccion-06.html">06. Container Runtime Interface (CRI) — el contrato con Kubernetes</a>
+      <a href="containerd-prod-leccion-07.html">07. containerd como runtime de kubelet</a>
+      <a href="containerd-prod-leccion-08.html">08. crictl — CLI para depurar containerd vía CRI</a>
+      <a href="containerd-prod-leccion-09.html">09. Configuración de containerd para Kubernetes (config.toml)</a>
+      <a href="containerd-prod-leccion-10.html">10. Sandbox/pause container — cómo containerd gestiona Pods</a>
+      <a href="containerd-prod-leccion-11.html">11. ctr — CLI de bajo nivel de containerd</a>
+      <a href="containerd-prod-leccion-12.html">12. Pull y gestión de imágenes con containerd</a>
+      <a href="containerd-prod-leccion-13.html">13. Snapshotters — overlayfs y alternativas</a>
+      <a href="containerd-prod-leccion-14.html">14. Content store — almacenamiento de contenido de imágenes</a>
+      <a href="containerd-prod-leccion-15.html">15. Garbage collection de imágenes y contenido no usado</a>
+      <a href="containerd-prod-leccion-16.html">16. runc y la interfaz OCI Runtime</a>
+      <a href="containerd-prod-leccion-17.html">17. Runtimes alternativos — Kata Containers, gVisor (runsc)</a>
+      <a href="containerd-prod-leccion-18.html">18. RuntimeClass en Kubernetes — múltiples runtimes en el mismo cluster</a>
+      <a href="containerd-prod-leccion-19.html">19. Configuración de runtime seguro para cargas no confiables</a>
+      <a href="containerd-prod-leccion-20.html">20. Seccomp, AppArmor y containerd</a>
+      <a href="containerd-prod-leccion-21.html">21. Plugins de containerd — extensibilidad</a>
+      <a href="containerd-prod-leccion-22.html">22. Configuración de registries y mirrors</a>
+      <a href="containerd-prod-leccion-23.html">23. Métricas de containerd (Prometheus)</a>
+      <a href="containerd-prod-leccion-24.html">24. Troubleshooting con ctr y crictl</a>
+      <a href="containerd-prod-leccion-25.html">25. Logs y debugging de containerd</a>
+      <a href="containerd-prod-leccion-26.html">26. Actualización de containerd sin downtime de Pods</a>
+      <a href="containerd-prod-leccion-27.html">27. Rendimiento — tuning de containerd a gran escala</a>
+      <a href="containerd-prod-leccion-28.html">28. Migración de dockershim a containerd</a>
+      <a href="containerd-prod-leccion-29.html">29. containerd en entornos air-gapped</a>
+      <a href="containerd-prod-leccion-30.html">30. Proyecto final: runtime de contenedores completo con containerd listo para producción</a>
+      <a href="Containerd_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Kustomize en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="kustomize-prod-leccion-01.html">01. Qué es Kustomize y el enfoque template-free</a>
+      <a href="kustomize-prod-leccion-02.html">02. kustomization.yaml — estructura básica</a>
+      <a href="kustomize-prod-leccion-03.html">03. Instalación y uso (kubectl -k, standalone binary)</a>
+      <a href="kustomize-prod-leccion-04.html">04. Bases y overlays — el patrón fundamental</a>
+      <a href="kustomize-prod-leccion-05.html">05. Kustomize vs Helm — cuándo usar cada uno</a>
+      <a href="kustomize-prod-leccion-06.html">06. commonLabels y commonAnnotations</a>
+      <a href="kustomize-prod-leccion-07.html">07. namePrefix y nameSuffix</a>
+      <a href="kustomize-prod-leccion-08.html">08. namespace transformer</a>
+      <a href="kustomize-prod-leccion-09.html">09. images — sobrescritura de tags de imagen</a>
+      <a href="kustomize-prod-leccion-10.html">10. replicas — ajuste de réplicas por overlay</a>
+      <a href="kustomize-prod-leccion-11.html">11. strategicMergePatch — fundamentos</a>
+      <a href="kustomize-prod-leccion-12.html">12. JSONPatch (RFC 6902) — patches precisos</a>
+      <a href="kustomize-prod-leccion-13.html">13. patchesStrategicMerge vs patches (sintaxis moderna)</a>
+      <a href="kustomize-prod-leccion-14.html">14. Patches condicionales por target (labelSelector, annotationSelector)</a>
+      <a href="kustomize-prod-leccion-15.html">15. Inline patches vs patches en archivos separados</a>
+      <a href="kustomize-prod-leccion-16.html">16. ConfigMapGenerator — generación de ConfigMaps</a>
+      <a href="kustomize-prod-leccion-17.html">17. SecretGenerator — generación de Secrets</a>
+      <a href="kustomize-prod-leccion-18.html">18. Opciones de generadores — disableNameSuffixHash</a>
+      <a href="kustomize-prod-leccion-19.html">19. Generadores desde archivos externos (envs, files)</a>
+      <a href="kustomize-prod-leccion-20.html">20. Generadores personalizados (KRM functions)</a>
+      <a href="kustomize-prod-leccion-21.html">21. Estructura de directorios recomendada (base/overlays)</a>
+      <a href="kustomize-prod-leccion-22.html">22. Components — piezas reutilizables entre overlays</a>
+      <a href="kustomize-prod-leccion-23.html">23. Remote bases — referenciar bases desde un repositorio Git</a>
+      <a href="kustomize-prod-leccion-24.html">24. Composición de múltiples bases</a>
+      <a href="kustomize-prod-leccion-25.html">25. Validación de manifiestos generados (kustomize build | kubectl apply --dry-run)</a>
+      <a href="kustomize-prod-leccion-26.html">26. Kustomize con ArgoCD/Flux (GitOps)</a>
+      <a href="kustomize-prod-leccion-27.html">27. Gestión de secretos con Kustomize (SOPS, Sealed Secrets)</a>
+      <a href="kustomize-prod-leccion-28.html">28. Testing de overlays antes de aplicar</a>
+      <a href="kustomize-prod-leccion-29.html">29. Migración de Helm a Kustomize (o combinación de ambos)</a>
+      <a href="kustomize-prod-leccion-30.html">30. Proyecto final: estructura de despliegue multi-entorno completa con Kustomize lista para producción</a>
+      <a href="Kustomize_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
 </div>
 
 <section class="hero">
