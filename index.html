@@ -1037,6 +1037,82 @@
       <a href="Istio_en_Produccion.pdf">📄 PDF completo</a>
     </div>
   </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Service Mesh en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="servicemesh-prod-leccion-01.html">01. Qué es un service mesh — conceptos generales</a>
+      <a href="servicemesh-prod-leccion-02.html">02. Cuándo SÍ necesitas un service mesh (y cuándo no)</a>
+      <a href="servicemesh-prod-leccion-03.html">03. Comparativa: Istio vs Linkerd vs Consul Connect vs Cilium</a>
+      <a href="servicemesh-prod-leccion-04.html">04. Sidecar-based vs sidecar-less (eBPF) — modelos arquitectónicos</a>
+      <a href="servicemesh-prod-leccion-05.html">05. Service Mesh Interface (SMI) — estandarización</a>
+      <a href="servicemesh-prod-leccion-06.html">06. Arquitectura de Linkerd — linkerd2-proxy (Rust)</a>
+      <a href="servicemesh-prod-leccion-07.html">07. Instalación y onboarding de Linkerd</a>
+      <a href="servicemesh-prod-leccion-08.html">08. mTLS automático en Linkerd</a>
+      <a href="servicemesh-prod-leccion-09.html">09. Traffic split y canary con Linkerd</a>
+      <a href="servicemesh-prod-leccion-10.html">10. Linkerd viz — observabilidad integrada</a>
+      <a href="servicemesh-prod-leccion-11.html">11. Arquitectura de Consul Connect</a>
+      <a href="servicemesh-prod-leccion-12.html">12. Consul Connect — service discovery multi-datacenter</a>
+      <a href="servicemesh-prod-leccion-13.html">13. Cilium Service Mesh — eBPF sin sidecar</a>
+      <a href="servicemesh-prod-leccion-14.html">14. Cilium — Network Policies avanzadas con eBPF</a>
+      <a href="servicemesh-prod-leccion-15.html">15. Comparativa de rendimiento: sidecar vs sidecar-less</a>
+      <a href="servicemesh-prod-leccion-16.html">16. Mesh y arquitectura de microservicios — buenas prácticas</a>
+      <a href="servicemesh-prod-leccion-17.html">17. API Gateway vs Service Mesh — dónde termina uno y empieza el otro</a>
+      <a href="servicemesh-prod-leccion-18.html">18. Service mesh y Kubernetes Gateway API</a>
+      <a href="servicemesh-prod-leccion-19.html">19. Zero-trust networking con service mesh</a>
+      <a href="servicemesh-prod-leccion-20.html">20. Mesh expansion — VMs fuera de Kubernetes</a>
+      <a href="servicemesh-prod-leccion-21.html">21. Migración entre implementaciones de service mesh</a>
+      <a href="servicemesh-prod-leccion-22.html">22. Mesh federation — múltiples meshes interconectados</a>
+      <a href="servicemesh-prod-leccion-23.html">23. Coexistencia de múltiples meshes en un mismo cluster</a>
+      <a href="servicemesh-prod-leccion-24.html">24. Adopción incremental — servicio por servicio</a>
+      <a href="servicemesh-prod-leccion-25.html">25. Evaluación de madurez de un mesh en producción</a>
+      <a href="servicemesh-prod-leccion-26.html">26. Costo total de propiedad (TCO) de un service mesh</a>
+      <a href="servicemesh-prod-leccion-27.html">27. Equipo y gobernanza de una plataforma de mesh</a>
+      <a href="servicemesh-prod-leccion-28.html">28. Señales de que tu mesh necesita rediseño</a>
+      <a href="servicemesh-prod-leccion-29.html">29. Roadmap de adopción de service mesh en una organización</a>
+      <a href="servicemesh-prod-leccion-30.html">30. Proyecto final: elegir y justificar la estrategia de service mesh para una organización</a>
+      <a href="ServiceMesh_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Loki en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="loki-prod-leccion-01.html">01. Qué es Loki y filosofía 'like Prometheus, but for logs'</a>
+      <a href="loki-prod-leccion-02.html">02. Arquitectura de Loki — componentes</a>
+      <a href="loki-prod-leccion-03.html">03. Loki monolithic vs simple scalable vs microservices mode</a>
+      <a href="loki-prod-leccion-04.html">04. Instalación de Loki (Helm, single binary)</a>
+      <a href="loki-prod-leccion-05.html">05. LogQL — fundamentos del lenguaje de consulta</a>
+      <a href="loki-prod-leccion-06.html">06. Promtail — agente de recolección de logs</a>
+      <a href="loki-prod-leccion-07.html">07. Labels — diseño de labels eficiente</a>
+      <a href="loki-prod-leccion-08.html">08. Cardinalidad de labels — el error más común</a>
+      <a href="loki-prod-leccion-09.html">09. Pipelines de Promtail — parsing y transformación</a>
+      <a href="loki-prod-leccion-10.html">10. Alternativas a Promtail: Fluent Bit, Vector, Grafana Agent</a>
+      <a href="loki-prod-leccion-11.html">11. Chunks e índices — cómo almacena Loki los datos</a>
+      <a href="loki-prod-leccion-12.html">12. Backend de almacenamiento (S3, GCS, filesystem)</a>
+      <a href="loki-prod-leccion-13.html">13. TSDB index — el índice moderno de Loki</a>
+      <a href="loki-prod-leccion-14.html">14. Retención de logs y compactación</a>
+      <a href="loki-prod-leccion-15.html">15. Costos de almacenamiento vs Elasticsearch</a>
+      <a href="loki-prod-leccion-16.html">16. Filtros de línea (line filters)</a>
+      <a href="loki-prod-leccion-17.html">17. Parsers en LogQL (json, logfmt, regexp)</a>
+      <a href="loki-prod-leccion-18.html">18. Métricas desde logs con LogQL</a>
+      <a href="loki-prod-leccion-19.html">19. Agregaciones y funciones de rango</a>
+      <a href="loki-prod-leccion-20.html">20. Optimización de queries lentas en Loki</a>
+      <a href="loki-prod-leccion-21.html">21. Escalado horizontal de Loki (simple scalable mode)</a>
+      <a href="loki-prod-leccion-22.html">22. Multi-tenancy en Loki</a>
+      <a href="loki-prod-leccion-23.html">23. Rate limiting y protección contra sobrecarga</a>
+      <a href="loki-prod-leccion-24.html">24. Monitoreo del propio Loki (metamonitoring)</a>
+      <a href="loki-prod-leccion-25.html">25. Troubleshooting de ingesta fallida</a>
+      <a href="loki-prod-leccion-26.html">26. Integración con Grafana — exploración y dashboards</a>
+      <a href="loki-prod-leccion-27.html">27. Alerting basado en logs (Loki Ruler)</a>
+      <a href="loki-prod-leccion-28.html">28. Integración con Kubernetes (labels automáticos)</a>
+      <a href="loki-prod-leccion-29.html">29. Migración desde Elasticsearch/ELK a Loki</a>
+      <a href="loki-prod-leccion-30.html">30. Proyecto final: stack de logging completo con Loki listo para producción</a>
+      <a href="Loki_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
 </div>
 
 <section class="hero">
