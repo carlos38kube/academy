@@ -117,7 +117,33 @@
   </div>
   <script>
     document.getElementById('subscribe-btn').addEventListener('click', function () {
-      alert('La pasarela de pago se activará muy pronto.');
+      var token = localStorage.getItem('jivops_token');
+      if (!token) {
+        window.location.href = 'login.html';
+        return;
+      }
+      var btn = document.getElementById('subscribe-btn');
+      btn.disabled = true;
+      btn.textContent = 'Redirigiendo...';
+      fetch('https://api.jivops.com/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + token }
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data.url) {
+            window.location.href = data.url;
+          } else {
+            btn.disabled = false;
+            btn.textContent = 'Suscribirme';
+            alert('No se pudo iniciar el pago. Intenta de nuevo.');
+          }
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = 'Suscribirme';
+          alert('No se pudo iniciar el pago. Intenta de nuevo.');
+        });
     });
   </script>
 </body>
