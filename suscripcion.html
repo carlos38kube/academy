@@ -4,16 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Suscríbete · Jivops</title>
+<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 <style>
   :root {
     --bg: #0b1120;
     --surface: #121a2e;
-    --surface-hover: #182238;
     --border: #23304a;
     --text: #e8edf5;
     --text-dim: #7c8aab;
     --accent: #4d8fe6;
-    --green: #4ade80;
   }
   * { box-sizing: border-box; }
   body {
@@ -22,129 +21,68 @@
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
+    padding: 40px 16px;
   }
-  .card {
-    max-width: 460px;
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 40px 32px;
+  .header {
+    max-width: 900px;
+    margin: 0 auto 32px;
     text-align: center;
   }
-  .icon {
-    font-size: 40px;
-    margin-bottom: 12px;
-  }
-  h1 {
-    font-size: 22px;
-    margin: 0 0 8px;
-  }
-  p {
-    color: var(--text-dim);
-    line-height: 1.5;
-    margin: 0 0 24px;
-  }
-  .price {
-    font-size: 34px;
-    font-weight: 700;
-    margin: 8px 0 4px;
-  }
-  .price span {
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--text-dim);
-  }
-  ul {
-    text-align: left;
-    list-style: none;
-    padding: 0;
-    margin: 24px 0;
-  }
-  li {
-    padding: 8px 0;
-    color: var(--text);
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-  li::before {
-    content: "✓";
-    color: var(--green);
-    font-weight: 700;
-  }
-  button {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
-    background: var(--accent);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 8px;
-  }
-  button:hover { opacity: 0.9; }
+  .icon { font-size: 40px; margin-bottom: 12px; }
+  h1 { font-size: 24px; margin: 0 0 8px; }
+  p { color: var(--text-dim); line-height: 1.5; margin: 0 auto; max-width: 520px; }
   .back {
-    display: inline-block;
-    margin-top: 20px;
+    display: block;
+    text-align: center;
+    margin-top: 28px;
     color: var(--text-dim);
     text-decoration: none;
     font-size: 14px;
   }
   .back:hover { color: var(--text); }
+  #table-container { max-width: 900px; margin: 0 auto; min-height: 200px; }
+  .loading { text-align: center; color: var(--text-dim); padding: 40px; }
 </style>
 </head>
 <body>
-  <div class="card">
+  <div class="header">
     <div class="icon">🔒</div>
     <h1>Contenido avanzado</h1>
     <p>Este curso forma parte del contenido avanzado de Jivops. Suscríbete para desbloquear los 34 cursos completos, con 30 lecciones y PDF cada uno.</p>
-    <div class="price">$3.99<span> / mes</span></div>
-    <ul>
-      <li>Acceso a todos los cursos avanzados</li>
-      <li>Nuevos cursos incluidos sin costo extra</li>
-      <li>PDFs descargables de cada curso</li>
-      <li>Cancela cuando quieras</li>
-    </ul>
-    <button id="subscribe-btn">Suscribirme</button>
-    <a class="back" href="index.html">← Volver al inicio</a>
   </div>
+
+  <div id="table-container">
+    <div class="loading">Cargando planes…</div>
+  </div>
+
+  <a class="back" href="index.html">← Volver al inicio</a>
+
   <script>
-    document.getElementById('subscribe-btn').addEventListener('click', function () {
-      var token = localStorage.getItem('jivops_token');
-      if (!token) {
-        window.location.href = 'login.html';
-        return;
-      }
-      var btn = document.getElementById('subscribe-btn');
-      btn.disabled = true;
-      btn.textContent = 'Redirigiendo...';
-      fetch('https://api.jivops.com/create-checkout-session', {
-        method: 'POST',
+    var token = localStorage.getItem('jivops_token');
+    if (!token) {
+      window.location.href = 'login.html';
+    } else {
+      fetch('https://api.jivops.com/me', {
         headers: { 'Authorization': 'Bearer ' + token }
       })
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-          if (data.url) {
-            window.location.href = data.url;
-          } else {
-            btn.disabled = false;
-            btn.textContent = 'Suscribirme';
-            alert('No se pudo iniciar el pago. Intenta de nuevo.');
-          }
+        .then(function (res) {
+          if (!res.ok) throw new Error('unauthorized');
+          return res.json();
+        })
+        .then(function (user) {
+          var container = document.getElementById('table-container');
+          container.innerHTML =
+            '<stripe-pricing-table pricing-table-id="prctbl_1UAcEhF1X8P443Ck8ku13cSG" ' +
+            'publishable-key="pk_live_51U8PQtF1X8P443CkniVBOBGSlQtbMl9fDqOD5AGjdTmoaHG1MMmqlK03awaFBcxqNosig62wjfpwPzOKpZA8rz4900ou3rAioA" ' +
+            'client-reference-id="' + user.id + '" ' +
+            'customer-email="' + user.email + '">' +
+            '</stripe-pricing-table>';
         })
         .catch(function () {
-          btn.disabled = false;
-          btn.textContent = 'Suscribirme';
-          alert('No se pudo iniciar el pago. Intenta de nuevo.');
+          localStorage.removeItem('jivops_token');
+          window.location.href = 'login.html';
         });
-    });
+    }
   </script>
 </body>
 </html>
