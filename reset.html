@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Jivops - Restablecer contraseña</title>
+<style>
+  body { background:#0a0e1a; color:#e2e8f0; font-family: monospace; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
+  .box { background:#131824; padding:40px; border-radius:12px; width:320px; }
+  h1 { color:#5b8def; font-size:22px; }
+  input { width:100%; padding:10px; margin:8px 0; background:#0a0e1a; border:1px solid #2a3244; color:#e2e8f0; border-radius:6px; box-sizing:border-box; }
+  button { width:100%; padding:10px; margin-top:10px; background:#5b8def; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:bold; }
+  #msg { margin-top:10px; font-size:13px; color:#ff6b6b; }
+  .toggle { text-align:center; margin-top:12px; font-size:13px; color:#8899aa; cursor:pointer; }
+</style>
+</head>
+<body>
+<div class="box" id="requestBox">
+  <h1>Recuperar contraseña</h1>
+  <input type="email" id="email" placeholder="Email">
+  <button onclick="requestReset()">Enviar enlace</button>
+  <div id="msg"></div>
+  <div class="toggle" onclick="window.location.href='login.html'">Volver a iniciar sesión</div>
+</div>
+
+<div class="box" id="resetBox" style="display:none;">
+  <h1>Nueva contraseña</h1>
+  <input type="password" id="newPassword" placeholder="Nueva contraseña">
+  <button onclick="submitReset()">Cambiar contraseña</button>
+  <div id="msg2"></div>
+</div>
+
+<script>
+const API_URL = "https://api.jivops.com";
+const urlParams = new URLSearchParams(window.location.search);
+const token = urlParams.get("token");
+
+if (token) {
+  document.getElementById("requestBox").style.display = "none";
+  document.getElementById("resetBox").style.display = "block";
+}
+
+async function requestReset() {
+  const email = document.getElementById("email").value;
+  const msg = document.getElementById("msg");
+  msg.style.color = "#8899aa";
+  msg.innerText = "Enviando...";
+
+  const res = await fetch(`${API_URL}/forgot-password`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email })
+  });
+
+  if (res.ok) {
+    msg.style.color = "#5be97d";
+    msg.innerText = "Si el email existe, revisa tu bandeja de entrada.";
+  } else {
+    msg.style.color = "#ff6b6b";
+    msg.innerText = "Ocurrió un error, intenta de nuevo.";
+  }
+}
+
+async function submitReset() {
+  const newPassword = document.getElementById("newPassword").value;
+  const msg2 = document.getElementById("msg2");
+  msg2.style.color = "#8899aa";
+  msg2.innerText = "Actualizando...";
+
+  const res = await fetch(`${API_URL}/reset-password`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token, new_password: newPassword })
+  });
+
+  if (res.ok) {
+    msg2.style.color = "#5be97d";
+    msg2.innerText = "Contraseña actualizada. Redirigiendo...";
+    setTimeout(() => window.location.href = "login.html", 2000);
+  } else {
+    const err = await res.json();
+    msg2.style.color = "#ff6b6b";
+    msg2.innerText = err.detail || "Token inválido o expirado.";
+  }
+}
+</script>
+</body>
+</html>
