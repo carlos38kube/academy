@@ -168,7 +168,7 @@
 
   document.getElementById('freeCheck').addEventListener('click', () => {
     const val = document.getElementById('freeInput').value.trim().toLowerCase();
-    const keywords = ["evita", "consumir todo", "aislar", "sin docker"];
+    const keywords = ["evita", "consum", "aisl", "docker"];
     const hitCount = keywords.filter(k => val.includes(k)).length;
     const fb = document.getElementById('freeFeedback');
     if (hitCount >= Math.min(2, keywords.length)) {
