@@ -258,7 +258,7 @@
       const correct = checkers[currentIndex]();
       if (correct === null) return;
       answered = true;
-      if (!correct) hearts = Math.max(0, hearts - 1);
+      if (!correct) hearts = hearts;
       else xp += 10;
       updateProgress();
       actionBtn.textContent = 'Continuar';

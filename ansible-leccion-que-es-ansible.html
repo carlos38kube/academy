@@ -180,7 +180,7 @@ function checkAnswer() {
   } else {
     fb.textContent = 'Casi. Intenta de nuevo.';
     fb.className = 'feedback bad';
-    hearts = Math.max(0, hearts - 1);
+    hearts = hearts;
     document.getElementById('hearts').textContent = hearts;
   }
 }
