@@ -131,7 +131,7 @@
     document.getElementById(id).classList.add('active');
   }
 
-  function loseHeart() { hearts = Math.max(0, hearts - 1); updateProgress(); }
+  function loseHeart() { hearts = hearts; updateProgress(); }
   function gainXp(amount) { xp += amount; updateProgress(); }
 
   document.querySelectorAll('#mcOptions .option').forEach((opt, idx) => {
