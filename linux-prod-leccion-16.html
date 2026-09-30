@@ -166,12 +166,17 @@
     }
   });
 
-  document.getElementById('freeCheck').addEventListener('click', () => {
+    document.getElementById('freeCheck').addEventListener('click', () => {
     const val = document.getElementById('freeInput').value.trim().toLowerCase();
-    const keywords = ["sin downtime", "espacio", "crece", "sin apagar"];
-    const hitCount = keywords.filter(k => val.includes(k)).length;
+      const norm = s => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const concepts = [
+      ["downtime", "sin parar", "sin apagar", "sin detener", "sin interrumpir", "sin reiniciar", "sin desmontar", "sigue funcionando", "disponibilidad"],
+      ["espacio", "almacenamiento", "ampliar", "crece", "crecer", "extender", "aumentar", "capacidad"]
+    ];
+    const v = norm(val);
+    const hitCount = concepts.filter(g => g.some(k => v.includes(norm(k)))).length;
     const fb = document.getElementById('freeFeedback');
-    if (hitCount >= Math.min(2, keywords.length)) {
+    if (hitCount >= concepts.length) {
       gainXp(15); fb.classList.remove('show');
       currentStep = 3;
       document.getElementById('xpFinal').textContent = xp;
