@@ -1629,7 +1629,419 @@
     </div>
   </div>
 </div>
-
+<div class="adv-overlay" id="iaOverlay" onclick="this.classList.remove('open');document.getElementById('iaSidebar').classList.remove('open')"></div>
+<div class="adv-sidebar ia-sidebar" id="iaSidebar">
+  <button class="close-btn" onclick="document.getElementById('iaSidebar').classList.remove('open');document.getElementById('iaOverlay').classList.remove('open')">&times;</button>
+  <h3>Inteligencia Artificial</h3>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">MLOps en Producción <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="mlops-prod-leccion-01.html">01. Qué es MLOps y por qué existe</a>
+      <a href="mlops-prod-leccion-02.html">02. Ciclo de vida de un modelo de ML en producción</a>
+      <a href="mlops-prod-leccion-03.html">03. Niveles de madurez MLOps</a>
+      <a href="mlops-prod-leccion-04.html">04. Herramientas del ecosistema MLOps</a>
+      <a href="mlops-prod-leccion-05.html">05. Reproducibilidad: código, datos y entorno</a>
+      <a href="mlops-prod-leccion-06.html">06. Versionado de datos con DVC</a>
+      <a href="mlops-prod-leccion-07.html">07. Feature stores</a>
+      <a href="mlops-prod-leccion-08.html">08. Seguimiento de experimentos con MLflow Tracking</a>
+      <a href="mlops-prod-leccion-09.html">09. Gestión de hiperparámetros y búsqueda</a>
+      <a href="mlops-prod-leccion-10.html">10. Validación de datos y esquemas</a>
+      <a href="mlops-prod-leccion-11.html">11. Pipelines de ML como código</a>
+      <a href="mlops-prod-leccion-12.html">12. Kubeflow Pipelines</a>
+      <a href="mlops-prod-leccion-13.html">13. Orquestación con Airflow para ML</a>
+      <a href="mlops-prod-leccion-14.html">14. Entrenamiento distribuido y GPUs en Kubernetes</a>
+      <a href="mlops-prod-leccion-15.html">15. CI/CD para ML y entrenamiento continuo (CT)</a>
+      <a href="mlops-prod-leccion-16.html">16. Model Registry</a>
+      <a href="mlops-prod-leccion-17.html">17. Empaquetado de modelos: contenedores y ONNX</a>
+      <a href="mlops-prod-leccion-18.html">18. Serving: batch vs online</a>
+      <a href="mlops-prod-leccion-19.html">19. KServe y serving en Kubernetes</a>
+      <a href="mlops-prod-leccion-20.html">20. Estrategias de despliegue: canary, shadow y A/B</a>
+      <a href="mlops-prod-leccion-21.html">21. Monitoreo: métricas de sistema vs métricas de modelo</a>
+      <a href="mlops-prod-leccion-22.html">22. Data drift</a>
+      <a href="mlops-prod-leccion-23.html">23. Concept drift y degradación del modelo</a>
+      <a href="mlops-prod-leccion-24.html">24. Reentrenamiento automático y triggers</a>
+      <a href="mlops-prod-leccion-25.html">25. Observabilidad y logging de predicciones</a>
+      <a href="mlops-prod-leccion-26.html">26. Gobernanza, linaje y auditoría</a>
+      <a href="mlops-prod-leccion-27.html">27. Seguridad en ML: datos sensibles y ataques</a>
+      <a href="mlops-prod-leccion-28.html">28. Costos y optimización de inferencia</a>
+      <a href="mlops-prod-leccion-29.html">29. LLMOps: particularidades de los LLMs en producción</a>
+      <a href="mlops-prod-leccion-30.html">30. Proyecto final: plataforma MLOps completa lista para producción</a>
+      <a href="MLOps_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">LLMOps en Producción <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="llmops-prod-leccion-01.html">01. Qué es LLMOps y en qué se diferencia de MLOps clásico</a>
+      <a href="llmops-prod-leccion-02.html">02. Arquitectura de una aplicación LLM en producción</a>
+      <a href="llmops-prod-leccion-03.html">03. Elegir entre modelo propietario (API) vs modelo open-source autoalojado</a>
+      <a href="llmops-prod-leccion-04.html">04. Tokens, contexto y costos — unidades económicas de un LLM</a>
+      <a href="llmops-prod-leccion-05.html">05. Entornos: desarrollo, staging y producción para apps LLM</a>
+      <a href="llmops-prod-leccion-06.html">06. Prompt engineering — principios básicos</a>
+      <a href="llmops-prod-leccion-07.html">07. Versionado de prompts como código</a>
+      <a href="llmops-prod-leccion-08.html">08. Plantillas de prompts y variables dinámicas</a>
+      <a href="llmops-prod-leccion-09.html">09. Few-shot prompting y ejemplos en el prompt</a>
+      <a href="llmops-prod-leccion-10.html">10. Prompt injection — riesgos y mitigaciones</a>
+      <a href="llmops-prod-leccion-11.html">11. Qué es RAG y por qué se usa en producción</a>
+      <a href="llmops-prod-leccion-12.html">12. Embeddings y bases de datos vectoriales</a>
+      <a href="llmops-prod-leccion-13.html">13. Chunking — estrategias de división de documentos</a>
+      <a href="llmops-prod-leccion-14.html">14. Re-ranking y mejora de relevancia de recuperación</a>
+      <a href="llmops-prod-leccion-15.html">15. Actualización del índice — RAG con datos frescos</a>
+      <a href="llmops-prod-leccion-16.html">16. Evaluación de LLMs — métricas y desafíos</a>
+      <a href="llmops-prod-leccion-17.html">17. LLM-as-judge — usar un modelo para evaluar a otro</a>
+      <a href="llmops-prod-leccion-18.html">18. Datasets de evaluación (golden sets)</a>
+      <a href="llmops-prod-leccion-19.html">19. Testing de regresión para prompts y modelos</a>
+      <a href="llmops-prod-leccion-20.html">20. A/B testing de prompts y modelos en producción</a>
+      <a href="llmops-prod-leccion-21.html">21. Serving de LLMs — vLLM y motores de inferencia</a>
+      <a href="llmops-prod-leccion-22.html">22. Cuantización de modelos LLM</a>
+      <a href="llmops-prod-leccion-23.html">23. Streaming de respuestas — UX y arquitectura</a>
+      <a href="llmops-prod-leccion-24.html">24. Caching de respuestas y prompts</a>
+      <a href="llmops-prod-leccion-25.html">25. Fine-tuning vs prompting — cuándo usar cada uno</a>
+      <a href="llmops-prod-leccion-26.html">26. Observabilidad de aplicaciones LLM — tracing de llamadas</a>
+      <a href="llmops-prod-leccion-27.html">27. Guardrails — filtrado de contenido y validación de salidas</a>
+      <a href="llmops-prod-leccion-28.html">28. Gestión de costos a escala — rate limiting y budgets</a>
+      <a href="llmops-prod-leccion-29.html">29. Agentes LLM en producción — orquestación de herramientas</a>
+      <a href="llmops-prod-leccion-30.html">30. Proyecto final: plataforma LLMOps completa lista para producción</a>
+      <a href="LLMOps_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Kubeflow en Producción <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="kubeflow-prod-leccion-01.html">01. Qué es Kubeflow y su propósito como plataforma de ML en Kubernetes</a>
+      <a href="kubeflow-prod-leccion-02.html">02. Arquitectura de componentes de Kubeflow</a>
+      <a href="kubeflow-prod-leccion-03.html">03. Instalación de Kubeflow (manifests, distribuciones)</a>
+      <a href="kubeflow-prod-leccion-04.html">04. Kubeflow Central Dashboard</a>
+      <a href="kubeflow-prod-leccion-05.html">05. Kubeflow vs plataformas ML gestionadas (SageMaker, Vertex AI)</a>
+      <a href="kubeflow-prod-leccion-06.html">06. Kubeflow Notebooks — servidores Jupyter en el cluster</a>
+      <a href="kubeflow-prod-leccion-07.html">07. Perfiles (Profiles) y namespaces de usuario</a>
+      <a href="kubeflow-prod-leccion-08.html">08. Volúmenes persistentes para notebooks</a>
+      <a href="kubeflow-prod-leccion-09.html">09. Imágenes personalizadas de notebook</a>
+      <a href="kubeflow-prod-leccion-10.html">10. Recursos y cuotas para notebooks (CPU/GPU)</a>
+      <a href="kubeflow-prod-leccion-11.html">11. Kubeflow Pipelines — componentes y arquitectura interna</a>
+      <a href="kubeflow-prod-leccion-12.html">12. SDK de KFP — definir un pipeline en Python</a>
+      <a href="kubeflow-prod-leccion-13.html">13. Compilación y ejecución de pipelines</a>
+      <a href="kubeflow-prod-leccion-14.html">14. Parámetros y artefactos entre componentes</a>
+      <a href="kubeflow-prod-leccion-15.html">15. Recurring runs y scheduling de pipelines</a>
+      <a href="kubeflow-prod-leccion-16.html">16. Training Operator — TFJob, PyTorchJob</a>
+      <a href="kubeflow-prod-leccion-17.html">17. Entrenamiento distribuido con PyTorchJob</a>
+      <a href="kubeflow-prod-leccion-18.html">18. Katib — ajuste automático de hiperparámetros</a>
+      <a href="kubeflow-prod-leccion-19.html">19. Algoritmos de búsqueda en Katib</a>
+      <a href="kubeflow-prod-leccion-20.html">20. Experiment y Trial en Katib</a>
+      <a href="kubeflow-prod-leccion-21.html">21. KServe dentro de Kubeflow</a>
+      <a href="kubeflow-prod-leccion-22.html">22. InferenceService — despliegue de modelos</a>
+      <a href="kubeflow-prod-leccion-23.html">23. Multi-tenancy en Kubeflow — aislamiento entre equipos</a>
+      <a href="kubeflow-prod-leccion-24.html">24. RBAC e Istio AuthorizationPolicy en Kubeflow</a>
+      <a href="kubeflow-prod-leccion-25.html">25. Integración con Model Registry</a>
+      <a href="kubeflow-prod-leccion-26.html">26. Metadata y linaje con ML Metadata (MLMD)</a>
+      <a href="kubeflow-prod-leccion-27.html">27. Monitoreo de Kubeflow con Prometheus</a>
+      <a href="kubeflow-prod-leccion-28.html">28. Actualización de Kubeflow sin downtime</a>
+      <a href="kubeflow-prod-leccion-29.html">29. Troubleshooting de pipelines fallidos</a>
+      <a href="kubeflow-prod-leccion-30.html">30. Proyecto final: plataforma Kubeflow completa lista para producción</a>
+      <a href="Kubeflow_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">GPUs en Kubernetes <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="gpu-k8s-leccion-01.html">01. Lección 01</a>
+      <a href="gpu-k8s-leccion-02.html">02. Lección 02</a>
+      <a href="gpu-k8s-leccion-03.html">03. Lección 03</a>
+      <a href="gpu-k8s-leccion-04.html">04. Lección 04</a>
+      <a href="gpu-k8s-leccion-05.html">05. Lección 05</a>
+      <a href="gpu-k8s-leccion-06.html">06. Lección 06</a>
+      <a href="gpu-k8s-leccion-07.html">07. Lección 07</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Ollama y LLMs Self-Hosted <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="ollama-selfhosted-leccion-01.html">01. Qué es Ollama y por qué self-hosted LLMs</a>
+      <a href="ollama-selfhosted-leccion-02.html">02. Instalación de Ollama</a>
+      <a href="ollama-selfhosted-leccion-03.html">03. Modelos GGUF y cuantización</a>
+      <a href="ollama-selfhosted-leccion-04.html">04. Requisitos de hardware — CPU vs GPU</a>
+      <a href="ollama-selfhosted-leccion-05.html">05. Ollama vs servicios cloud de LLM</a>
+      <a href="ollama-selfhosted-leccion-06.html">06. Descargar y ejecutar modelos con Ollama</a>
+      <a href="ollama-selfhosted-leccion-07.html">07. Biblioteca de modelos de Ollama</a>
+      <a href="ollama-selfhosted-leccion-08.html">08. Modelfile — personalizar un modelo</a>
+      <a href="ollama-selfhosted-leccion-09.html">09. Ajustar parámetros de inferencia (temperature, context)</a>
+      <a href="ollama-selfhosted-leccion-10.html">10. Gestión de espacio en disco y múltiples modelos</a>
+      <a href="ollama-selfhosted-leccion-11.html">11. API REST de Ollama</a>
+      <a href="ollama-selfhosted-leccion-12.html">12. Streaming de respuestas con la API</a>
+      <a href="ollama-selfhosted-leccion-13.html">13. Compatibilidad con API de OpenAI</a>
+      <a href="ollama-selfhosted-leccion-14.html">14. Embeddings con Ollama</a>
+      <a href="ollama-selfhosted-leccion-15.html">15. Integración con LangChain y frameworks</a>
+      <a href="ollama-selfhosted-leccion-16.html">16. Ollama en Docker</a>
+      <a href="ollama-selfhosted-leccion-17.html">17. Persistencia de modelos en contenedores</a>
+      <a href="ollama-selfhosted-leccion-18.html">18. Ollama en Kubernetes</a>
+      <a href="ollama-selfhosted-leccion-19.html">19. Exponer Ollama de forma segura (reverse proxy, auth)</a>
+      <a href="ollama-selfhosted-leccion-20.html">20. Escalado de Ollama — múltiples réplicas</a>
+      <a href="ollama-selfhosted-leccion-21.html">21. Optimización de rendimiento de inferencia local</a>
+      <a href="ollama-selfhosted-leccion-22.html">22. Offloading de capas entre CPU y GPU</a>
+      <a href="ollama-selfhosted-leccion-23.html">23. Gestión de memoria y contexto largo</a>
+      <a href="ollama-selfhosted-leccion-24.html">24. Batch de peticiones concurrentes</a>
+      <a href="ollama-selfhosted-leccion-25.html">25. Comparación de modelos — tamaño vs calidad vs velocidad</a>
+      <a href="ollama-selfhosted-leccion-26.html">26. Seguridad de un despliegue self-hosted de LLM</a>
+      <a href="ollama-selfhosted-leccion-27.html">27. Monitoreo de Ollama en producción</a>
+      <a href="ollama-selfhosted-leccion-28.html">28. Actualización de modelos sin downtime</a>
+      <a href="ollama-selfhosted-leccion-29.html">29. Casos de uso — cuándo self-hosted vale la pena</a>
+      <a href="ollama-selfhosted-leccion-30.html">30. Proyecto final: plataforma de LLMs self-hosted lista para producción</a>
+      <a href="Ollama_LLMs_SelfHosted.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">RAG en Producción <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="rag-prod-leccion-01.html">01. Anatomía de un pipeline RAG en producción</a>
+      <a href="rag-prod-leccion-02.html">02. Ingesta de documentos — fuentes y formatos</a>
+      <a href="rag-prod-leccion-03.html">03. Parsers y extracción de contenido (PDF, HTML, Office)</a>
+      <a href="rag-prod-leccion-04.html">04. Preprocesamiento y limpieza de texto</a>
+      <a href="rag-prod-leccion-05.html">05. Metadata y enriquecimiento de fragmentos</a>
+      <a href="rag-prod-leccion-06.html">06. Comparación de bases de datos vectoriales (Pinecone, Weaviate, Qdrant, pgvector)</a>
+      <a href="rag-prod-leccion-07.html">07. Índices ANN — HNSW y IVF</a>
+      <a href="rag-prod-leccion-08.html">08. Filtrado por metadata en búsquedas vectoriales</a>
+      <a href="rag-prod-leccion-09.html">09. Namespaces y multi-tenancy en bases vectoriales</a>
+      <a href="rag-prod-leccion-10.html">10. Escalado y sharding de índices vectoriales</a>
+      <a href="rag-prod-leccion-11.html">11. Búsqueda híbrida — combinar vectorial y léxica (BM25)</a>
+      <a href="rag-prod-leccion-12.html">12. Query expansion y reformulación de consultas</a>
+      <a href="rag-prod-leccion-13.html">13. Recuperación multi-hop</a>
+      <a href="rag-prod-leccion-14.html">14. Filtros de contexto y ventana de recuperación</a>
+      <a href="rag-prod-leccion-15.html">15. Recuperación con múltiples índices (routing)</a>
+      <a href="rag-prod-leccion-16.html">16. Construcción del prompt final con contexto recuperado</a>
+      <a href="rag-prod-leccion-17.html">17. Manejo de contexto que no cabe en la ventana del modelo</a>
+      <a href="rag-prod-leccion-18.html">18. Citas y trazabilidad de fuentes en la respuesta</a>
+      <a href="rag-prod-leccion-19.html">19. Manejo de 'no sé' — evitar alucinaciones sin contexto suficiente</a>
+      <a href="rag-prod-leccion-20.html">20. RAG conversacional — memoria y contexto multi-turno</a>
+      <a href="rag-prod-leccion-21.html">21. Métricas de evaluación de RAG — faithfulness, relevance</a>
+      <a href="rag-prod-leccion-22.html">22. RAGAS y frameworks de evaluación automatizada</a>
+      <a href="rag-prod-leccion-23.html">23. Evaluación de la etapa de recuperación vs generación</a>
+      <a href="rag-prod-leccion-24.html">24. Testing de regresión para sistemas RAG</a>
+      <a href="rag-prod-leccion-25.html">25. Feedback de usuarios y mejora continua</a>
+      <a href="rag-prod-leccion-26.html">26. RAG multi-modal — imágenes y tablas</a>
+      <a href="rag-prod-leccion-27.html">27. Agentic RAG — recuperación como herramienta de un agente</a>
+      <a href="rag-prod-leccion-28.html">28. Costos de un sistema RAG a escala</a>
+      <a href="rag-prod-leccion-29.html">29. Seguridad — control de acceso a nivel de documento</a>
+      <a href="rag-prod-leccion-30.html">30. Proyecto final: sistema RAG completo listo para producción</a>
+      <a href="RAG_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Agentes de IA para DevOps <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="ia-agentes-devops-leccion-01.html">01. Qué es un agente de IA y en qué se diferencia de un chatbot simple</a>
+      <a href="ia-agentes-devops-leccion-02.html">02. El ciclo ReAct — razonar, actuar, observar</a>
+      <a href="ia-agentes-devops-leccion-03.html">03. Tool calling — cómo un LLM invoca herramientas externas</a>
+      <a href="ia-agentes-devops-leccion-04.html">04. Frameworks de agentes (LangGraph, CrewAI, AutoGen)</a>
+      <a href="ia-agentes-devops-leccion-05.html">05. Model Context Protocol (MCP) — estandarizando el acceso a herramientas</a>
+      <a href="ia-agentes-devops-leccion-06.html">06. Agentes que generan IaC (Terraform, Kubernetes manifests)</a>
+      <a href="ia-agentes-devops-leccion-07.html">07. Agentes de troubleshooting — diagnóstico automatizado de incidentes</a>
+      <a href="ia-agentes-devops-leccion-08.html">08. Agentes para análisis de logs y correlación de eventos</a>
+      <a href="ia-agentes-devops-leccion-09.html">09. Agentes de capacity planning y optimización de costos</a>
+      <a href="ia-agentes-devops-leccion-10.html">10. Riesgos de dar acceso de escritura a un agente sobre infraestructura real</a>
+      <a href="ia-agentes-devops-leccion-11.html">11. Agentes de revisión de código (code review automatizado)</a>
+      <a href="ia-agentes-devops-leccion-12.html">12. Agentes que generan y corrigen pipelines de CI/CD</a>
+      <a href="ia-agentes-devops-leccion-13.html">13. Agentes para triage de fallos de build</a>
+      <a href="ia-agentes-devops-leccion-14.html">14. Agentes de generación de tests automatizados</a>
+      <a href="ia-agentes-devops-leccion-15.html">15. Integración de agentes con GitHub/GitLab (PRs, issues)</a>
+      <a href="ia-agentes-devops-leccion-16.html">16. Arquitecturas multi-agente — por qué dividir tareas entre agentes</a>
+      <a href="ia-agentes-devops-leccion-17.html">17. Patrones de orquestación — supervisor, pipeline, debate</a>
+      <a href="ia-agentes-devops-leccion-18.html">18. Comunicación entre agentes</a>
+      <a href="ia-agentes-devops-leccion-19.html">19. Delegación de tareas y especialización de agentes</a>
+      <a href="ia-agentes-devops-leccion-20.html">20. Memoria compartida entre agentes de un mismo sistema</a>
+      <a href="ia-agentes-devops-leccion-21.html">21. Principio de menor privilegio aplicado a agentes</a>
+      <a href="ia-agentes-devops-leccion-22.html">22. Human-in-the-loop — aprobación antes de ejecutar acciones críticas</a>
+      <a href="ia-agentes-devops-leccion-23.html">23. Sandboxing de acciones de un agente</a>
+      <a href="ia-agentes-devops-leccion-24.html">24. Auditoría y logging de decisiones de un agente</a>
+      <a href="ia-agentes-devops-leccion-25.html">25. Prevención de bucles infinitos y consumo descontrolado de recursos</a>
+      <a href="ia-agentes-devops-leccion-26.html">26. Observabilidad de agentes — tracing de decisiones y herramientas invocadas</a>
+      <a href="ia-agentes-devops-leccion-27.html">27. Evaluación de agentes — más allá de evaluar una única respuesta</a>
+      <a href="ia-agentes-devops-leccion-28.html">28. Costos de ejecutar agentes con múltiples pasos e iteraciones</a>
+      <a href="ia-agentes-devops-leccion-29.html">29. Casos de uso reales — cuándo un agente aporta valor real en DevOps</a>
+      <a href="ia-agentes-devops-leccion-30.html">30. Proyecto final: plataforma de agentes de IA para DevOps lista para producción</a>
+      <a href="Agentes_IA_DevOps.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Observabilidad de IA <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="obs-ia-leccion-01.html">01. Por qué la observabilidad tradicional no es suficiente para sistemas de IA</a>
+      <a href="obs-ia-leccion-02.html">02. Los tres pilares aplicados a IA — logs, métricas y trazas</a>
+      <a href="obs-ia-leccion-03.html">03. Qué hace única a la observabilidad de IA — calidad y semántica</a>
+      <a href="obs-ia-leccion-04.html">04. OpenTelemetry y estandarización de trazas para IA</a>
+      <a href="obs-ia-leccion-05.html">05. Arquitectura de un stack de observabilidad de IA</a>
+      <a href="obs-ia-leccion-06.html">06. Trazas de extremo a extremo en una aplicación LLM/agente</a>
+      <a href="obs-ia-leccion-07.html">07. Spans anidados — de la petición del usuario a cada llamada al modelo</a>
+      <a href="obs-ia-leccion-08.html">08. Herramientas de tracing especializadas (LangSmith, Langfuse, Arize)</a>
+      <a href="obs-ia-leccion-09.html">09. Correlación de trazas entre microservicios y llamadas al LLM</a>
+      <a href="obs-ia-leccion-10.html">10. Sampling de trazas — qué capturar a gran escala</a>
+      <a href="obs-ia-leccion-11.html">11. Métricas de negocio vs métricas técnicas en sistemas de IA</a>
+      <a href="obs-ia-leccion-12.html">12. Monitoreo de calidad de respuesta en producción</a>
+      <a href="obs-ia-leccion-13.html">13. Detección de drift de datos y de modelo en tiempo real</a>
+      <a href="obs-ia-leccion-14.html">14. Métricas de seguridad — tasa de bloqueo de guardrails, intentos de jailbreak</a>
+      <a href="obs-ia-leccion-15.html">15. Dashboards efectivos para sistemas de IA</a>
+      <a href="obs-ia-leccion-16.html">16. Observabilidad de costos — tokens, llamadas, por usuario/feature</a>
+      <a href="obs-ia-leccion-17.html">17. Atribución de costos en sistemas multi-modelo</a>
+      <a href="obs-ia-leccion-18.html">18. Latencia — percentiles y su impacto en experiencia de usuario</a>
+      <a href="obs-ia-leccion-19.html">19. Observabilidad de uso de GPU y recursos de inferencia</a>
+      <a href="obs-ia-leccion-20.html">20. Presupuestos y alertas de costos</a>
+      <a href="obs-ia-leccion-21.html">21. Definir alertas significativas para sistemas de IA</a>
+      <a href="obs-ia-leccion-22.html">22. Detección de anomalías en el comportamiento del modelo</a>
+      <a href="obs-ia-leccion-23.html">23. Runbooks para incidentes específicos de IA</a>
+      <a href="obs-ia-leccion-24.html">24. On-call para sistemas de IA — qué es diferente</a>
+      <a href="obs-ia-leccion-25.html">25. Post-mortems de incidentes de IA</a>
+      <a href="obs-ia-leccion-26.html">26. Feedback humano como señal de observabilidad</a>
+      <a href="obs-ia-leccion-27.html">27. Observabilidad para cumplimiento y auditoría (compliance)</a>
+      <a href="obs-ia-leccion-28.html">28. Observabilidad multi-agente — visibilidad de sistemas complejos</a>
+      <a href="obs-ia-leccion-29.html">29. Cultura de observabilidad — de reactivo a proactivo</a>
+      <a href="obs-ia-leccion-30.html">30. Proyecto final: stack de observabilidad de IA completo listo para producción</a>
+      <a href="Observabilidad_de_IA.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Seguridad en IA <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="seguridad-ia-leccion-01.html">01. Por qué la IA introduce una superficie de ataque distinta al software tradicional</a>
+      <a href="seguridad-ia-leccion-02.html">02. OWASP Top 10 para aplicaciones LLM</a>
+      <a href="seguridad-ia-leccion-03.html">03. Modelado de amenazas para sistemas de IA</a>
+      <a href="seguridad-ia-leccion-04.html">04. El ciclo de vida de ML y dónde puede introducirse cada riesgo</a>
+      <a href="seguridad-ia-leccion-05.html">05. Diferencia entre seguridad DEL modelo y seguridad CON el modelo</a>
+      <a href="seguridad-ia-leccion-06.html">06. Prompt injection avanzado — directo vs indirecto</a>
+      <a href="seguridad-ia-leccion-07.html">07. Jailbreaking — técnicas y por qué funcionan</a>
+      <a href="seguridad-ia-leccion-08.html">08. Ataques adversariales sobre modelos de clasificación/visión</a>
+      <a href="seguridad-ia-leccion-09.html">09. Data poisoning — envenenamiento de datos de entrenamiento</a>
+      <a href="seguridad-ia-leccion-10.html">10. Ataques de evasión en producción</a>
+      <a href="seguridad-ia-leccion-11.html">11. Model inversion — reconstruir datos de entrenamiento</a>
+      <a href="seguridad-ia-leccion-12.html">12. Membership inference — saber si un dato se usó para entrenar</a>
+      <a href="seguridad-ia-leccion-13.html">13. Model extraction — robo del modelo mediante consultas</a>
+      <a href="seguridad-ia-leccion-14.html">14. Fuga de PII en respuestas generadas</a>
+      <a href="seguridad-ia-leccion-15.html">15. Técnicas de privacidad diferencial en ML</a>
+      <a href="seguridad-ia-leccion-16.html">16. Arquitectura de defensa en capas para aplicaciones LLM</a>
+      <a href="seguridad-ia-leccion-17.html">17. Filtrado de entrada — sanitización de prompts</a>
+      <a href="seguridad-ia-leccion-18.html">18. Filtrado de salida — validación de respuestas antes de entregarlas</a>
+      <a href="seguridad-ia-leccion-19.html">19. Guardrails basados en clasificadores vs basados en reglas</a>
+      <a href="seguridad-ia-leccion-20.html">20. Rate limiting y throttling como defensa</a>
+      <a href="seguridad-ia-leccion-21.html">21. Seguridad de la cadena de suministro de modelos (model supply chain)</a>
+      <a href="seguridad-ia-leccion-22.html">22. Riesgos de modelos y datasets de terceros no verificados</a>
+      <a href="seguridad-ia-leccion-23.html">23. Escaneo de vulnerabilidades en dependencias de ML</a>
+      <a href="seguridad-ia-leccion-24.html">24. Seguridad de API keys y credenciales de modelos</a>
+      <a href="seguridad-ia-leccion-25.html">25. Aislamiento y sandboxing de cargas de trabajo de inferencia</a>
+      <a href="seguridad-ia-leccion-26.html">26. Red teaming de sistemas de IA</a>
+      <a href="seguridad-ia-leccion-27.html">27. Detección de abuso y uso malicioso en producción</a>
+      <a href="seguridad-ia-leccion-28.html">28. Respuesta a incidentes de seguridad específicos de IA</a>
+      <a href="seguridad-ia-leccion-29.html">29. Cumplimiento normativo de seguridad de IA (EU AI Act, marcos regulatorios)</a>
+      <a href="seguridad-ia-leccion-30.html">30. Proyecto final: postura de seguridad de IA completa lista para producción</a>
+      <a href="Seguridad_en_IA.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">AIOps: IA para Operaciones de TI <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="aiops-leccion-01.html">01. Qué es AIOps y qué problema resuelve en operaciones de TI modernas</a>
+      <a href="aiops-leccion-02.html">02. AIOps vs monitoreo tradicional basado en umbrales</a>
+      <a href="aiops-leccion-03.html">03. Las cuatro capacidades centrales de AIOps (correlación, anomalías, causa raíz,</a>
+      <a href="aiops-leccion-04.html">04. Fuentes de datos para AIOps — métricas, logs, trazas, eventos, topología</a>
+      <a href="aiops-leccion-05.html">05. Plataformas de AIOps — comerciales vs open source</a>
+      <a href="aiops-leccion-06.html">06. El problema de la fatiga de alertas</a>
+      <a href="aiops-leccion-07.html">07. Deduplicación y agrupación de alertas similares</a>
+      <a href="aiops-leccion-08.html">08. Correlación de eventos basada en topología</a>
+      <a href="aiops-leccion-09.html">09. Correlación temporal — eventos que ocurren juntos</a>
+      <a href="aiops-leccion-10.html">10. Supresión inteligente de alertas durante incidentes conocidos</a>
+      <a href="aiops-leccion-11.html">11. Detección de anomalías estadística vs basada en ML</a>
+      <a href="aiops-leccion-12.html">12. Baselines dinámicos — aprender el comportamiento normal</a>
+      <a href="aiops-leccion-13.html">13. Detección de anomalías estacionales (día/semana/mes)</a>
+      <a href="aiops-leccion-14.html">14. Anomalías multivariadas — correlación entre varias métricas</a>
+      <a href="aiops-leccion-15.html">15. Falsos positivos — el reto central de la detección de anomalías</a>
+      <a href="aiops-leccion-16.html">16. Qué es el análisis de causa raíz (RCA) automatizado</a>
+      <a href="aiops-leccion-17.html">17. Grafos de dependencia de servicios para RCA</a>
+      <a href="aiops-leccion-18.html">18. Análisis de logs con NLP para encontrar la causa</a>
+      <a href="aiops-leccion-19.html">19. Ranking de causas probables — priorizar hipótesis</a>
+      <a href="aiops-leccion-20.html">20. Limitaciones del RCA automatizado — cuándo confiar y cuándo no</a>
+      <a href="aiops-leccion-21.html">21. Mantenimiento predictivo de infraestructura</a>
+      <a href="aiops-leccion-22.html">22. Forecasting de capacidad con series temporales</a>
+      <a href="aiops-leccion-23.html">23. Predicción de fallos antes de que ocurran</a>
+      <a href="aiops-leccion-24.html">24. Remediación automatizada — de la detección a la acción</a>
+      <a href="aiops-leccion-25.html">25. Runbooks automatizados disparados por IA</a>
+      <a href="aiops-leccion-26.html">26. Integración de AIOps con el stack de observabilidad existente</a>
+      <a href="aiops-leccion-27.html">27. Entrenar modelos de AIOps con datos históricos de incidentes</a>
+      <a href="aiops-leccion-28.html">28. Medir el éxito de una iniciativa de AIOps — métricas de impacto</a>
+      <a href="aiops-leccion-29.html">29. Adopción organizacional — de reactivo a impulsado por IA</a>
+      <a href="aiops-leccion-30.html">30. Proyecto final: plataforma de AIOps completa lista para producción</a>
+      <a href="AIOps.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">IA en la Nube <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="ia-nube-leccion-01.html">01. Por qué usar servicios de IA gestionados en la nube en vez de construir todo propio</a>
+      <a href="ia-nube-leccion-02.html">02. Los tres grandes: AWS, Azure, GCP — panorama general de sus ofertas de IA</a>
+      <a href="ia-nube-leccion-03.html">03. Modelos de servicio: IaaS, PaaS y modelos totalmente gestionados para IA</a>
+      <a href="ia-nube-leccion-04.html">04. Elegir entre API gestionada vs infraestructura gestionada vs self-hosted</a>
+      <a href="ia-nube-leccion-05.html">05. Vendor lock-in en IA — riesgos y mitigaciones</a>
+      <a href="ia-nube-leccion-06.html">06. Amazon Bedrock — acceso gestionado a modelos fundacionales</a>
+      <a href="ia-nube-leccion-07.html">07. Amazon SageMaker — plataforma de ML de extremo a extremo</a>
+      <a href="ia-nube-leccion-08.html">08. SageMaker endpoints — despliegue de modelos para inferencia</a>
+      <a href="ia-nube-leccion-09.html">09. AWS y GPUs — instancias EC2 para IA (P4, P5, Inferentia, Trainium)</a>
+      <a href="ia-nube-leccion-10.html">10. Servicios de IA especializados de AWS (Textract, Transcribe, Rekognition)</a>
+      <a href="ia-nube-leccion-11.html">11. Azure OpenAI Service — acceso gestionado a modelos de OpenAI</a>
+      <a href="ia-nube-leccion-12.html">12. Azure Machine Learning — plataforma de ML de Microsoft</a>
+      <a href="ia-nube-leccion-13.html">13. Azure AI Search — búsqueda vectorial e híbrida gestionada</a>
+      <a href="ia-nube-leccion-14.html">14. Content Safety y guardrails nativos en Azure AI</a>
+      <a href="ia-nube-leccion-15.html">15. Integración de Azure AI con el ecosistema Microsoft (Copilot, Power Platform)</a>
+      <a href="ia-nube-leccion-16.html">16. Vertex AI — plataforma unificada de ML de Google Cloud</a>
+      <a href="ia-nube-leccion-17.html">17. Modelos Gemini vía Vertex AI</a>
+      <a href="ia-nube-leccion-18.html">18. Vertex AI Search y Vertex AI Agent Builder</a>
+      <a href="ia-nube-leccion-19.html">19. TPUs — el hardware de IA propio de Google</a>
+      <a href="ia-nube-leccion-20.html">20. Model Garden — catálogo de modelos en Vertex AI</a>
+      <a href="ia-nube-leccion-21.html">21. Comparar el costo real entre proveedores para una misma carga de trabajo de IA</a>
+      <a href="ia-nube-leccion-22.html">22. Abstracciones multi-cloud — LiteLLM y capas de compatibilidad</a>
+      <a href="ia-nube-leccion-23.html">23. Latencia y ubicación de datos — elegir la región correcta</a>
+      <a href="ia-nube-leccion-24.html">24. Bases de datos vectoriales gestionadas en la nube</a>
+      <a href="ia-nube-leccion-25.html">25. Estrategias de failover entre proveedores de IA</a>
+      <a href="ia-nube-leccion-26.html">26. Seguridad y cumplimiento de IA en la nube (IAM, VPC, cifrado)</a>
+      <a href="ia-nube-leccion-27.html">27. Monitoreo y costos en servicios de IA gestionados</a>
+      <a href="ia-nube-leccion-28.html">28. CI/CD para despliegues de IA en la nube</a>
+      <a href="ia-nube-leccion-29.html">29. Casos de uso — cuándo cada proveedor tiene ventaja real</a>
+      <a href="ia-nube-leccion-30.html">30. Proyecto final: arquitectura de IA en la nube completa lista para producción</a>
+      <a href="IA_en_la_Nube.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Python para IA <span class="arrow">▶</span></div>
+    <div class="adv-lessons">
+      <a href="python-ia-leccion-01.html">01. Por qué Python domina el ecosistema de IA y ML</a>
+      <a href="python-ia-leccion-02.html">02. Entornos virtuales y gestión de dependencias para proyectos de IA</a>
+      <a href="python-ia-leccion-03.html">03. Jupyter Notebooks — desarrollo interactivo para IA</a>
+      <a href="python-ia-leccion-04.html">04. Tipado con type hints en código de IA</a>
+      <a href="python-ia-leccion-05.html">05. Gestores de paquetes modernos (uv, poetry) para proyectos de ML</a>
+      <a href="python-ia-leccion-06.html">06. Arrays de NumPy — la base de la computación numérica en Python</a>
+      <a href="python-ia-leccion-07.html">07. Broadcasting en NumPy</a>
+      <a href="python-ia-leccion-08.html">08. Operaciones vectorizadas vs bucles — por qué importa el rendimiento</a>
+      <a href="python-ia-leccion-09.html">09. Álgebra lineal con NumPy — vectores y matrices</a>
+      <a href="python-ia-leccion-10.html">10. Tipos de datos y precisión numérica en NumPy</a>
+      <a href="python-ia-leccion-11.html">11. DataFrames de Pandas — estructura central para datos tabulares</a>
+      <a href="python-ia-leccion-12.html">12. Limpieza y preprocesamiento de datos con Pandas</a>
+      <a href="python-ia-leccion-13.html">13. Agrupación y agregación de datos (groupby)</a>
+      <a href="python-ia-leccion-14.html">14. Combinar datasets — merge, join y concat</a>
+      <a href="python-ia-leccion-15.html">15. Series temporales con Pandas</a>
+      <a href="python-ia-leccion-16.html">16. Tensores de PyTorch — la estructura central de deep learning</a>
+      <a href="python-ia-leccion-17.html">17. Autograd — diferenciación automática en PyTorch</a>
+      <a href="python-ia-leccion-18.html">18. Construir una red neuronal simple con PyTorch</a>
+      <a href="python-ia-leccion-19.html">19. DataLoaders — alimentar datos al proceso de entrenamiento</a>
+      <a href="python-ia-leccion-20.html">20. Mover cómputo entre CPU y GPU con PyTorch</a>
+      <a href="python-ia-leccion-21.html">21. Consumir APIs de LLM desde Python — el patrón básico</a>
+      <a href="python-ia-leccion-22.html">22. Programación asíncrona en Python para llamadas a APIs de IA</a>
+      <a href="python-ia-leccion-23.html">23. Manejo de reintentos y rate limits en clientes de API</a>
+      <a href="python-ia-leccion-24.html">24. Streaming de respuestas con Python</a>
+      <a href="python-ia-leccion-25.html">25. Validación de datos con Pydantic para aplicaciones de IA</a>
+      <a href="python-ia-leccion-26.html">26. Testing de código que involucra modelos de IA</a>
+      <a href="python-ia-leccion-27.html">27. Logging y debugging de pipelines de IA en Python</a>
+      <a href="python-ia-leccion-28.html">28. Empaquetar un proyecto de IA para distribución</a>
+      <a href="python-ia-leccion-29.html">29. Reproducibilidad — semillas aleatorias y determinismo</a>
+      <a href="python-ia-leccion-30.html">30. Proyecto final: pipeline de IA en Python completo listo para producción</a>
+      <a href="Python_para_IA.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+</div>
 <section class="hero">
   <h1>Conviértete en <span>DevOps Engineer</span></h1>
   <div class="hero-cta">
