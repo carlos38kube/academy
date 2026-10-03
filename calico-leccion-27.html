@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<style id="jivops-gate-style">html:not(.jivops-unlocked) body{display:none!important;}</style>
+<script src="gate.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calico · Lección 27 · Jivops</title>
+<style>
+  :root {
+    --bg: #0b1120; --surface: #121a2e; --surface-hover: #182238;
+    --border: #23304a; --text: #e8edf5; --text-dim: #7c8aab;
+    --accent: #4d8fe6; --green: #4ade80; --red: #e5484d; --amber: #e6b34d;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'IBM Plex Mono', 'Courier New', monospace; margin: 0; min-height: 100vh; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 32px; border-bottom: 1px solid var(--border); }
+  .hearts { color: var(--red); font-size: 15px; }
+  .xp { color: var(--amber); font-size: 15px; }
+  .progress-track { flex: 1; height: 8px; background: var(--surface); border-radius: 4px; margin: 0 24px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width .3s ease; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 24px 100px; }
+  .kicker { color: var(--accent); font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px; }
+  h1 { color: var(--accent); font-size: 26px; line-height: 1.3; margin: 0 0 32px; }
+  .step { display: none; }
+  .step.active { display: block; }
+  .option { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; cursor: pointer; font-size: 15px; transition: border-color .15s ease, background .15s ease; }
+  .option:hover { background: var(--surface-hover); }
+  .option.correct { border-color: var(--green); background: rgba(74,222,128,0.08); }
+  .option.wrong { border-color: var(--red); background: rgba(229,72,77,0.08); }
+  .option.disabled { pointer-events: none; opacity: 0.85; }
+  .feedback { border: 1px solid var(--red); background: rgba(229,72,77,0.08); color: #ff9a9d; border-radius: 10px; padding: 16px 20px; margin-top: 8px; font-size: 14px; display: none; }
+  .feedback.show { display: block; }
+  .code-line { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; font-size: 15px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  input[type=text], textarea { background: var(--bg); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 15px; padding: 10px 12px; border-radius: 6px; }
+  input[type=text] { min-width: 160px; }
+  textarea { width: 100%; min-height: 90px; resize: vertical; }
+  .btn { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 16px 24px; font-family: inherit; font-weight: bold; font-size: 15px; cursor: pointer; width: 100%; margin-top: 20px; }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn.green { background: var(--green); color: #06240f; }
+  .complete { text-align: center; padding-top: 60px; }
+  .check { font-size: 56px; color: var(--green); margin-bottom: 16px; }
+  .complete h2 { font-size: 26px; margin: 0 0 8px; }
+  .complete p { color: var(--text-dim); margin-bottom: 32px; }
+  .stats { display: flex; gap: 16px; justify-content: center; margin-bottom: 32px; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 32px; min-width: 140px; }
+  .stat .value { font-size: 28px; font-weight: bold; }
+  .stat .label { color: var(--text-dim); font-size: 12px; margin-top: 6px; text-transform: uppercase; }
+  .nav-row { display: flex; gap: 12px; }
+  .nav-row a { flex: 1; text-align: center; padding: 14px; border: 1px solid var(--border); border-radius: 8px; color: var(--text); text-decoration: none; font-size: 14px; }
+  .nav-row a.primary { background: var(--accent); border-color: var(--accent); font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="hearts">&#9829; <span id="heartsVal">3</span></div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="xp">&#9889; <span id="xpVal">0</span></div>
+</div>
+
+<main>
+
+  <div class="step active" id="step-mc">
+    <div class="kicker">Calico &middot; Lección 27</div>
+    <h1>¿Qué tipo de métricas relacionadas con Calico son especialmente relevantes de monitorear en un cluster de producción, más allá de solo confirmar que los Pods de Felix están técnicamente en ejecución?</h1>
+    <div id="mcOptions">
+      <div class="option">Métricas sobre el número de reglas de NetworkPolicy aplicadas y su tiempo de procesamiento, el estado de las sesiones BGP (activas vs caídas), y el número de paquetes denegados por políticas, dando visibilidad real de si la seguridad y el enrutamiento de red están funcionando correctamente más allá de solo el estado del proceso</div>
+      <div class="option">Solo es relevante monitorear si el proceso de Felix está técnicamente en ejecución, sin ninguna necesidad real de monitorear métricas adicionales sobre el comportamiento real del enrutamiento BGP o la aplicación de NetworkPolicy</div>
+      <div class="option">Calico no expone absolutamente ninguna métrica real compatible con Prometheus, haciendo imposible monitorear su comportamiento mediante esa herramienta específica</div>
+      <div class="option">Solo es relevante monitorear estas métricas si el cluster tiene exactamente una única NetworkPolicy en total configurada, sin ninguna necesidad real de visibilidad sobre más políticas o sesiones BGP distintas</div>
+    </div>
+    <div class="feedback" id="mcFeedback"></div>
+    <button class="btn" id="mcContinue" disabled>Continuar</button>
+  </div>
+
+  <div class="step" id="step-fill">
+    <div class="kicker">Calico &middot; Lección 27</div>
+    <h1>Completa el código</h1>
+    <div class="code-line">El número de paquetes denegados por políticas da visibilidad real de si la seguridad de red está funcionando <input type="text" id="fillInput" autocomplete="off"></div>
+    <div class="feedback" id="fillFeedback">Revisa: da visibilidad real de si la seguridad y el enrutamiento de red están funcionando correctamente.</div>
+    <button class="btn" id="fillCheck">Comprobar</button>
+  </div>
+
+  <div class="step" id="step-free">
+    <div class="kicker">Calico &middot; Lección 27</div>
+    <h1>¿Por qué monitorear específicamente el estado de las sesiones BGP (activas vs caídas) entre nodos revela un problema real que una simple verificación de que Felix está en ejecución no detectaría?</h1>
+    <textarea id="freeInput" placeholder="Escribe tu respuesta..."></textarea>
+    <div class="feedback" id="freeFeedback">Pista: el proceso de Felix podría estar técnicamente en ejecución mientras una sesión específica de BGP con otro nodo está caída, sin que eso se refleje en el estado básico del proceso; esa sesión BGP caída significa que ese nodo específico no está recibiendo o propagando correctamente las rutas necesarias para la conectividad real, un problema que solo una métrica específica del estado de las sesiones BGP revelaría, no la simple confirmación de que el proceso sigue corriendo normalmente.</div>
+    <button class="btn" id="freeCheck">Comprobar</button>
+  </div>
+
+  <div class="step" id="step-complete">
+    <div class="complete">
+      <div class="check">&#10003;</div>
+      <h2>&iexcl;Lecci&oacute;n completada!</h2>
+      <p>Monitoreo de Calico con Prometheus</p>
+      <div class="stats">
+        <div class="stat"><div class="value" id="xpFinal">0</div><div class="label">XP ganado</div></div>
+        <div class="stat"><div class="value" id="heartsFinal">3</div><div class="label">Vidas restantes</div></div>
+      </div>
+      <div class="nav-row">
+        <a href="calico-leccion-26.html">&larr; Anterior</a>
+        <a href="calico-leccion-28.html" class="primary">Siguiente &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const TOTAL_STEPS = 3;
+  let currentStep = 0;
+  let hearts = 3;
+  let xp = 0;
+  const correctIndex = 0;
+  const optionFeedback = {"0": "", "1": "Más allá de confirmar que el proceso está en ejecución, monitorear métricas reales de comportamiento (BGP, NetworkPolicy) es especialmente importante para un cluster de producción.", "2": "Calico sí expone métricas reales compatibles con el formato de Prometheus, permitiendo monitorear su comportamiento mediante esa herramienta de forma efectiva.", "3": "El monitoreo de estas métricas es especialmente relevante justamente con múltiples políticas y sesiones BGP distintas funcionando simultáneamente, no con una única política aislada."};
+  const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+  function updateProgress() {
+    document.getElementById('progressFill').style.width = ((currentStep) / TOTAL_STEPS * 100) + '%';
+    document.getElementById('heartsVal').textContent = hearts;
+    document.getElementById('xpVal').textContent = xp;
+  }
+  function goToStep(id) {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+  function loseHeart() { hearts = Math.max(0, hearts - 1); updateProgress(); }
+  function gainXp(amount) { xp += amount; updateProgress(); }
+
+  document.querySelectorAll('#mcOptions .option').forEach((opt, idx) => {
+    opt.addEventListener('click', () => {
+      if (opt.classList.contains('disabled')) return;
+      document.querySelectorAll('#mcOptions .option').forEach(o => o.classList.add('disabled'));
+      const fb = document.getElementById('mcFeedback');
+      if (idx === correctIndex) {
+        opt.classList.add('correct');
+        gainXp(10);
+        document.getElementById('mcContinue').disabled = false;
+      } else {
+        opt.classList.add('wrong');
+        document.querySelectorAll('#mcOptions .option')[correctIndex].classList.add('correct');
+        loseHeart();
+        fb.textContent = optionFeedback[idx] || 'Esa opci\u00f3n no es correcta.';
+        fb.classList.add('show');
+        document.getElementById('mcContinue').disabled = false;
+      }
+    });
+  });
+
+  document.getElementById('mcContinue').addEventListener('click', () => {
+    currentStep = 1; updateProgress(); goToStep('step-fill');
+  });
+
+  document.getElementById('fillCheck').addEventListener('click', () => {
+    const val = norm(document.getElementById('fillInput').value.trim()).replace(/[";]/g, '');
+    const answer = "correctamente";
+    const fb = document.getElementById('fillFeedback');
+    if (val === norm(answer)) {
+      gainXp(10); fb.classList.remove('show');
+      currentStep = 2; updateProgress(); goToStep('step-free');
+    } else {
+      loseHeart(); fb.classList.add('show');
+    }
+  });
+
+  document.getElementById('freeCheck').addEventListener('click', () => {
+    const val = norm(document.getElementById('freeInput').value.trim());
+    const keywords = ["felix podria estar tecnicamente en ejecucion mientras una sesion especifica de bgp con otro nodo esta caida sin que eso se refleje en el estado basico del proceso", "sesion bgp caida significa que ese nodo especifico no esta recibiendo o propagando correctamente las rutas necesarias para la conectividad real entre nodos", "problema de conectividad real derivado de esa sesion bgp caida no seria visible simplemente confirmando que el proceso de felix sigue corriendo normalmente", "metrica especifica del estado de las sesiones bgp es necesaria para detectar ese tipo de problema que la disponibilidad basica del proceso no podria revelar por si sola"];
+    // una palabra clave cuenta si al menos la mitad de sus palabras significativas aparecen en la respuesta
+    const hit = k => {
+      const words = norm(k).split(/\s+/).filter(w => w.length > 3);
+      if (words.length === 0) return val.includes(norm(k));
+      return words.filter(w => val.includes(w)).length >= Math.ceil(words.length / 2);
+    };
+    const hitCount = keywords.filter(hit).length;
+    const fb = document.getElementById('freeFeedback');
+    if (val.length >= 15 && hitCount >= Math.min(2, keywords.length)) {
+      gainXp(15); fb.classList.remove('show');
+      currentStep = 3;
+      document.getElementById('xpFinal').textContent = xp;
+      document.getElementById('heartsFinal').textContent = hearts;
+      updateProgress(); goToStep('step-complete');
+    } else {
+      loseHeart(); fb.classList.add('show');
+    }
+  });
+
+  updateProgress();
+</script>
+
+</body>
+</html>
