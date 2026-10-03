@@ -259,90 +259,13 @@
     Jivops
   </div>
   <div class="nav-links">
-    <a href="#cursos">Cursos</a><button class="adv-toggle" onclick="document.getElementById('advSidebar').classList.add('open');document.getElementById('advOverlay').classList.add('open')">Contenido avanzado</button><button class="adv-toggle ia-toggle" onclick="document.getElementById('iaSidebar').classList.add('open');document.getElementById('iaOverlay').classList.add('open')">IA</button><button class="adv-toggle" onclick="document.getElementById('segSidebar').classList.add('open');document.getElementById('segOverlay').classList.add('open')">Seguridad</button> <button class="adv-toggle" onclick="document.getElementById('orqSidebar').classList.add('open');document.getElementById('orqOverlay').classList.add('open')">Orquestación</button><button class="adv-toggle" onclick="document.getElementById('redSidebar').classList.add('open');document.getElementById('redOverlay').classList.add('open')">Redes</button><a href="login.html">Iniciar sesión</a>
+    <a href="#cursos">Cursos</a><button class="adv-toggle" onclick="document.getElementById('advSidebar').classList.add('open');document.getElementById('advOverlay').classList.add('open')">Contenido avanzado</button><button class="adv-toggle ia-toggle" onclick="document.getElementById('iaSidebar').classList.add('open');document.getElementById('iaOverlay').classList.add('open')">IA</button><button class="adv-toggle" onclick="document.getElementById('segSidebar').classList.add('open');document.getElementById('segOverlay').classList.add('open')">Seguridad</button> <button class="adv-toggle" onclick="document.getElementById('orqSidebar').classList.add('open');document.getElementById('orqOverlay').classList.add('open')">Orquestación</button><button class="adv-toggle" onclick="document.getElementById('redSidebar').classList.add('open');document.getElementById('redOverlay').classList.add('open')">Redes</button><button class="adv-toggle" onclick="document.getElementById('autSidebar').classList.add('open');document.getElementById('autOverlay').classList.add('open')">Automatización</button><a href="login.html">Iniciar sesión</a>
   </div>
 </nav>
   <div class="adv-overlay" id="advOverlay" onclick="this.classList.remove('open');document.getElementById('advSidebar').classList.remove('open')"></div>
 <div class="adv-sidebar" id="advSidebar">
   <button class="close-btn" onclick="document.getElementById('advSidebar').classList.remove('open');document.getElementById('advOverlay').classList.remove('open')">&times;</button>
   <h3>Contenido avanzado</h3>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      Python en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="python-prod-leccion-01.html">01. Type hints y mypy</a>
-      <a href="python-prod-leccion-02.html">02. Testing con pytest — fundamentos</a>
-      <a href="python-prod-leccion-03.html">03. Fixtures y mocking</a>
-      <a href="python-prod-leccion-04.html">04. Cobertura de tests y CI</a>
-      <a href="python-prod-leccion-05.html">05. Logging estructurado</a>
-      <a href="python-prod-leccion-06.html">06. Manejo de excepciones en producción</a>
-      <a href="python-prod-leccion-07.html">07. Context managers avanzados</a>
-      <a href="python-prod-leccion-08.html">08. Decoradores en producción</a>
-      <a href="python-prod-leccion-09.html">09. Dataclasses y Pydantic</a>
-      <a href="python-prod-leccion-10.html">10. Arquitectura en capas (services/repos)</a>
-      <a href="python-prod-leccion-11.html">11. Concurrencia con threading</a>
-      <a href="python-prod-leccion-12.html">12. Concurrencia con multiprocessing</a>
-      <a href="python-prod-leccion-13.html">13. Programación asíncrona con asyncio</a>
-      <a href="python-prod-leccion-14.html">14. async/await en la práctica</a>
-      <a href="python-prod-leccion-15.html">15. Rendimiento: profiling con cProfile</a>
-      <a href="python-prod-leccion-16.html">16. Construir una API con FastAPI</a>
-      <a href="python-prod-leccion-17.html">17. Validación de datos con Pydantic</a>
-      <a href="python-prod-leccion-18.html">18. Autenticación JWT en FastAPI</a>
-      <a href="python-prod-leccion-19.html">19. Rate limiting y throttling</a>
-      <a href="python-prod-leccion-20.html">20. Documentación automática de APIs (OpenAPI)</a>
-      <a href="python-prod-leccion-21.html">21. Empaquetado con pyproject.toml</a>
-      <a href="python-prod-leccion-22.html">22. Entornos virtuales y dependencias reproducibles</a>
-      <a href="python-prod-leccion-23.html">23. Dockerizar una app Python</a>
-      <a href="python-prod-leccion-24.html">24. Variables de entorno y configuración segura (12-factor)</a>
-      <a href="python-prod-leccion-25.html">25. CI/CD para proyectos Python</a>
-      <a href="python-prod-leccion-26.html">26. Logging centralizado y correlación de requests</a>
-      <a href="python-prod-leccion-27.html">27. Métricas con Prometheus client</a>
-      <a href="python-prod-leccion-28.html">28. Manejo de secretos (Vault, env vars seguras)</a>
-      <a href="python-prod-leccion-29.html">29. Seguridad: dependencias vulnerables (pip-audit)</a>
-      <a href="python-prod-leccion-30.html">30. Proyecto final: API Python lista para producción</a>
-      <a href="Python_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      Ansible en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="ansible-prod-leccion-01.html">01. Estructura de proyectos Ansible en producción</a>
-      <a href="ansible-prod-leccion-02.html">02. Inventarios dinámicos</a>
-      <a href="ansible-prod-leccion-03.html">03. Variables y precedencia</a>
-      <a href="ansible-prod-leccion-04.html">04. Ansible Vault en profundidad</a>
-      <a href="ansible-prod-leccion-05.html">05. Collections — organización moderna de contenido</a>
-      <a href="ansible-prod-leccion-06.html">06. Roles reutilizables — buenas prácticas</a>
-      <a href="ansible-prod-leccion-07.html">07. Ansible Galaxy y gestión de dependencias</a>
-      <a href="ansible-prod-leccion-08.html">08. Templates Jinja2 avanzados</a>
-      <a href="ansible-prod-leccion-09.html">09. Handlers y notificaciones</a>
-      <a href="ansible-prod-leccion-10.html">10. Tags para ejecución selectiva</a>
-      <a href="ansible-prod-leccion-11.html">11. Idempotencia real — módulos vs shell/command</a>
-      <a href="ansible-prod-leccion-12.html">12. Manejo de errores: block/rescue/always</a>
-      <a href="ansible-prod-leccion-13.html">13. Estrategias de ejecución (linear, free, etc.)</a>
-      <a href="ansible-prod-leccion-14.html">14. Delegación de tareas (delegate_to)</a>
-      <a href="ansible-prod-leccion-15.html">15. Ansible Facts y gathering personalizado</a>
-      <a href="ansible-prod-leccion-16.html">16. Vault avanzado: múltiples passwords</a>
-      <a href="ansible-prod-leccion-17.html">17. Gestión de secretos externos (HashiCorp Vault)</a>
-      <a href="ansible-prod-leccion-18.html">18. Control de acceso y permisos (become)</a>
-      <a href="ansible-prod-leccion-19.html">19. Auditoría de ejecuciones (logging)</a>
-      <a href="ansible-prod-leccion-20.html">20. Hardening de servidores con Ansible</a>
-      <a href="ansible-prod-leccion-21.html">21. Ansible en paralelo a gran escala (forks, serial)</a>
-      <a href="ansible-prod-leccion-22.html">22. Rolling updates con Ansible</a>
-      <a href="ansible-prod-leccion-23.html">23. Ansible con contenedores (community.docker)</a>
-      <a href="ansible-prod-leccion-24.html">24. Ansible para Kubernetes (kubernetes.core)</a>
-      <a href="ansible-prod-leccion-25.html">25. Optimización de performance de playbooks</a>
-      <a href="ansible-prod-leccion-26.html">26. Testing de playbooks con Molecule</a>
-      <a href="ansible-prod-leccion-27.html">27. CI/CD para playbooks Ansible</a>
-      <a href="ansible-prod-leccion-28.html">28. Ansible Tower / AWX — introducción</a>
-      <a href="ansible-prod-leccion-29.html">29. Versionado y control de cambios de infraestructura</a>
-      <a href="ansible-prod-leccion-30.html">30. Proyecto final: automatización completa de un entorno de producción</a>
-      <a href="Ansible_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
     <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
       Monitorización en Producción <span class="arrow">▶</span>
     </div>
@@ -419,43 +342,6 @@
     </div>
   </div>
   <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      Bitbucket en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="bitbucket-prod-leccion-01.html">01. Arquitectura de proyectos y repos en Bitbucket</a>
-      <a href="bitbucket-prod-leccion-02.html">02. Bitbucket Pipelines — introducción y bitbucket-pipelines.yml</a>
-      <a href="bitbucket-prod-leccion-03.html">03. Pipes reutilizables</a>
-      <a href="bitbucket-prod-leccion-04.html">04. Variables y secretos en Pipelines</a>
-      <a href="bitbucket-prod-leccion-05.html">05. Caching en Pipelines para builds más rápidos</a>
-      <a href="bitbucket-prod-leccion-06.html">06. Deployments y entornos en Pipelines</a>
-      <a href="bitbucket-prod-leccion-07.html">07. Pipelines paralelos y matrices de build</a>
-      <a href="bitbucket-prod-leccion-08.html">08. Artifacts entre steps</a>
-      <a href="bitbucket-prod-leccion-09.html">09. Triggers y condiciones de ejecución</a>
-      <a href="bitbucket-prod-leccion-10.html">10. Debugging de pipelines fallidos</a>
-      <a href="bitbucket-prod-leccion-11.html">11. Branching strategies (Gitflow, trunk-based) en Bitbucket</a>
-      <a href="bitbucket-prod-leccion-12.html">12. Branch permissions y reglas de protección</a>
-      <a href="bitbucket-prod-leccion-13.html">13. Pull requests — revisiones obligatorias</a>
-      <a href="bitbucket-prod-leccion-14.html">14. Merge strategies (squash, merge commit, fast-forward)</a>
-      <a href="bitbucket-prod-leccion-15.html">15. Resolución de conflictos en equipos grandes</a>
-      <a href="bitbucket-prod-leccion-16.html">16. Gestión de permisos por repositorio y workspace</a>
-      <a href="bitbucket-prod-leccion-17.html">17. SSH keys y app passwords</a>
-      <a href="bitbucket-prod-leccion-18.html">18. Secrets management en Bitbucket</a>
-      <a href="bitbucket-prod-leccion-19.html">19. Auditoría de accesos y actividad</a>
-      <a href="bitbucket-prod-leccion-20.html">20. Protección de ramas críticas (main/production)</a>
-      <a href="bitbucket-prod-leccion-21.html">21. Integración con Jira</a>
-      <a href="bitbucket-prod-leccion-22.html">22. Integración con Slack/Teams</a>
-      <a href="bitbucket-prod-leccion-23.html">23. Webhooks personalizados</a>
-      <a href="bitbucket-prod-leccion-24.html">24. Bitbucket + Kubernetes (despliegue automatizado)</a>
-      <a href="bitbucket-prod-leccion-25.html">25. Bitbucket + Terraform (IaC pipelines)</a>
-      <a href="bitbucket-prod-leccion-26.html">26. Gestión de repos a gran escala (múltiples equipos)</a>
-      <a href="bitbucket-prod-leccion-27.html">27. Code owners y revisión obligatoria por área</a>
-      <a href="bitbucket-prod-leccion-28.html">28. Métricas de pipeline y DORA metrics</a>
-      <a href="bitbucket-prod-leccion-29.html">29. Migración y mantenimiento de repos legacy</a>
-      <a href="bitbucket-prod-leccion-30.html">30. Proyecto final: pipeline completo de CI/CD en Bitbucket para producción</a>
-      <a href="Bitbucket_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
   <div class="adv-course">
     <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
       Docker en Producción <span class="arrow">▶</span>
@@ -492,233 +378,6 @@
       <a href="docker-prod-leccion-29.html">29. Docker en producción: buenas prácticas de despliegue</a>
       <a href="docker-prod-leccion-30.html">30. Proyecto final: aplicación containerizada lista para producción</a>
       <a href="Docker_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      Terraform en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="terraform-prod-leccion-01.html">01. Estructura de proyectos Terraform en producción</a>
-      <a href="terraform-prod-leccion-02.html">02. Providers y versionado</a>
-      <a href="terraform-prod-leccion-03.html">03. Variables y tfvars por entorno</a>
-      <a href="terraform-prod-leccion-04.html">04. Outputs y data sources</a>
-      <a href="terraform-prod-leccion-05.html">05. Terraform workspaces</a>
-      <a href="terraform-prod-leccion-06.html">06. Remote state — fundamentos</a>
-      <a href="terraform-prod-leccion-07.html">07. State locking con DynamoDB/backend</a>
-      <a href="terraform-prod-leccion-08.html">08. Import de infraestructura existente</a>
-      <a href="terraform-prod-leccion-09.html">09. terraform state mv y refactorización</a>
-      <a href="terraform-prod-leccion-10.html">10. Drift detection</a>
-      <a href="terraform-prod-leccion-11.html">11. Módulos reutilizables — diseño</a>
-      <a href="terraform-prod-leccion-12.html">12. Registry de módulos (público y privado)</a>
-      <a href="terraform-prod-leccion-13.html">13. Composición de módulos</a>
-      <a href="terraform-prod-leccion-14.html">14. Versionado semántico de módulos</a>
-      <a href="terraform-prod-leccion-15.html">15. Testing de módulos con Terratest</a>
-      <a href="terraform-prod-leccion-16.html">16. Gestión de secretos (Vault provider, SOPS)</a>
-      <a href="terraform-prod-leccion-17.html">17. IAM y principio de menor privilegio en Terraform</a>
-      <a href="terraform-prod-leccion-18.html">18. Políticas con Sentinel/OPA</a>
-      <a href="terraform-prod-leccion-19.html">19. Escaneo de seguridad (tfsec, Checkov)</a>
-      <a href="terraform-prod-leccion-20.html">20. Protección contra destroy accidental</a>
-      <a href="terraform-prod-leccion-21.html">21. Terraform Cloud/Enterprise — introducción</a>
-      <a href="terraform-prod-leccion-22.html">22. CI/CD para Terraform (plan/apply automatizado)</a>
-      <a href="terraform-prod-leccion-23.html">23. Revisión de PRs con terraform plan output</a>
-      <a href="terraform-prod-leccion-24.html">24. Colaboración multi-equipo con workspaces</a>
-      <a href="terraform-prod-leccion-25.html">25. Rollback y recuperación ante errores de apply</a>
-      <a href="terraform-prod-leccion-26.html">26. Terraform a gran escala — múltiples estados</a>
-      <a href="terraform-prod-leccion-27.html">27. Optimización de performance (paralelismo, targeting)</a>
-      <a href="terraform-prod-leccion-28.html">28. Gestión de dependencias entre módulos/stacks</a>
-      <a href="terraform-prod-leccion-29.html">29. Documentación de infraestructura como código</a>
-      <a href="terraform-prod-leccion-30.html">30. Proyecto final: infraestructura completa gestionada con Terraform en producción</a>
-      <a href="Terraform_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      CI/CD en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="cicd-prod-leccion-01.html">01. Principios de CI/CD en producción</a>
-      <a href="cicd-prod-leccion-02.html">02. Pipeline as code — buenas prácticas</a>
-      <a href="cicd-prod-leccion-03.html">03. Trunk-based development y CI continuo</a>
-      <a href="cicd-prod-leccion-04.html">04. Feature flags y despliegue desacoplado de release</a>
-      <a href="cicd-prod-leccion-05.html">05. Gestión de artefactos (artifact repository)</a>
-      <a href="cicd-prod-leccion-06.html">06. GitHub Actions — workflows avanzados</a>
-      <a href="cicd-prod-leccion-07.html">07. Reusable workflows y composite actions</a>
-      <a href="cicd-prod-leccion-08.html">08. Matrix builds en GitHub Actions</a>
-      <a href="cicd-prod-leccion-09.html">09. Environments y protection rules en GitHub Actions</a>
-      <a href="cicd-prod-leccion-10.html">10. Self-hosted runners</a>
-      <a href="cicd-prod-leccion-11.html">11. Jenkins — Jenkinsfile declarativo avanzado</a>
-      <a href="cicd-prod-leccion-12.html">12. Jenkins shared libraries</a>
-      <a href="cicd-prod-leccion-13.html">13. Jenkins agents y distribución de carga</a>
-      <a href="cicd-prod-leccion-14.html">14. Jenkins pipelines paralelos</a>
-      <a href="cicd-prod-leccion-15.html">15. Migración de Jenkins a CI/CD moderno</a>
-      <a href="cicd-prod-leccion-16.html">16. Blue-Green deployments</a>
-      <a href="cicd-prod-leccion-17.html">17. Canary releases</a>
-      <a href="cicd-prod-leccion-18.html">18. Rolling deployments</a>
-      <a href="cicd-prod-leccion-19.html">19. Despliegues con feature flags avanzados</a>
-      <a href="cicd-prod-leccion-20.html">20. Rollback automatizado</a>
-      <a href="cicd-prod-leccion-21.html">21. Gestión de secretos en pipelines CI/CD</a>
-      <a href="cicd-prod-leccion-22.html">22. Escaneo de seguridad en el pipeline (SAST/DAST)</a>
-      <a href="cicd-prod-leccion-23.html">23. Firma y verificación de artefactos (supply chain security)</a>
-      <a href="cicd-prod-leccion-24.html">24. SBOM (Software Bill of Materials)</a>
-      <a href="cicd-prod-leccion-25.html">25. Least privilege en credenciales de CI/CD</a>
-      <a href="cicd-prod-leccion-26.html">26. Métricas DORA — deployment frequency, lead time, MTTR, change failure rate</a>
-      <a href="cicd-prod-leccion-27.html">27. Observabilidad de pipelines</a>
-      <a href="cicd-prod-leccion-28.html">28. Optimización de tiempos de build</a>
-      <a href="cicd-prod-leccion-29.html">29. Cultura de CI/CD y adopción en equipos</a>
-      <a href="cicd-prod-leccion-30.html">30. Proyecto final: pipeline CI/CD completo de nivel élite (DORA)</a>
-      <a href="CICD_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      GitHub en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="github-prod-leccion-01.html">01. Organizaciones y equipos en GitHub</a>
-      <a href="github-prod-leccion-02.html">02. Repository visibility y transferencia de repos</a>
-      <a href="github-prod-leccion-03.html">03. CODEOWNERS y revisión obligatoria</a>
-      <a href="github-prod-leccion-04.html">04. Branch protection rules avanzadas</a>
-      <a href="github-prod-leccion-05.html">05. Repository rulesets</a>
-      <a href="github-prod-leccion-06.html">06. Dependabot — actualizaciones automáticas de dependencias</a>
-      <a href="github-prod-leccion-07.html">07. Secret scanning</a>
-      <a href="github-prod-leccion-08.html">08. Code scanning con CodeQL</a>
-      <a href="github-prod-leccion-09.html">09. Security advisories y GHSA</a>
-      <a href="github-prod-leccion-10.html">10. Auditoría con audit log</a>
-      <a href="github-prod-leccion-11.html">11. GitHub REST API — fundamentos</a>
-      <a href="github-prod-leccion-12.html">12. GitHub GraphQL API</a>
-      <a href="github-prod-leccion-13.html">13. GitHub Apps vs OAuth Apps vs Personal Access Tokens</a>
-      <a href="github-prod-leccion-14.html">14. Webhooks de GitHub</a>
-      <a href="github-prod-leccion-15.html">15. Bots y automatización con Probot/Octokit</a>
-      <a href="github-prod-leccion-16.html">16. GitHub Projects (beta/v2)</a>
-      <a href="github-prod-leccion-17.html">17. Issue templates y forms</a>
-      <a href="github-prod-leccion-18.html">18. Discussions</a>
-      <a href="github-prod-leccion-19.html">19. Milestones y releases</a>
-      <a href="github-prod-leccion-20.html">20. Changelog automatizado (release notes)</a>
-      <a href="github-prod-leccion-21.html">21. GitHub Packages — registry de paquetes</a>
-      <a href="github-prod-leccion-22.html">22. GitHub Container Registry (ghcr.io)</a>
-      <a href="github-prod-leccion-23.html">23. Releases y assets binarios</a>
-      <a href="github-prod-leccion-24.html">24. GitHub Pages en producción</a>
-      <a href="github-prod-leccion-25.html">25. GitHub como código: terraform-provider-github</a>
-      <a href="github-prod-leccion-26.html">26. GitHub Enterprise — diferencias clave</a>
-      <a href="github-prod-leccion-27.html">27. SSO y SAML en GitHub</a>
-      <a href="github-prod-leccion-28.html">28. Migración de repos (GitLab/Bitbucket a GitHub)</a>
-      <a href="github-prod-leccion-29.html">29. GitHub Copilot en equipos de producción</a>
-      <a href="github-prod-leccion-30.html">30. Proyecto final: gobernanza completa de una organización GitHub en producción</a>
-      <a href="GitHub_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      Artifactory en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="artifactory-prod-leccion-01.html">01. Arquitectura de Artifactory — local, remote, virtual repos</a>
-      <a href="artifactory-prod-leccion-02.html">02. Instalación y topología (standalone vs HA cluster)</a>
-      <a href="artifactory-prod-leccion-03.html">03. Tipos de repositorios soportados (Maven, npm, Docker, PyPI, etc.)</a>
-      <a href="artifactory-prod-leccion-04.html">04. Artifactory REST API — fundamentos</a>
-      <a href="artifactory-prod-leccion-05.html">05. Metadata y propiedades de artefactos</a>
-      <a href="artifactory-prod-leccion-06.html">06. Repositorios locales — buenas prácticas</a>
-      <a href="artifactory-prod-leccion-07.html">07. Repositorios remotos (proxy/cache) — configuración</a>
-      <a href="artifactory-prod-leccion-08.html">08. Repositorios virtuales — agregación</a>
-      <a href="artifactory-prod-leccion-09.html">09. Retention policies y cleanup automático</a>
-      <a href="artifactory-prod-leccion-10.html">10. Promoción de artefactos entre repos (dev/staging/prod)</a>
-      <a href="artifactory-prod-leccion-11.html">11. Control de acceso y permisos granulares</a>
-      <a href="artifactory-prod-leccion-12.html">12. Grupos de usuarios y permission targets</a>
-      <a href="artifactory-prod-leccion-13.html">13. Integración con LDAP/SSO</a>
-      <a href="artifactory-prod-leccion-14.html">14. JFrog Xray — escaneo de vulnerabilidades</a>
-      <a href="artifactory-prod-leccion-15.html">15. Políticas de seguridad y bloqueo de artefactos vulnerables</a>
-      <a href="artifactory-prod-leccion-16.html">16. Integración con Jenkins (Artifactory plugin)</a>
-      <a href="artifactory-prod-leccion-17.html">17. Integración con GitHub Actions/GitLab CI</a>
-      <a href="artifactory-prod-leccion-18.html">18. Build Info y trazabilidad de builds</a>
-      <a href="artifactory-prod-leccion-19.html">19. Docker registry en Artifactory</a>
-      <a href="artifactory-prod-leccion-20.html">20. Publicación y consumo de paquetes (npm, Maven, PyPI)</a>
-      <a href="artifactory-prod-leccion-21.html">21. Replicación push/pull entre instancias</a>
-      <a href="artifactory-prod-leccion-22.html">22. Alta disponibilidad (HA) de Artifactory</a>
-      <a href="artifactory-prod-leccion-23.html">23. Backup y disaster recovery</a>
-      <a href="artifactory-prod-leccion-24.html">24. Migración de datos entre instancias</a>
-      <a href="artifactory-prod-leccion-25.html">25. Monitoreo y métricas de Artifactory</a>
-      <a href="artifactory-prod-leccion-26.html">26. Optimización de storage (filestore, S3 backend)</a>
-      <a href="artifactory-prod-leccion-27.html">27. Federación de repositorios (Artifactory Federation)</a>
-      <a href="artifactory-prod-leccion-28.html">28. Gestión de licencias y costos</a>
-      <a href="artifactory-prod-leccion-29.html">29. Auditoría y compliance en Artifactory</a>
-      <a href="artifactory-prod-leccion-30.html">30. Proyecto final: Artifactory completo listo para producción</a>
-      <a href="Artifactory_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      Jenkins en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="jenkins-prod-leccion-01.html">01. Arquitectura Jenkins — controller/agent</a>
-      <a href="jenkins-prod-leccion-02.html">02. Instalación y configuración inicial de Jenkins</a>
-      <a href="jenkins-prod-leccion-03.html">03. Jenkins Configuration as Code (JCasC)</a>
-      <a href="jenkins-prod-leccion-04.html">04. Gestión de plugins — buenas prácticas</a>
-      <a href="jenkins-prod-leccion-05.html">05. Actualización y ciclo de vida de Jenkins</a>
-      <a href="jenkins-prod-leccion-06.html">06. Matrix-based security y roles</a>
-      <a href="jenkins-prod-leccion-07.html">07. Credentials management en Jenkins</a>
-      <a href="jenkins-prod-leccion-08.html">08. Integración con LDAP/SSO</a>
-      <a href="jenkins-prod-leccion-09.html">09. Hardening de Jenkins (CSRF, script security)</a>
-      <a href="jenkins-prod-leccion-10.html">10. Auditoría de acceso y cambios</a>
-      <a href="jenkins-prod-leccion-11.html">11. Static agents vs dynamic agents</a>
-      <a href="jenkins-prod-leccion-12.html">12. Jenkins Kubernetes Plugin — agentes efímeros</a>
-      <a href="jenkins-prod-leccion-13.html">13. Docker agents en Jenkins</a>
-      <a href="jenkins-prod-leccion-14.html">14. Escalado horizontal con múltiples controllers</a>
-      <a href="jenkins-prod-leccion-15.html">15. Cloud agents (EC2, GCE plugin)</a>
-      <a href="jenkins-prod-leccion-16.html">16. Shared libraries — testing y versionado</a>
-      <a href="jenkins-prod-leccion-17.html">17. Pipeline input/approval steps</a>
-      <a href="jenkins-prod-leccion-18.html">18. Post actions y notificaciones</a>
-      <a href="jenkins-prod-leccion-19.html">19. Artifacts y stash/unstash entre stages</a>
-      <a href="jenkins-prod-leccion-20.html">20. Blue Ocean y visualización de pipelines</a>
-      <a href="jenkins-prod-leccion-21.html">21. Backup de Jenkins (JENKINS_HOME)</a>
-      <a href="jenkins-prod-leccion-22.html">22. Disaster recovery y failover</a>
-      <a href="jenkins-prod-leccion-23.html">23. Migración de Jenkins a nueva infraestructura</a>
-      <a href="jenkins-prod-leccion-24.html">24. Monitoreo con Prometheus plugin</a>
-      <a href="jenkins-prod-leccion-25.html">25. Troubleshooting de builds lentos o colgados</a>
-      <a href="jenkins-prod-leccion-26.html">26. Integración con Artifactory/Nexus</a>
-      <a href="jenkins-prod-leccion-27.html">27. Integración con Kubernetes para despliegues</a>
-      <a href="jenkins-prod-leccion-28.html">28. Gestión de secretos externos (Vault plugin)</a>
-      <a href="jenkins-prod-leccion-29.html">29. Proyecto final: Jenkins completo listo para producción</a>
-      <a href="Jenkins_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      ArgoCD en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="argocd-prod-leccion-01.html">01. Arquitectura de ArgoCD — componentes</a>
-      <a href="argocd-prod-leccion-02.html">02. Instalación y configuración inicial</a>
-      <a href="argocd-prod-leccion-03.html">03. Application CRD — fundamentos</a>
-      <a href="argocd-prod-leccion-04.html">04. Sync policies — manual vs automated</a>
-      <a href="argocd-prod-leccion-05.html">05. Sync waves y hooks</a>
-      <a href="argocd-prod-leccion-06.html">06. App of Apps pattern</a>
-      <a href="argocd-prod-leccion-07.html">07. ApplicationSets — generadores</a>
-      <a href="argocd-prod-leccion-08.html">08. Proyectos de ArgoCD (AppProject)</a>
-      <a href="argocd-prod-leccion-09.html">09. Gestión de Helm charts con ArgoCD</a>
-      <a href="argocd-prod-leccion-10.html">10. Kustomize con ArgoCD</a>
-      <a href="argocd-prod-leccion-11.html">11. RBAC en ArgoCD</a>
-      <a href="argocd-prod-leccion-12.html">12. SSO con Dex/OIDC</a>
-      <a href="argocd-prod-leccion-13.html">13. Gestión de secretos (Sealed Secrets, External Secrets)</a>
-      <a href="argocd-prod-leccion-14.html">14. Repository credentials y acceso a Git privado</a>
-      <a href="argocd-prod-leccion-15.html">15. Auditoría y logging de cambios</a>
-      <a href="argocd-prod-leccion-16.html">16. Gestión multi-cluster con ArgoCD</a>
-      <a href="argocd-prod-leccion-17.html">17. Cluster de control central vs distribuido</a>
-      <a href="argocd-prod-leccion-18.html">18. Alta disponibilidad de ArgoCD</a>
-      <a href="argocd-prod-leccion-19.html">19. Escalado del repo server</a>
-      <a href="argocd-prod-leccion-20.html">20. Namespace-scoped Argo CD instances</a>
-      <a href="argocd-prod-leccion-21.html">21. Argo Rollouts — Canary deployments</a>
-      <a href="argocd-prod-leccion-22.html">22. Argo Rollouts — Blue-Green deployments</a>
-      <a href="argocd-prod-leccion-23.html">23. Analysis templates y métricas automáticas</a>
-      <a href="argocd-prod-leccion-24.html">24. Notificaciones (Argo CD Notifications)</a>
-      <a href="argocd-prod-leccion-25.html">25. Dashboards y monitoreo con Prometheus</a>
-      <a href="argocd-prod-leccion-26.html">26. Drift detection y self-healing</a>
-      <a href="argocd-prod-leccion-27.html">27. Backup y disaster recovery de ArgoCD</a>
-      <a href="argocd-prod-leccion-28.html">28. Migración y actualización de ArgoCD</a>
-      <a href="argocd-prod-leccion-29.html">29. Integración con Vault/External Secrets Operator</a>
-      <a href="argocd-prod-leccion-30.html">30. Proyecto final: ArgoCD completo listo para producción</a>
-      <a href="ArgoCD_en_Produccion.pdf">📄 PDF completo</a>
     </div>
   </div>
   <div class="adv-course">
@@ -985,120 +644,6 @@
       <a href="containerd-prod-leccion-29.html">29. containerd en entornos air-gapped</a>
       <a href="containerd-prod-leccion-30.html">30. Proyecto final: runtime de contenedores completo con containerd listo para producción</a>
       <a href="Containerd_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      Kustomize en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="kustomize-prod-leccion-01.html">01. Qué es Kustomize y el enfoque template-free</a>
-      <a href="kustomize-prod-leccion-02.html">02. kustomization.yaml — estructura básica</a>
-      <a href="kustomize-prod-leccion-03.html">03. Instalación y uso (kubectl -k, standalone binary)</a>
-      <a href="kustomize-prod-leccion-04.html">04. Bases y overlays — el patrón fundamental</a>
-      <a href="kustomize-prod-leccion-05.html">05. Kustomize vs Helm — cuándo usar cada uno</a>
-      <a href="kustomize-prod-leccion-06.html">06. commonLabels y commonAnnotations</a>
-      <a href="kustomize-prod-leccion-07.html">07. namePrefix y nameSuffix</a>
-      <a href="kustomize-prod-leccion-08.html">08. namespace transformer</a>
-      <a href="kustomize-prod-leccion-09.html">09. images — sobrescritura de tags de imagen</a>
-      <a href="kustomize-prod-leccion-10.html">10. replicas — ajuste de réplicas por overlay</a>
-      <a href="kustomize-prod-leccion-11.html">11. strategicMergePatch — fundamentos</a>
-      <a href="kustomize-prod-leccion-12.html">12. JSONPatch (RFC 6902) — patches precisos</a>
-      <a href="kustomize-prod-leccion-13.html">13. patchesStrategicMerge vs patches (sintaxis moderna)</a>
-      <a href="kustomize-prod-leccion-14.html">14. Patches condicionales por target (labelSelector, annotationSelector)</a>
-      <a href="kustomize-prod-leccion-15.html">15. Inline patches vs patches en archivos separados</a>
-      <a href="kustomize-prod-leccion-16.html">16. ConfigMapGenerator — generación de ConfigMaps</a>
-      <a href="kustomize-prod-leccion-17.html">17. SecretGenerator — generación de Secrets</a>
-      <a href="kustomize-prod-leccion-18.html">18. Opciones de generadores — disableNameSuffixHash</a>
-      <a href="kustomize-prod-leccion-19.html">19. Generadores desde archivos externos (envs, files)</a>
-      <a href="kustomize-prod-leccion-20.html">20. Generadores personalizados (KRM functions)</a>
-      <a href="kustomize-prod-leccion-21.html">21. Estructura de directorios recomendada (base/overlays)</a>
-      <a href="kustomize-prod-leccion-22.html">22. Components — piezas reutilizables entre overlays</a>
-      <a href="kustomize-prod-leccion-23.html">23. Remote bases — referenciar bases desde un repositorio Git</a>
-      <a href="kustomize-prod-leccion-24.html">24. Composición de múltiples bases</a>
-      <a href="kustomize-prod-leccion-25.html">25. Validación de manifiestos generados (kustomize build | kubectl apply --dry-run)</a>
-      <a href="kustomize-prod-leccion-26.html">26. Kustomize con ArgoCD/Flux (GitOps)</a>
-      <a href="kustomize-prod-leccion-27.html">27. Gestión de secretos con Kustomize (SOPS, Sealed Secrets)</a>
-      <a href="kustomize-prod-leccion-28.html">28. Testing de overlays antes de aplicar</a>
-      <a href="kustomize-prod-leccion-29.html">29. Migración de Helm a Kustomize (o combinación de ambos)</a>
-      <a href="kustomize-prod-leccion-30.html">30. Proyecto final: estructura de despliegue multi-entorno completa con Kustomize lista para producción</a>
-      <a href="Kustomize_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      Flux en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="flux-prod-leccion-01.html">01. Qué es Flux y el modelo GitOps Toolkit</a>
-      <a href="flux-prod-leccion-02.html">02. Arquitectura — controllers especializados (source, kustomize, helm, notification)</a>
-      <a href="flux-prod-leccion-03.html">03. Instalación de Flux (flux bootstrap)</a>
-      <a href="flux-prod-leccion-04.html">04. Flux CLI — comandos fundamentales</a>
-      <a href="flux-prod-leccion-05.html">05. Flux vs ArgoCD — diferencias de enfoque</a>
-      <a href="flux-prod-leccion-06.html">06. GitRepository — fuente desde Git</a>
-      <a href="flux-prod-leccion-07.html">07. HelmRepository — fuente desde repositorios Helm</a>
-      <a href="flux-prod-leccion-08.html">08. OCIRepository — fuente desde registries OCI</a>
-      <a href="flux-prod-leccion-09.html">09. Bucket — fuente desde object storage</a>
-      <a href="flux-prod-leccion-10.html">10. Autenticación de sources (SSH, tokens, credenciales)</a>
-      <a href="flux-prod-leccion-11.html">11. Kustomization CRD — aplicar manifiestos desde un source</a>
-      <a href="flux-prod-leccion-12.html">12. HelmRelease — gestión de Helm charts</a>
-      <a href="flux-prod-leccion-13.html">13. Dependencias entre Kustomizations</a>
-      <a href="flux-prod-leccion-14.html">14. Intervalos de reconciliación y drift detection</a>
-      <a href="flux-prod-leccion-15.html">15. Health checks y readiness en Kustomizations</a>
-      <a href="flux-prod-leccion-16.html">16. Patrón de repositorios — monorepo vs multi-repo</a>
-      <a href="flux-prod-leccion-17.html">17. Estructura recomendada (clusters/, infrastructure/, apps/)</a>
-      <a href="flux-prod-leccion-18.html">18. Multi-tenancy con Flux — tenants aislados</a>
-      <a href="flux-prod-leccion-19.html">19. Promoción entre entornos (dev → staging → prod)</a>
-      <a href="flux-prod-leccion-20.html">20. Flux y Kustomize — integración nativa</a>
-      <a href="flux-prod-leccion-21.html">21. Image Reflector Controller — escaneo de nuevas versiones</a>
-      <a href="flux-prod-leccion-22.html">22. Image Automation Controller — actualización automática de tags</a>
-      <a href="flux-prod-leccion-23.html">23. Políticas de selección de imágenes (semver, alfabético)</a>
-      <a href="flux-prod-leccion-24.html">24. Notification Controller — alertas hacia Slack/Teams</a>
-      <a href="flux-prod-leccion-25.html">25. Webhooks — receivers para triggers externos</a>
-      <a href="flux-prod-leccion-26.html">26. RBAC y seguridad en Flux</a>
-      <a href="flux-prod-leccion-27.html">27. Troubleshooting de reconciliación fallida</a>
-      <a href="flux-prod-leccion-28.html">28. Monitoreo de Flux con Prometheus/Grafana</a>
-      <a href="flux-prod-leccion-29.html">29. Actualización de Flux sin downtime</a>
-      <a href="flux-prod-leccion-30.html">30. Proyecto final: plataforma GitOps completa con Flux lista para producción</a>
-      <a href="Flux_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      Pulumi en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="pulumi-prod-leccion-01.html">01. Qué es Pulumi y el enfoque de IaC con lenguajes reales</a>
-      <a href="pulumi-prod-leccion-02.html">02. Arquitectura — engine, providers, state</a>
-      <a href="pulumi-prod-leccion-03.html">03. Instalación y primer proyecto Pulumi</a>
-      <a href="pulumi-prod-leccion-04.html">04. Pulumi vs Terraform — diferencias de enfoque</a>
-      <a href="pulumi-prod-leccion-05.html">05. Lenguajes soportados — elegir el SDK adecuado</a>
-      <a href="pulumi-prod-leccion-06.html">06. Recursos — declaración y ciclo de vida</a>
-      <a href="pulumi-prod-leccion-07.html">07. Inputs y Outputs — el modelo asíncrono de Pulumi</a>
-      <a href="pulumi-prod-leccion-08.html">08. Stacks — entornos múltiples de un mismo proyecto</a>
-      <a href="pulumi-prod-leccion-09.html">09. Configuración y secretos por stack</a>
-      <a href="pulumi-prod-leccion-10.html">10. Dependencias entre recursos — explícitas e implícitas</a>
-      <a href="pulumi-prod-leccion-11.html">11. Component Resources — encapsular infraestructura reutilizable</a>
-      <a href="pulumi-prod-leccion-12.html">12. ComponentResource vs recursos nativos del provider</a>
-      <a href="pulumi-prod-leccion-13.html">13. Pulumi Packages — publicar componentes reutilizables</a>
-      <a href="pulumi-prod-leccion-14.html">14. Programación real — loops, condicionales, funciones</a>
-      <a href="pulumi-prod-leccion-15.html">15. Testing de infraestructura (unit tests con el SDK)</a>
-      <a href="pulumi-prod-leccion-16.html">16. Pulumi Service backend — state gestionado</a>
-      <a href="pulumi-prod-leccion-17.html">17. Self-managed backends — S3, Azure Blob, GCS</a>
-      <a href="pulumi-prod-leccion-18.html">18. Locking de state y concurrencia</a>
-      <a href="pulumi-prod-leccion-19.html">19. Import de recursos existentes</a>
-      <a href="pulumi-prod-leccion-20.html">20. Refresh y detección de drift</a>
-      <a href="pulumi-prod-leccion-21.html">21. Pulumi en pipelines de CI/CD</a>
-      <a href="pulumi-prod-leccion-22.html">22. Pulumi Deployments — CI/CD gestionado nativo</a>
-      <a href="pulumi-prod-leccion-23.html">23. Políticas con CrossGuard (Policy as Code)</a>
-      <a href="pulumi-prod-leccion-24.html">24. Automation API — Pulumi programático</a>
-      <a href="pulumi-prod-leccion-25.html">25. Preview y diff antes de aplicar cambios</a>
-      <a href="pulumi-prod-leccion-26.html">26. Gestión de múltiples clouds con un solo proyecto</a>
-      <a href="pulumi-prod-leccion-27.html">27. RBAC y equipos en Pulumi Service</a>
-      <a href="pulumi-prod-leccion-28.html">28. Migración de Terraform a Pulumi</a>
-      <a href="pulumi-prod-leccion-29.html">29. Rendimiento — paralelismo y optimización de despliegues grandes</a>
-      <a href="pulumi-prod-leccion-30.html">30. Proyecto final: infraestructura completa con Pulumi lista para producción</a>
-      <a href="Pulumi_en_Produccion.pdf">📄 PDF completo</a>
     </div>
   </div>
   <div class="adv-course">
@@ -2243,6 +1788,429 @@
       <a href="calico-leccion-29.html">29. Migración hacia Calico desde otro CNI</a>
       <a href="calico-leccion-30.html">30. Proyecto final: red de cluster con Calico lista para producción</a>
       <a href="Calico.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+</div>
+  <div class="adv-overlay" id="autOverlay" onclick="this.classList.remove('open');document.getElementById('autSidebar').classList.remove('open')"></div>
+<div class="adv-sidebar" id="autSidebar">
+  <button class="close-btn" onclick="document.getElementById('autSidebar').classList.remove('open');document.getElementById('autOverlay').classList.remove('open')">&times;</button>
+  <h3>Automatización</h3>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Ansible en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="ansible-prod-leccion-01.html">01. Estructura de proyectos Ansible en producción</a>
+      <a href="ansible-prod-leccion-02.html">02. Inventarios dinámicos</a>
+      <a href="ansible-prod-leccion-03.html">03. Variables y precedencia</a>
+      <a href="ansible-prod-leccion-04.html">04. Ansible Vault en profundidad</a>
+      <a href="ansible-prod-leccion-05.html">05. Collections — organización moderna de contenido</a>
+      <a href="ansible-prod-leccion-06.html">06. Roles reutilizables — buenas prácticas</a>
+      <a href="ansible-prod-leccion-07.html">07. Ansible Galaxy y gestión de dependencias</a>
+      <a href="ansible-prod-leccion-08.html">08. Templates Jinja2 avanzados</a>
+      <a href="ansible-prod-leccion-09.html">09. Handlers y notificaciones</a>
+      <a href="ansible-prod-leccion-10.html">10. Tags para ejecución selectiva</a>
+      <a href="ansible-prod-leccion-11.html">11. Idempotencia real — módulos vs shell/command</a>
+      <a href="ansible-prod-leccion-12.html">12. Manejo de errores: block/rescue/always</a>
+      <a href="ansible-prod-leccion-13.html">13. Estrategias de ejecución (linear, free, etc.)</a>
+      <a href="ansible-prod-leccion-14.html">14. Delegación de tareas (delegate_to)</a>
+      <a href="ansible-prod-leccion-15.html">15. Ansible Facts y gathering personalizado</a>
+      <a href="ansible-prod-leccion-16.html">16. Vault avanzado: múltiples passwords</a>
+      <a href="ansible-prod-leccion-17.html">17. Gestión de secretos externos (HashiCorp Vault)</a>
+      <a href="ansible-prod-leccion-18.html">18. Control de acceso y permisos (become)</a>
+      <a href="ansible-prod-leccion-19.html">19. Auditoría de ejecuciones (logging)</a>
+      <a href="ansible-prod-leccion-20.html">20. Hardening de servidores con Ansible</a>
+      <a href="ansible-prod-leccion-21.html">21. Ansible en paralelo a gran escala (forks, serial)</a>
+      <a href="ansible-prod-leccion-22.html">22. Rolling updates con Ansible</a>
+      <a href="ansible-prod-leccion-23.html">23. Ansible con contenedores (community.docker)</a>
+      <a href="ansible-prod-leccion-24.html">24. Ansible para Kubernetes (kubernetes.core)</a>
+      <a href="ansible-prod-leccion-25.html">25. Optimización de performance de playbooks</a>
+      <a href="ansible-prod-leccion-26.html">26. Testing de playbooks con Molecule</a>
+      <a href="ansible-prod-leccion-27.html">27. CI/CD para playbooks Ansible</a>
+      <a href="ansible-prod-leccion-28.html">28. Ansible Tower / AWX — introducción</a>
+      <a href="ansible-prod-leccion-29.html">29. Versionado y control de cambios de infraestructura</a>
+      <a href="ansible-prod-leccion-30.html">30. Proyecto final: automatización completa de un entorno de producción</a>
+      <a href="Ansible_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Terraform en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="terraform-prod-leccion-01.html">01. Estructura de proyectos Terraform en producción</a>
+      <a href="terraform-prod-leccion-02.html">02. Providers y versionado</a>
+      <a href="terraform-prod-leccion-03.html">03. Variables y tfvars por entorno</a>
+      <a href="terraform-prod-leccion-04.html">04. Outputs y data sources</a>
+      <a href="terraform-prod-leccion-05.html">05. Terraform workspaces</a>
+      <a href="terraform-prod-leccion-06.html">06. Remote state — fundamentos</a>
+      <a href="terraform-prod-leccion-07.html">07. State locking con DynamoDB/backend</a>
+      <a href="terraform-prod-leccion-08.html">08. Import de infraestructura existente</a>
+      <a href="terraform-prod-leccion-09.html">09. terraform state mv y refactorización</a>
+      <a href="terraform-prod-leccion-10.html">10. Drift detection</a>
+      <a href="terraform-prod-leccion-11.html">11. Módulos reutilizables — diseño</a>
+      <a href="terraform-prod-leccion-12.html">12. Registry de módulos (público y privado)</a>
+      <a href="terraform-prod-leccion-13.html">13. Composición de módulos</a>
+      <a href="terraform-prod-leccion-14.html">14. Versionado semántico de módulos</a>
+      <a href="terraform-prod-leccion-15.html">15. Testing de módulos con Terratest</a>
+      <a href="terraform-prod-leccion-16.html">16. Gestión de secretos (Vault provider, SOPS)</a>
+      <a href="terraform-prod-leccion-17.html">17. IAM y principio de menor privilegio en Terraform</a>
+      <a href="terraform-prod-leccion-18.html">18. Políticas con Sentinel/OPA</a>
+      <a href="terraform-prod-leccion-19.html">19. Escaneo de seguridad (tfsec, Checkov)</a>
+      <a href="terraform-prod-leccion-20.html">20. Protección contra destroy accidental</a>
+      <a href="terraform-prod-leccion-21.html">21. Terraform Cloud/Enterprise — introducción</a>
+      <a href="terraform-prod-leccion-22.html">22. CI/CD para Terraform (plan/apply automatizado)</a>
+      <a href="terraform-prod-leccion-23.html">23. Revisión de PRs con terraform plan output</a>
+      <a href="terraform-prod-leccion-24.html">24. Colaboración multi-equipo con workspaces</a>
+      <a href="terraform-prod-leccion-25.html">25. Rollback y recuperación ante errores de apply</a>
+      <a href="terraform-prod-leccion-26.html">26. Terraform a gran escala — múltiples estados</a>
+      <a href="terraform-prod-leccion-27.html">27. Optimización de performance (paralelismo, targeting)</a>
+      <a href="terraform-prod-leccion-28.html">28. Gestión de dependencias entre módulos/stacks</a>
+      <a href="terraform-prod-leccion-29.html">29. Documentación de infraestructura como código</a>
+      <a href="terraform-prod-leccion-30.html">30. Proyecto final: infraestructura completa gestionada con Terraform en producción</a>
+      <a href="Terraform_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Pulumi en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="pulumi-prod-leccion-01.html">01. Qué es Pulumi y el enfoque de IaC con lenguajes reales</a>
+      <a href="pulumi-prod-leccion-02.html">02. Arquitectura — engine, providers, state</a>
+      <a href="pulumi-prod-leccion-03.html">03. Instalación y primer proyecto Pulumi</a>
+      <a href="pulumi-prod-leccion-04.html">04. Pulumi vs Terraform — diferencias de enfoque</a>
+      <a href="pulumi-prod-leccion-05.html">05. Lenguajes soportados — elegir el SDK adecuado</a>
+      <a href="pulumi-prod-leccion-06.html">06. Recursos — declaración y ciclo de vida</a>
+      <a href="pulumi-prod-leccion-07.html">07. Inputs y Outputs — el modelo asíncrono de Pulumi</a>
+      <a href="pulumi-prod-leccion-08.html">08. Stacks — entornos múltiples de un mismo proyecto</a>
+      <a href="pulumi-prod-leccion-09.html">09. Configuración y secretos por stack</a>
+      <a href="pulumi-prod-leccion-10.html">10. Dependencias entre recursos — explícitas e implícitas</a>
+      <a href="pulumi-prod-leccion-11.html">11. Component Resources — encapsular infraestructura reutilizable</a>
+      <a href="pulumi-prod-leccion-12.html">12. ComponentResource vs recursos nativos del provider</a>
+      <a href="pulumi-prod-leccion-13.html">13. Pulumi Packages — publicar componentes reutilizables</a>
+      <a href="pulumi-prod-leccion-14.html">14. Programación real — loops, condicionales, funciones</a>
+      <a href="pulumi-prod-leccion-15.html">15. Testing de infraestructura (unit tests con el SDK)</a>
+      <a href="pulumi-prod-leccion-16.html">16. Pulumi Service backend — state gestionado</a>
+      <a href="pulumi-prod-leccion-17.html">17. Self-managed backends — S3, Azure Blob, GCS</a>
+      <a href="pulumi-prod-leccion-18.html">18. Locking de state y concurrencia</a>
+      <a href="pulumi-prod-leccion-19.html">19. Import de recursos existentes</a>
+      <a href="pulumi-prod-leccion-20.html">20. Refresh y detección de drift</a>
+      <a href="pulumi-prod-leccion-21.html">21. Pulumi en pipelines de CI/CD</a>
+      <a href="pulumi-prod-leccion-22.html">22. Pulumi Deployments — CI/CD gestionado nativo</a>
+      <a href="pulumi-prod-leccion-23.html">23. Políticas con CrossGuard (Policy as Code)</a>
+      <a href="pulumi-prod-leccion-24.html">24. Automation API — Pulumi programático</a>
+      <a href="pulumi-prod-leccion-25.html">25. Preview y diff antes de aplicar cambios</a>
+      <a href="pulumi-prod-leccion-26.html">26. Gestión de múltiples clouds con un solo proyecto</a>
+      <a href="pulumi-prod-leccion-27.html">27. RBAC y equipos en Pulumi Service</a>
+      <a href="pulumi-prod-leccion-28.html">28. Migración de Terraform a Pulumi</a>
+      <a href="pulumi-prod-leccion-29.html">29. Rendimiento — paralelismo y optimización de despliegues grandes</a>
+      <a href="pulumi-prod-leccion-30.html">30. Proyecto final: infraestructura completa con Pulumi lista para producción</a>
+      <a href="Pulumi_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Kustomize en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="kustomize-prod-leccion-01.html">01. Qué es Kustomize y el enfoque template-free</a>
+      <a href="kustomize-prod-leccion-02.html">02. kustomization.yaml — estructura básica</a>
+      <a href="kustomize-prod-leccion-03.html">03. Instalación y uso (kubectl -k, standalone binary)</a>
+      <a href="kustomize-prod-leccion-04.html">04. Bases y overlays — el patrón fundamental</a>
+      <a href="kustomize-prod-leccion-05.html">05. Kustomize vs Helm — cuándo usar cada uno</a>
+      <a href="kustomize-prod-leccion-06.html">06. commonLabels y commonAnnotations</a>
+      <a href="kustomize-prod-leccion-07.html">07. namePrefix y nameSuffix</a>
+      <a href="kustomize-prod-leccion-08.html">08. namespace transformer</a>
+      <a href="kustomize-prod-leccion-09.html">09. images — sobrescritura de tags de imagen</a>
+      <a href="kustomize-prod-leccion-10.html">10. replicas — ajuste de réplicas por overlay</a>
+      <a href="kustomize-prod-leccion-11.html">11. strategicMergePatch — fundamentos</a>
+      <a href="kustomize-prod-leccion-12.html">12. JSONPatch (RFC 6902) — patches precisos</a>
+      <a href="kustomize-prod-leccion-13.html">13. patchesStrategicMerge vs patches (sintaxis moderna)</a>
+      <a href="kustomize-prod-leccion-14.html">14. Patches condicionales por target (labelSelector, annotationSelector)</a>
+      <a href="kustomize-prod-leccion-15.html">15. Inline patches vs patches en archivos separados</a>
+      <a href="kustomize-prod-leccion-16.html">16. ConfigMapGenerator — generación de ConfigMaps</a>
+      <a href="kustomize-prod-leccion-17.html">17. SecretGenerator — generación de Secrets</a>
+      <a href="kustomize-prod-leccion-18.html">18. Opciones de generadores — disableNameSuffixHash</a>
+      <a href="kustomize-prod-leccion-19.html">19. Generadores desde archivos externos (envs, files)</a>
+      <a href="kustomize-prod-leccion-20.html">20. Generadores personalizados (KRM functions)</a>
+      <a href="kustomize-prod-leccion-21.html">21. Estructura de directorios recomendada (base/overlays)</a>
+      <a href="kustomize-prod-leccion-22.html">22. Components — piezas reutilizables entre overlays</a>
+      <a href="kustomize-prod-leccion-23.html">23. Remote bases — referenciar bases desde un repositorio Git</a>
+      <a href="kustomize-prod-leccion-24.html">24. Composición de múltiples bases</a>
+      <a href="kustomize-prod-leccion-25.html">25. Validación de manifiestos generados (kustomize build | kubectl apply --dry-run)</a>
+      <a href="kustomize-prod-leccion-26.html">26. Kustomize con ArgoCD/Flux (GitOps)</a>
+      <a href="kustomize-prod-leccion-27.html">27. Gestión de secretos con Kustomize (SOPS, Sealed Secrets)</a>
+      <a href="kustomize-prod-leccion-28.html">28. Testing de overlays antes de aplicar</a>
+      <a href="kustomize-prod-leccion-29.html">29. Migración de Helm a Kustomize (o combinación de ambos)</a>
+      <a href="kustomize-prod-leccion-30.html">30. Proyecto final: estructura de despliegue multi-entorno completa con Kustomize lista para producción</a>
+      <a href="Kustomize_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      CI/CD en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="cicd-prod-leccion-01.html">01. Principios de CI/CD en producción</a>
+      <a href="cicd-prod-leccion-02.html">02. Pipeline as code — buenas prácticas</a>
+      <a href="cicd-prod-leccion-03.html">03. Trunk-based development y CI continuo</a>
+      <a href="cicd-prod-leccion-04.html">04. Feature flags y despliegue desacoplado de release</a>
+      <a href="cicd-prod-leccion-05.html">05. Gestión de artefactos (artifact repository)</a>
+      <a href="cicd-prod-leccion-06.html">06. GitHub Actions — workflows avanzados</a>
+      <a href="cicd-prod-leccion-07.html">07. Reusable workflows y composite actions</a>
+      <a href="cicd-prod-leccion-08.html">08. Matrix builds en GitHub Actions</a>
+      <a href="cicd-prod-leccion-09.html">09. Environments y protection rules en GitHub Actions</a>
+      <a href="cicd-prod-leccion-10.html">10. Self-hosted runners</a>
+      <a href="cicd-prod-leccion-11.html">11. Jenkins — Jenkinsfile declarativo avanzado</a>
+      <a href="cicd-prod-leccion-12.html">12. Jenkins shared libraries</a>
+      <a href="cicd-prod-leccion-13.html">13. Jenkins agents y distribución de carga</a>
+      <a href="cicd-prod-leccion-14.html">14. Jenkins pipelines paralelos</a>
+      <a href="cicd-prod-leccion-15.html">15. Migración de Jenkins a CI/CD moderno</a>
+      <a href="cicd-prod-leccion-16.html">16. Blue-Green deployments</a>
+      <a href="cicd-prod-leccion-17.html">17. Canary releases</a>
+      <a href="cicd-prod-leccion-18.html">18. Rolling deployments</a>
+      <a href="cicd-prod-leccion-19.html">19. Despliegues con feature flags avanzados</a>
+      <a href="cicd-prod-leccion-20.html">20. Rollback automatizado</a>
+      <a href="cicd-prod-leccion-21.html">21. Gestión de secretos en pipelines CI/CD</a>
+      <a href="cicd-prod-leccion-22.html">22. Escaneo de seguridad en el pipeline (SAST/DAST)</a>
+      <a href="cicd-prod-leccion-23.html">23. Firma y verificación de artefactos (supply chain security)</a>
+      <a href="cicd-prod-leccion-24.html">24. SBOM (Software Bill of Materials)</a>
+      <a href="cicd-prod-leccion-25.html">25. Least privilege en credenciales de CI/CD</a>
+      <a href="cicd-prod-leccion-26.html">26. Métricas DORA — deployment frequency, lead time, MTTR, change failure rate</a>
+      <a href="cicd-prod-leccion-27.html">27. Observabilidad de pipelines</a>
+      <a href="cicd-prod-leccion-28.html">28. Optimización de tiempos de build</a>
+      <a href="cicd-prod-leccion-29.html">29. Cultura de CI/CD y adopción en equipos</a>
+      <a href="cicd-prod-leccion-30.html">30. Proyecto final: pipeline CI/CD completo de nivel élite (DORA)</a>
+      <a href="CICD_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Jenkins en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="jenkins-prod-leccion-01.html">01. Arquitectura Jenkins — controller/agent</a>
+      <a href="jenkins-prod-leccion-02.html">02. Instalación y configuración inicial de Jenkins</a>
+      <a href="jenkins-prod-leccion-03.html">03. Jenkins Configuration as Code (JCasC)</a>
+      <a href="jenkins-prod-leccion-04.html">04. Gestión de plugins — buenas prácticas</a>
+      <a href="jenkins-prod-leccion-05.html">05. Actualización y ciclo de vida de Jenkins</a>
+      <a href="jenkins-prod-leccion-06.html">06. Matrix-based security y roles</a>
+      <a href="jenkins-prod-leccion-07.html">07. Credentials management en Jenkins</a>
+      <a href="jenkins-prod-leccion-08.html">08. Integración con LDAP/SSO</a>
+      <a href="jenkins-prod-leccion-09.html">09. Hardening de Jenkins (CSRF, script security)</a>
+      <a href="jenkins-prod-leccion-10.html">10. Auditoría de acceso y cambios</a>
+      <a href="jenkins-prod-leccion-11.html">11. Static agents vs dynamic agents</a>
+      <a href="jenkins-prod-leccion-12.html">12. Jenkins Kubernetes Plugin — agentes efímeros</a>
+      <a href="jenkins-prod-leccion-13.html">13. Docker agents en Jenkins</a>
+      <a href="jenkins-prod-leccion-14.html">14. Escalado horizontal con múltiples controllers</a>
+      <a href="jenkins-prod-leccion-15.html">15. Cloud agents (EC2, GCE plugin)</a>
+      <a href="jenkins-prod-leccion-16.html">16. Shared libraries — testing y versionado</a>
+      <a href="jenkins-prod-leccion-17.html">17. Pipeline input/approval steps</a>
+      <a href="jenkins-prod-leccion-18.html">18. Post actions y notificaciones</a>
+      <a href="jenkins-prod-leccion-19.html">19. Artifacts y stash/unstash entre stages</a>
+      <a href="jenkins-prod-leccion-20.html">20. Blue Ocean y visualización de pipelines</a>
+      <a href="jenkins-prod-leccion-21.html">21. Backup de Jenkins (JENKINS_HOME)</a>
+      <a href="jenkins-prod-leccion-22.html">22. Disaster recovery y failover</a>
+      <a href="jenkins-prod-leccion-23.html">23. Migración de Jenkins a nueva infraestructura</a>
+      <a href="jenkins-prod-leccion-24.html">24. Monitoreo con Prometheus plugin</a>
+      <a href="jenkins-prod-leccion-25.html">25. Troubleshooting de builds lentos o colgados</a>
+      <a href="jenkins-prod-leccion-26.html">26. Integración con Artifactory/Nexus</a>
+      <a href="jenkins-prod-leccion-27.html">27. Integración con Kubernetes para despliegues</a>
+      <a href="jenkins-prod-leccion-28.html">28. Webhooks y triggers desde SCM</a>
+      <a href="jenkins-prod-leccion-29.html">29. Gestión de secretos externos (Vault plugin)</a>
+      <a href="jenkins-prod-leccion-30.html">30. Proyecto final: Jenkins completo listo para producción</a>
+      <a href="Jenkins_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      GitHub en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="github-prod-leccion-01.html">01. Organizaciones y equipos en GitHub</a>
+      <a href="github-prod-leccion-02.html">02. Repository visibility y transferencia de repos</a>
+      <a href="github-prod-leccion-03.html">03. CODEOWNERS y revisión obligatoria</a>
+      <a href="github-prod-leccion-04.html">04. Branch protection rules avanzadas</a>
+      <a href="github-prod-leccion-05.html">05. Repository rulesets</a>
+      <a href="github-prod-leccion-06.html">06. Dependabot — actualizaciones automáticas de dependencias</a>
+      <a href="github-prod-leccion-07.html">07. Secret scanning</a>
+      <a href="github-prod-leccion-08.html">08. Code scanning con CodeQL</a>
+      <a href="github-prod-leccion-09.html">09. Security advisories y GHSA</a>
+      <a href="github-prod-leccion-10.html">10. Auditoría con audit log</a>
+      <a href="github-prod-leccion-11.html">11. GitHub REST API — fundamentos</a>
+      <a href="github-prod-leccion-12.html">12. GitHub GraphQL API</a>
+      <a href="github-prod-leccion-13.html">13. GitHub Apps vs OAuth Apps vs Personal Access Tokens</a>
+      <a href="github-prod-leccion-14.html">14. Webhooks de GitHub</a>
+      <a href="github-prod-leccion-15.html">15. Bots y automatización con Probot/Octokit</a>
+      <a href="github-prod-leccion-16.html">16. GitHub Projects (beta/v2)</a>
+      <a href="github-prod-leccion-17.html">17. Issue templates y forms</a>
+      <a href="github-prod-leccion-18.html">18. Discussions</a>
+      <a href="github-prod-leccion-19.html">19. Milestones y releases</a>
+      <a href="github-prod-leccion-20.html">20. Changelog automatizado (release notes)</a>
+      <a href="github-prod-leccion-21.html">21. GitHub Packages — registry de paquetes</a>
+      <a href="github-prod-leccion-22.html">22. GitHub Container Registry (ghcr.io)</a>
+      <a href="github-prod-leccion-23.html">23. Releases y assets binarios</a>
+      <a href="github-prod-leccion-24.html">24. GitHub Pages en producción</a>
+      <a href="github-prod-leccion-25.html">25. GitHub como código: terraform-provider-github</a>
+      <a href="github-prod-leccion-26.html">26. GitHub Enterprise — diferencias clave</a>
+      <a href="github-prod-leccion-27.html">27. SSO y SAML en GitHub</a>
+      <a href="github-prod-leccion-28.html">28. Migración de repos (GitLab/Bitbucket a GitHub)</a>
+      <a href="github-prod-leccion-29.html">29. GitHub Copilot en equipos de producción</a>
+      <a href="github-prod-leccion-30.html">30. Proyecto final: gobernanza completa de una organización GitHub en producción</a>
+      <a href="GitHub_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Bitbucket en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="bitbucket-prod-leccion-01.html">01. Arquitectura de proyectos y repos en Bitbucket</a>
+      <a href="bitbucket-prod-leccion-02.html">02. Bitbucket Pipelines — introducción y bitbucket-pipelines.yml</a>
+      <a href="bitbucket-prod-leccion-03.html">03. Pipes reutilizables</a>
+      <a href="bitbucket-prod-leccion-04.html">04. Variables y secretos en Pipelines</a>
+      <a href="bitbucket-prod-leccion-05.html">05. Caching en Pipelines para builds más rápidos</a>
+      <a href="bitbucket-prod-leccion-06.html">06. Deployments y entornos en Pipelines</a>
+      <a href="bitbucket-prod-leccion-07.html">07. Pipelines paralelos y matrices de build</a>
+      <a href="bitbucket-prod-leccion-08.html">08. Artifacts entre steps</a>
+      <a href="bitbucket-prod-leccion-09.html">09. Triggers y condiciones de ejecución</a>
+      <a href="bitbucket-prod-leccion-10.html">10. Debugging de pipelines fallidos</a>
+      <a href="bitbucket-prod-leccion-11.html">11. Branching strategies (Gitflow, trunk-based) en Bitbucket</a>
+      <a href="bitbucket-prod-leccion-12.html">12. Branch permissions y reglas de protección</a>
+      <a href="bitbucket-prod-leccion-13.html">13. Pull requests — revisiones obligatorias</a>
+      <a href="bitbucket-prod-leccion-14.html">14. Merge strategies (squash, merge commit, fast-forward)</a>
+      <a href="bitbucket-prod-leccion-15.html">15. Resolución de conflictos en equipos grandes</a>
+      <a href="bitbucket-prod-leccion-16.html">16. Gestión de permisos por repositorio y workspace</a>
+      <a href="bitbucket-prod-leccion-17.html">17. SSH keys y app passwords</a>
+      <a href="bitbucket-prod-leccion-18.html">18. Secrets management en Bitbucket</a>
+      <a href="bitbucket-prod-leccion-19.html">19. Auditoría de accesos y actividad</a>
+      <a href="bitbucket-prod-leccion-20.html">20. Protección de ramas críticas (main/production)</a>
+      <a href="bitbucket-prod-leccion-21.html">21. Integración con Jira</a>
+      <a href="bitbucket-prod-leccion-22.html">22. Integración con Slack/Teams</a>
+      <a href="bitbucket-prod-leccion-23.html">23. Webhooks personalizados</a>
+      <a href="bitbucket-prod-leccion-24.html">24. Bitbucket + Kubernetes (despliegue automatizado)</a>
+      <a href="bitbucket-prod-leccion-25.html">25. Bitbucket + Terraform (IaC pipelines)</a>
+      <a href="bitbucket-prod-leccion-26.html">26. Gestión de repos a gran escala (múltiples equipos)</a>
+      <a href="bitbucket-prod-leccion-27.html">27. Code owners y revisión obligatoria por área</a>
+      <a href="bitbucket-prod-leccion-28.html">28. Métricas de pipeline y DORA metrics</a>
+      <a href="bitbucket-prod-leccion-29.html">29. Migración y mantenimiento de repos legacy</a>
+      <a href="bitbucket-prod-leccion-30.html">30. Proyecto final: pipeline completo de CI/CD en Bitbucket para producción</a>
+      <a href="Bitbucket_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      ArgoCD en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="argocd-prod-leccion-01.html">01. Arquitectura de ArgoCD — componentes</a>
+      <a href="argocd-prod-leccion-02.html">02. Instalación y configuración inicial</a>
+      <a href="argocd-prod-leccion-03.html">03. Application CRD — fundamentos</a>
+      <a href="argocd-prod-leccion-04.html">04. Sync policies — manual vs automated</a>
+      <a href="argocd-prod-leccion-05.html">05. Sync waves y hooks</a>
+      <a href="argocd-prod-leccion-06.html">06. App of Apps pattern</a>
+      <a href="argocd-prod-leccion-07.html">07. ApplicationSets — generadores</a>
+      <a href="argocd-prod-leccion-08.html">08. Proyectos de ArgoCD (AppProject)</a>
+      <a href="argocd-prod-leccion-09.html">09. Gestión de Helm charts con ArgoCD</a>
+      <a href="argocd-prod-leccion-10.html">10. Kustomize con ArgoCD</a>
+      <a href="argocd-prod-leccion-11.html">11. RBAC en ArgoCD</a>
+      <a href="argocd-prod-leccion-12.html">12. SSO con Dex/OIDC</a>
+      <a href="argocd-prod-leccion-13.html">13. Gestión de secretos (Sealed Secrets, External Secrets)</a>
+      <a href="argocd-prod-leccion-14.html">14. Repository credentials y acceso a Git privado</a>
+      <a href="argocd-prod-leccion-15.html">15. Auditoría y logging de cambios</a>
+      <a href="argocd-prod-leccion-16.html">16. Gestión multi-cluster con ArgoCD</a>
+      <a href="argocd-prod-leccion-17.html">17. Cluster de control central vs distribuido</a>
+      <a href="argocd-prod-leccion-18.html">18. Alta disponibilidad de ArgoCD</a>
+      <a href="argocd-prod-leccion-19.html">19. Escalado del repo server</a>
+      <a href="argocd-prod-leccion-20.html">20. Namespace-scoped Argo CD instances</a>
+      <a href="argocd-prod-leccion-21.html">21. Argo Rollouts — Canary deployments</a>
+      <a href="argocd-prod-leccion-22.html">22. Argo Rollouts — Blue-Green deployments</a>
+      <a href="argocd-prod-leccion-23.html">23. Analysis templates y métricas automáticas</a>
+      <a href="argocd-prod-leccion-24.html">24. Notificaciones (Argo CD Notifications)</a>
+      <a href="argocd-prod-leccion-25.html">25. Dashboards y monitoreo con Prometheus</a>
+      <a href="argocd-prod-leccion-26.html">26. Drift detection y self-healing</a>
+      <a href="argocd-prod-leccion-27.html">27. Backup y disaster recovery de ArgoCD</a>
+      <a href="argocd-prod-leccion-28.html">28. Migración y actualización de ArgoCD</a>
+      <a href="argocd-prod-leccion-29.html">29. Integración con Vault/External Secrets Operator</a>
+      <a href="argocd-prod-leccion-30.html">30. Proyecto final: ArgoCD completo listo para producción</a>
+      <a href="ArgoCD_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Flux en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="flux-prod-leccion-01.html">01. Qué es Flux y el modelo GitOps Toolkit</a>
+      <a href="flux-prod-leccion-02.html">02. Arquitectura — controllers especializados (source, kustomize, helm, notification)</a>
+      <a href="flux-prod-leccion-03.html">03. Instalación de Flux (flux bootstrap)</a>
+      <a href="flux-prod-leccion-04.html">04. Flux CLI — comandos fundamentales</a>
+      <a href="flux-prod-leccion-05.html">05. Flux vs ArgoCD — diferencias de enfoque</a>
+      <a href="flux-prod-leccion-06.html">06. GitRepository — fuente desde Git</a>
+      <a href="flux-prod-leccion-07.html">07. HelmRepository — fuente desde repositorios Helm</a>
+      <a href="flux-prod-leccion-08.html">08. OCIRepository — fuente desde registries OCI</a>
+      <a href="flux-prod-leccion-09.html">09. Bucket — fuente desde object storage</a>
+      <a href="flux-prod-leccion-10.html">10. Autenticación de sources (SSH, tokens, credenciales)</a>
+      <a href="flux-prod-leccion-11.html">11. Kustomization CRD — aplicar manifiestos desde un source</a>
+      <a href="flux-prod-leccion-12.html">12. HelmRelease — gestión de Helm charts</a>
+      <a href="flux-prod-leccion-13.html">13. Dependencias entre Kustomizations</a>
+      <a href="flux-prod-leccion-14.html">14. Intervalos de reconciliación y drift detection</a>
+      <a href="flux-prod-leccion-15.html">15. Health checks y readiness en Kustomizations</a>
+      <a href="flux-prod-leccion-16.html">16. Patrón de repositorios — monorepo vs multi-repo</a>
+      <a href="flux-prod-leccion-17.html">17. Estructura recomendada (clusters/, infrastructure/, apps/)</a>
+      <a href="flux-prod-leccion-18.html">18. Multi-tenancy con Flux — tenants aislados</a>
+      <a href="flux-prod-leccion-19.html">19. Promoción entre entornos (dev → staging → prod)</a>
+      <a href="flux-prod-leccion-20.html">20. Flux y Kustomize — integración nativa</a>
+      <a href="flux-prod-leccion-21.html">21. Image Reflector Controller — escaneo de nuevas versiones</a>
+      <a href="flux-prod-leccion-22.html">22. Image Automation Controller — actualización automática de tags</a>
+      <a href="flux-prod-leccion-23.html">23. Políticas de selección de imágenes (semver, alfabético)</a>
+      <a href="flux-prod-leccion-24.html">24. Notification Controller — alertas hacia Slack/Teams</a>
+      <a href="flux-prod-leccion-25.html">25. Webhooks — receivers para triggers externos</a>
+      <a href="flux-prod-leccion-26.html">26. RBAC y seguridad en Flux</a>
+      <a href="flux-prod-leccion-27.html">27. Troubleshooting de reconciliación fallida</a>
+      <a href="flux-prod-leccion-28.html">28. Monitoreo de Flux con Prometheus/Grafana</a>
+      <a href="flux-prod-leccion-29.html">29. Actualización de Flux sin downtime</a>
+      <a href="flux-prod-leccion-30.html">30. Proyecto final: plataforma GitOps completa con Flux lista para producción</a>
+      <a href="Flux_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Artifactory en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="artifactory-prod-leccion-01.html">01. Arquitectura de Artifactory — local, remote, virtual repos</a>
+      <a href="artifactory-prod-leccion-02.html">02. Instalación y topología (standalone vs HA cluster)</a>
+      <a href="artifactory-prod-leccion-03.html">03. Tipos de repositorios soportados (Maven, npm, Docker, PyPI, etc.)</a>
+      <a href="artifactory-prod-leccion-04.html">04. Artifactory REST API — fundamentos</a>
+      <a href="artifactory-prod-leccion-05.html">05. Metadata y propiedades de artefactos</a>
+      <a href="artifactory-prod-leccion-06.html">06. Repositorios locales — buenas prácticas</a>
+      <a href="artifactory-prod-leccion-07.html">07. Repositorios remotos (proxy/cache) — configuración</a>
+      <a href="artifactory-prod-leccion-08.html">08. Repositorios virtuales — agregación</a>
+      <a href="artifactory-prod-leccion-09.html">09. Retention policies y cleanup automático</a>
+      <a href="artifactory-prod-leccion-10.html">10. Promoción de artefactos entre repos (dev/staging/prod)</a>
+      <a href="artifactory-prod-leccion-11.html">11. Control de acceso y permisos granulares</a>
+      <a href="artifactory-prod-leccion-12.html">12. Grupos de usuarios y permission targets</a>
+      <a href="artifactory-prod-leccion-13.html">13. Integración con LDAP/SSO</a>
+      <a href="artifactory-prod-leccion-14.html">14. JFrog Xray — escaneo de vulnerabilidades</a>
+      <a href="artifactory-prod-leccion-15.html">15. Políticas de seguridad y bloqueo de artefactos vulnerables</a>
+      <a href="artifactory-prod-leccion-16.html">16. Integración con Jenkins (Artifactory plugin)</a>
+      <a href="artifactory-prod-leccion-17.html">17. Integración con GitHub Actions/GitLab CI</a>
+      <a href="artifactory-prod-leccion-18.html">18. Build Info y trazabilidad de builds</a>
+      <a href="artifactory-prod-leccion-19.html">19. Docker registry en Artifactory</a>
+      <a href="artifactory-prod-leccion-20.html">20. Publicación y consumo de paquetes (npm, Maven, PyPI)</a>
+      <a href="artifactory-prod-leccion-21.html">21. Replicación push/pull entre instancias</a>
+      <a href="artifactory-prod-leccion-22.html">22. Alta disponibilidad (HA) de Artifactory</a>
+      <a href="artifactory-prod-leccion-23.html">23. Backup y disaster recovery</a>
+      <a href="artifactory-prod-leccion-24.html">24. Migración de datos entre instancias</a>
+      <a href="artifactory-prod-leccion-25.html">25. Monitoreo y métricas de Artifactory</a>
+      <a href="artifactory-prod-leccion-26.html">26. Optimización de storage (filestore, S3 backend)</a>
+      <a href="artifactory-prod-leccion-27.html">27. Federación de repositorios (Artifactory Federation)</a>
+      <a href="artifactory-prod-leccion-28.html">28. Gestión de licencias y costos</a>
+      <a href="artifactory-prod-leccion-29.html">29. Auditoría y compliance en Artifactory</a>
+      <a href="artifactory-prod-leccion-30.html">30. Proyecto final: Artifactory completo listo para producción</a>
+      <a href="Artifactory_en_Produccion.pdf">📄 PDF completo</a>
     </div>
   </div>
 </div>
