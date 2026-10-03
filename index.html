@@ -119,8 +119,9 @@
   }
   .logo { font-family: var(--mono); font-weight: 700; font-size: 18px; }
   .logo span { color: var(--k8s-blue); }
-  .nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--text-dim); }
-  .nav-links a:hover { color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; color: var(--text); }
+  .nav-links a { border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; margin-left: 20px; }
+  .nav-links a:hover { border-color: var(--text); }
 
   .hero {
     max-width: 760px;
