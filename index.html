@@ -259,7 +259,7 @@
     Jivops
   </div>
   <div class="nav-links">
-    <a href="#cursos">Cursos</a><button class="adv-toggle" onclick="document.getElementById('advSidebar').classList.add('open');document.getElementById('advOverlay').classList.add('open')">Contenido avanzado</button><button class="adv-toggle ia-toggle" onclick="document.getElementById('iaSidebar').classList.add('open');document.getElementById('iaOverlay').classList.add('open')">IA</button><button class="adv-toggle" onclick="document.getElementById('segSidebar').classList.add('open');document.getElementById('segOverlay').classList.add('open')">Seguridad</button> <button class="adv-toggle" onclick="document.getElementById('orqSidebar').classList.add('open');document.getElementById('orqOverlay').classList.add('open')">Orquestación</button><a href="login.html">Iniciar sesión</a>
+    <a href="#cursos">Cursos</a><button class="adv-toggle" onclick="document.getElementById('advSidebar').classList.add('open');document.getElementById('advOverlay').classList.add('open')">Contenido avanzado</button><button class="adv-toggle ia-toggle" onclick="document.getElementById('iaSidebar').classList.add('open');document.getElementById('iaOverlay').classList.add('open')">IA</button><button class="adv-toggle" onclick="document.getElementById('segSidebar').classList.add('open');document.getElementById('segOverlay').classList.add('open')">Seguridad</button> <button class="adv-toggle" onclick="document.getElementById('orqSidebar').classList.add('open');document.getElementById('orqOverlay').classList.add('open')">Orquestación</button><button class="adv-toggle" onclick="document.getElementById('redSidebar').classList.add('open');document.getElementById('redOverlay').classList.add('open')">Redes</button><a href="login.html">Iniciar sesión</a>
   </div>
 </nav>
   <div class="adv-overlay" id="advOverlay" onclick="this.classList.remove('open');document.getElementById('advSidebar').classList.remove('open')"></div>
@@ -795,82 +795,6 @@
       <a href="elasticsearch-prod-leccion-29.html">29. Capacity planning y costos</a>
       <a href="elasticsearch-prod-leccion-30.html">30. Proyecto final: cluster Elasticsearch completo listo para producción</a>
       <a href="Elasticsearch_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      Istio en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="istio-prod-leccion-01.html">01. Qué es un service mesh y por qué Istio</a>
-      <a href="istio-prod-leccion-02.html">02. Arquitectura de Istio — control plane y data plane</a>
-      <a href="istio-prod-leccion-03.html">03. Instalación de Istio (istioctl, profiles)</a>
-      <a href="istio-prod-leccion-04.html">04. Sidecar injection — automática vs manual</a>
-      <a href="istio-prod-leccion-05.html">05. Istio Ambient Mesh vs Sidecar mode</a>
-      <a href="istio-prod-leccion-06.html">06. VirtualService — enrutamiento de tráfico</a>
-      <a href="istio-prod-leccion-07.html">07. DestinationRule — subsets y políticas</a>
-      <a href="istio-prod-leccion-08.html">08. Gateway — entrada de tráfico al mesh</a>
-      <a href="istio-prod-leccion-09.html">09. Canary releases con Istio</a>
-      <a href="istio-prod-leccion-10.html">10. Circuit breaking y retries</a>
-      <a href="istio-prod-leccion-11.html">11. mTLS automático entre servicios</a>
-      <a href="istio-prod-leccion-12.html">12. PeerAuthentication — políticas de mTLS</a>
-      <a href="istio-prod-leccion-13.html">13. AuthorizationPolicy — control de acceso</a>
-      <a href="istio-prod-leccion-14.html">14. RequestAuthentication — JWT validation</a>
-      <a href="istio-prod-leccion-15.html">15. Gestión de certificados con Istio CA</a>
-      <a href="istio-prod-leccion-16.html">16. Métricas automáticas con Istio (Prometheus)</a>
-      <a href="istio-prod-leccion-17.html">17. Distributed tracing con Istio</a>
-      <a href="istio-prod-leccion-18.html">18. Kiali — visualización del mesh</a>
-      <a href="istio-prod-leccion-19.html">19. Access logs de Envoy</a>
-      <a href="istio-prod-leccion-20.html">20. Dashboards de Grafana para Istio</a>
-      <a href="istio-prod-leccion-21.html">21. Timeouts y retries avanzados</a>
-      <a href="istio-prod-leccion-22.html">22. Fault injection — chaos testing</a>
-      <a href="istio-prod-leccion-23.html">23. Rate limiting con Istio</a>
-      <a href="istio-prod-leccion-24.html">24. Multi-cluster mesh</a>
-      <a href="istio-prod-leccion-25.html">25. Escalado del control plane (istiod)</a>
-      <a href="istio-prod-leccion-26.html">26. Actualización de Istio sin downtime</a>
-      <a href="istio-prod-leccion-27.html">27. Troubleshooting de sidecars y Envoy</a>
-      <a href="istio-prod-leccion-28.html">28. Rendimiento — overhead del sidecar</a>
-      <a href="istio-prod-leccion-29.html">29. Migración progresiva a Istio (brownfield)</a>
-      <a href="istio-prod-leccion-30.html">30. Proyecto final: service mesh completo listo para producción</a>
-      <a href="Istio_en_Produccion.pdf">📄 PDF completo</a>
-    </div>
-  </div>
-  <div class="adv-course">
-    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-      Service Mesh en Producción <span class="arrow">▶</span>
-    </div>
-    <div class="adv-lessons">
-      <a href="servicemesh-prod-leccion-01.html">01. Qué es un service mesh — conceptos generales</a>
-      <a href="servicemesh-prod-leccion-02.html">02. Cuándo SÍ necesitas un service mesh (y cuándo no)</a>
-      <a href="servicemesh-prod-leccion-03.html">03. Comparativa: Istio vs Linkerd vs Consul Connect vs Cilium</a>
-      <a href="servicemesh-prod-leccion-04.html">04. Sidecar-based vs sidecar-less (eBPF) — modelos arquitectónicos</a>
-      <a href="servicemesh-prod-leccion-05.html">05. Service Mesh Interface (SMI) — estandarización</a>
-      <a href="servicemesh-prod-leccion-06.html">06. Arquitectura de Linkerd — linkerd2-proxy (Rust)</a>
-      <a href="servicemesh-prod-leccion-07.html">07. Instalación y onboarding de Linkerd</a>
-      <a href="servicemesh-prod-leccion-08.html">08. mTLS automático en Linkerd</a>
-      <a href="servicemesh-prod-leccion-09.html">09. Traffic split y canary con Linkerd</a>
-      <a href="servicemesh-prod-leccion-10.html">10. Linkerd viz — observabilidad integrada</a>
-      <a href="servicemesh-prod-leccion-11.html">11. Arquitectura de Consul Connect</a>
-      <a href="servicemesh-prod-leccion-12.html">12. Consul Connect — service discovery multi-datacenter</a>
-      <a href="servicemesh-prod-leccion-13.html">13. Cilium Service Mesh — eBPF sin sidecar</a>
-      <a href="servicemesh-prod-leccion-14.html">14. Cilium — Network Policies avanzadas con eBPF</a>
-      <a href="servicemesh-prod-leccion-15.html">15. Comparativa de rendimiento: sidecar vs sidecar-less</a>
-      <a href="servicemesh-prod-leccion-16.html">16. Mesh y arquitectura de microservicios — buenas prácticas</a>
-      <a href="servicemesh-prod-leccion-17.html">17. API Gateway vs Service Mesh — dónde termina uno y empieza el otro</a>
-      <a href="servicemesh-prod-leccion-18.html">18. Service mesh y Kubernetes Gateway API</a>
-      <a href="servicemesh-prod-leccion-19.html">19. Zero-trust networking con service mesh</a>
-      <a href="servicemesh-prod-leccion-20.html">20. Mesh expansion — VMs fuera de Kubernetes</a>
-      <a href="servicemesh-prod-leccion-21.html">21. Migración entre implementaciones de service mesh</a>
-      <a href="servicemesh-prod-leccion-22.html">22. Mesh federation — múltiples meshes interconectados</a>
-      <a href="servicemesh-prod-leccion-23.html">23. Coexistencia de múltiples meshes en un mismo cluster</a>
-      <a href="servicemesh-prod-leccion-24.html">24. Adopción incremental — servicio por servicio</a>
-      <a href="servicemesh-prod-leccion-25.html">25. Evaluación de madurez de un mesh en producción</a>
-      <a href="servicemesh-prod-leccion-26.html">26. Costo total de propiedad (TCO) de un service mesh</a>
-      <a href="servicemesh-prod-leccion-27.html">27. Equipo y gobernanza de una plataforma de mesh</a>
-      <a href="servicemesh-prod-leccion-28.html">28. Señales de que tu mesh necesita rediseño</a>
-      <a href="servicemesh-prod-leccion-29.html">29. Roadmap de adopción de service mesh en una organización</a>
-      <a href="servicemesh-prod-leccion-30.html">30. Proyecto final: elegir y justificar la estrategia de service mesh para una organización</a>
-      <a href="ServiceMesh_en_Produccion.pdf">📄 PDF completo</a>
     </div>
   </div>
   <div class="adv-course">
@@ -2126,7 +2050,88 @@
     </div>
   </div>
 </div>
-  <div class="adv-overlay" id="orqOverlay" onclick="this.classList.remove('open');document.getElementById('orqSidebar').classList.remove('open')"></div>                 
+  <div class="adv-overlay" id="orqOverlay" onclick="this.classList.remove('open');document.getElementById('orqSidebar').classList.remove('open')"></div>
+  <div class="adv-overlay" id="redOverlay" onclick="this.classList.remove('open');document.getElementById('redSidebar').classList.remove('open')"></div>
+<div class="adv-sidebar" id="redSidebar">
+  <button class="close-btn" onclick="document.getElementById('redSidebar').classList.remove('open');document.getElementById('redOverlay').classList.remove('open')">&times;</button>
+  <h3>Redes</h3>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Istio en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="istio-prod-leccion-01.html">01. Qué es un service mesh y por qué Istio</a>
+      <a href="istio-prod-leccion-02.html">02. Arquitectura de Istio — control plane y data plane</a>
+      <a href="istio-prod-leccion-03.html">03. Instalación de Istio (istioctl, profiles)</a>
+      <a href="istio-prod-leccion-04.html">04. Sidecar injection — automática vs manual</a>
+      <a href="istio-prod-leccion-05.html">05. Istio Ambient Mesh vs Sidecar mode</a>
+      <a href="istio-prod-leccion-06.html">06. VirtualService — enrutamiento de tráfico</a>
+      <a href="istio-prod-leccion-07.html">07. DestinationRule — subsets y políticas</a>
+      <a href="istio-prod-leccion-08.html">08. Gateway — entrada de tráfico al mesh</a>
+      <a href="istio-prod-leccion-09.html">09. Canary releases con Istio</a>
+      <a href="istio-prod-leccion-10.html">10. Circuit breaking y retries</a>
+      <a href="istio-prod-leccion-11.html">11. mTLS automático entre servicios</a>
+      <a href="istio-prod-leccion-12.html">12. PeerAuthentication — políticas de mTLS</a>
+      <a href="istio-prod-leccion-13.html">13. AuthorizationPolicy — control de acceso</a>
+      <a href="istio-prod-leccion-14.html">14. RequestAuthentication — JWT validation</a>
+      <a href="istio-prod-leccion-15.html">15. Gestión de certificados con Istio CA</a>
+      <a href="istio-prod-leccion-16.html">16. Métricas automáticas con Istio (Prometheus)</a>
+      <a href="istio-prod-leccion-17.html">17. Distributed tracing con Istio</a>
+      <a href="istio-prod-leccion-18.html">18. Kiali — visualización del mesh</a>
+      <a href="istio-prod-leccion-19.html">19. Access logs de Envoy</a>
+      <a href="istio-prod-leccion-20.html">20. Dashboards de Grafana para Istio</a>
+      <a href="istio-prod-leccion-21.html">21. Timeouts y retries avanzados</a>
+      <a href="istio-prod-leccion-22.html">22. Fault injection — chaos testing</a>
+      <a href="istio-prod-leccion-23.html">23. Rate limiting con Istio</a>
+      <a href="istio-prod-leccion-24.html">24. Multi-cluster mesh</a>
+      <a href="istio-prod-leccion-25.html">25. Escalado del control plane (istiod)</a>
+      <a href="istio-prod-leccion-26.html">26. Actualización de Istio sin downtime</a>
+      <a href="istio-prod-leccion-27.html">27. Troubleshooting de sidecars y Envoy</a>
+      <a href="istio-prod-leccion-28.html">28. Rendimiento — overhead del sidecar</a>
+      <a href="istio-prod-leccion-29.html">29. Migración progresiva a Istio (brownfield)</a>
+      <a href="istio-prod-leccion-30.html">30. Proyecto final: service mesh completo listo para producción</a>
+      <a href="Istio_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Service Mesh en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="servicemesh-prod-leccion-01.html">01. Qué es un service mesh — conceptos generales</a>
+      <a href="servicemesh-prod-leccion-02.html">02. Cuándo SÍ necesitas un service mesh (y cuándo no)</a>
+      <a href="servicemesh-prod-leccion-03.html">03. Comparativa: Istio vs Linkerd vs Consul Connect vs Cilium</a>
+      <a href="servicemesh-prod-leccion-04.html">04. Sidecar-based vs sidecar-less (eBPF) — modelos arquitectónicos</a>
+      <a href="servicemesh-prod-leccion-05.html">05. Service Mesh Interface (SMI) — estandarización</a>
+      <a href="servicemesh-prod-leccion-06.html">06. Arquitectura de Linkerd — linkerd2-proxy (Rust)</a>
+      <a href="servicemesh-prod-leccion-07.html">07. Instalación y onboarding de Linkerd</a>
+      <a href="servicemesh-prod-leccion-08.html">08. mTLS automático en Linkerd</a>
+      <a href="servicemesh-prod-leccion-09.html">09. Traffic split y canary con Linkerd</a>
+      <a href="servicemesh-prod-leccion-10.html">10. Linkerd viz — observabilidad integrada</a>
+      <a href="servicemesh-prod-leccion-11.html">11. Arquitectura de Consul Connect</a>
+      <a href="servicemesh-prod-leccion-12.html">12. Consul Connect — service discovery multi-datacenter</a>
+      <a href="servicemesh-prod-leccion-13.html">13. Cilium Service Mesh — eBPF sin sidecar</a>
+      <a href="servicemesh-prod-leccion-14.html">14. Cilium — Network Policies avanzadas con eBPF</a>
+      <a href="servicemesh-prod-leccion-15.html">15. Comparativa de rendimiento: sidecar vs sidecar-less</a>
+      <a href="servicemesh-prod-leccion-16.html">16. Mesh y arquitectura de microservicios — buenas prácticas</a>
+      <a href="servicemesh-prod-leccion-17.html">17. API Gateway vs Service Mesh — dónde termina uno y empieza el otro</a>
+      <a href="servicemesh-prod-leccion-18.html">18. Service mesh y Kubernetes Gateway API</a>
+      <a href="servicemesh-prod-leccion-19.html">19. Zero-trust networking con service mesh</a>
+      <a href="servicemesh-prod-leccion-20.html">20. Mesh expansion — VMs fuera de Kubernetes</a>
+      <a href="servicemesh-prod-leccion-21.html">21. Migración entre implementaciones de service mesh</a>
+      <a href="servicemesh-prod-leccion-22.html">22. Mesh federation — múltiples meshes interconectados</a>
+      <a href="servicemesh-prod-leccion-23.html">23. Coexistencia de múltiples meshes en un mismo cluster</a>
+      <a href="servicemesh-prod-leccion-24.html">24. Adopción incremental — servicio por servicio</a>
+      <a href="servicemesh-prod-leccion-25.html">25. Evaluación de madurez de un mesh en producción</a>
+      <a href="servicemesh-prod-leccion-26.html">26. Costo total de propiedad (TCO) de un service mesh</a>
+      <a href="servicemesh-prod-leccion-27.html">27. Equipo y gobernanza de una plataforma de mesh</a>
+      <a href="servicemesh-prod-leccion-28.html">28. Señales de que tu mesh necesita rediseño</a>
+      <a href="servicemesh-prod-leccion-29.html">29. Roadmap de adopción de service mesh en una organización</a>
+      <a href="servicemesh-prod-leccion-30.html">30. Proyecto final: elegir y justificar la estrategia de service mesh para una organización</a>
+      <a href="ServiceMesh_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+</div>
   <section class="hero">
   <h1>Conviértete en <span>DevOps Engineer</span></h1>
   <div class="hero-cta">
