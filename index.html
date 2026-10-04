@@ -259,7 +259,7 @@
     Jivops
   </div>
   <div class="nav-links">
-    <button class="adv-toggle" onclick="document.getElementById('advSidebar').classList.add('open');document.getElementById('advOverlay').classList.add('open')">Contenido avanzado</button><button class="adv-toggle ia-toggle" onclick="document.getElementById('iaSidebar').classList.add('open');document.getElementById('iaOverlay').classList.add('open')">IA</button><button class="adv-toggle" onclick="document.getElementById('segSidebar').classList.add('open');document.getElementById('segOverlay').classList.add('open')">Seguridad</button> <button class="adv-toggle" onclick="document.getElementById('orqSidebar').classList.add('open');document.getElementById('orqOverlay').classList.add('open')">Orquestación</button><button class="adv-toggle" onclick="document.getElementById('redSidebar').classList.add('open');document.getElementById('redOverlay').classList.add('open')">Redes</button><button class="adv-toggle" onclick="document.getElementById('autSidebar').classList.add('open');document.getElementById('autOverlay').classList.add('open')">Automatización</button><a href="login.html">Iniciar sesión</a>
+    <button class="adv-toggle" onclick="document.getElementById('advSidebar').classList.add('open');document.getElementById('advOverlay').classList.add('open')">Contenido avanzado</button><button class="adv-toggle ia-toggle" onclick="document.getElementById('iaSidebar').classList.add('open');document.getElementById('iaOverlay').classList.add('open')">IA</button><button class="adv-toggle" onclick="document.getElementById('segSidebar').classList.add('open');document.getElementById('segOverlay').classList.add('open')">Seguridad</button> <button class="adv-toggle" onclick="document.getElementById('orqSidebar').classList.add('open');document.getElementById('orqOverlay').classList.add('open')">Orquestación</button><button class="adv-toggle" onclick="document.getElementById('redSidebar').classList.add('open');document.getElementById('redOverlay').classList.add('open')">Redes</button><button class="adv-toggle" onclick="document.getElementById('autSidebar').classList.add('open');document.getElementById('autOverlay').classList.add('open')">Automatización</button><button class="adv-toggle" onclick="document.getElementById('obsSidebar').classList.add('open');document.getElementById('obsOverlay').classList.add('open')">Observabilidad</button><button class="adv-toggle" onclick="document.getElementById('obsSidebar').classList.add('open');document.getElementById('obsOverlay').classList.add('open')">Observabilidad</button><a href="login.html">Iniciar sesión</a>
   </div>
 </nav>
   <div class="adv-overlay" id="advOverlay" onclick="this.classList.remove('open');document.getElementById('advSidebar').classList.remove('open')"></div>
@@ -2249,6 +2249,163 @@
       <a href="artifactory-prod-leccion-29.html">29. Auditoría y compliance en Artifactory</a>
       <a href="artifactory-prod-leccion-30.html">30. Proyecto final: Artifactory completo listo para producción</a>
       <a href="Artifactory_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+</div>
+  <div class="adv-overlay" id="obsOverlay" onclick="this.classList.remove('open');document.getElementById('obsSidebar').classList.remove('open')"></div>
+<div class="adv-sidebar" id="obsSidebar">
+  <button class="close-btn" onclick="document.getElementById('obsSidebar').classList.remove('open');document.getElementById('obsOverlay').classList.remove('open')">&times;</button>
+  <h3>Observabilidad</h3>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Monitorización en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="monitoreo-prod-leccion-01.html">01. Arquitectura de Prometheus en producción</a>
+      <a href="monitoreo-prod-leccion-02.html">02. PromQL avanzado — funciones de agregación</a>
+      <a href="monitoreo-prod-leccion-03.html">03. Recording rules</a>
+      <a href="monitoreo-prod-leccion-04.html">04. Federación de Prometheus</a>
+      <a href="monitoreo-prod-leccion-05.html">05. Exporters personalizados</a>
+      <a href="monitoreo-prod-leccion-06.html">06. Grafana: variables de dashboard</a>
+      <a href="monitoreo-prod-leccion-07.html">07. Grafana: paneles avanzados (heatmaps, histogramas)</a>
+      <a href="monitoreo-prod-leccion-08.html">08. Grafana: alerting nativo</a>
+      <a href="monitoreo-prod-leccion-09.html">09. Dashboards como código (Grafonnet/JSON)</a>
+      <a href="monitoreo-prod-leccion-10.html">10. Grafana: permisos y organizaciones</a>
+      <a href="monitoreo-prod-leccion-11.html">11. Alertmanager: routing avanzado</a>
+      <a href="monitoreo-prod-leccion-12.html">12. Alertmanager: inhibición y silencios</a>
+      <a href="monitoreo-prod-leccion-13.html">13. Runbooks y respuesta a incidentes</a>
+      <a href="monitoreo-prod-leccion-14.html">14. On-call y escalado de alertas</a>
+      <a href="monitoreo-prod-leccion-15.html">15. Postmortems sin culpa (blameless)</a>
+      <a href="monitoreo-prod-leccion-16.html">16. Logging: Loki arquitectura</a>
+      <a href="monitoreo-prod-leccion-17.html">17. LogQL — consultas avanzadas</a>
+      <a href="monitoreo-prod-leccion-18.html">18. Retención y costos de logs</a>
+      <a href="monitoreo-prod-leccion-19.html">19. Correlación logs-métricas-trazas</a>
+      <a href="monitoreo-prod-leccion-20.html">20. Alertas basadas en logs</a>
+      <a href="monitoreo-prod-leccion-21.html">21. Tracing distribuido con Tempo</a>
+      <a href="monitoreo-prod-leccion-22.html">22. Instrumentación con OpenTelemetry</a>
+      <a href="monitoreo-prod-leccion-23.html">23. SLI: definir indicadores de nivel de servicio</a>
+      <a href="monitoreo-prod-leccion-24.html">24. SLO: definir objetivos y error budgets</a>
+      <a href="monitoreo-prod-leccion-25.html">25. Dashboards de SLO</a>
+      <a href="monitoreo-prod-leccion-26.html">26. Capacity planning con métricas históricas</a>
+      <a href="monitoreo-prod-leccion-27.html">27. Detección de anomalías</a>
+      <a href="monitoreo-prod-leccion-28.html">28. Costos de observabilidad (cardinalidad)</a>
+      <a href="monitoreo-prod-leccion-29.html">29. Auditoría y cumplimiento en monitoreo</a>
+      <a href="monitoreo-prod-leccion-30.html">30. Proyecto final: stack de observabilidad completo en producción</a>
+      <a href="Monitorizacion_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Elasticsearch en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="elasticsearch-prod-leccion-01.html">01. Arquitectura de Elasticsearch — nodes, shards, replicas</a>
+      <a href="elasticsearch-prod-leccion-02.html">02. Cluster topology — master, data, ingest, coordinating nodes</a>
+      <a href="elasticsearch-prod-leccion-03.html">03. Índices y mapping — fundamentos</a>
+      <a href="elasticsearch-prod-leccion-04.html">04. Instalación y configuración inicial en producción</a>
+      <a href="elasticsearch-prod-leccion-05.html">05. Sizing — cuántos shards y réplicas necesito</a>
+      <a href="elasticsearch-prod-leccion-06.html">06. Mapping dinámico vs explícito</a>
+      <a href="elasticsearch-prod-leccion-07.html">07. Tipos de datos y analyzers</a>
+      <a href="elasticsearch-prod-leccion-08.html">08. Bulk API — indexación eficiente</a>
+      <a href="elasticsearch-prod-leccion-09.html">09. Index lifecycle management (ILM)</a>
+      <a href="elasticsearch-prod-leccion-10.html">10. Reindexación sin downtime</a>
+      <a href="elasticsearch-prod-leccion-11.html">11. Query DSL — fundamentos</a>
+      <a href="elasticsearch-prod-leccion-12.html">12. Full-text search vs term-level queries</a>
+      <a href="elasticsearch-prod-leccion-13.html">13. Agregaciones — fundamentos</a>
+      <a href="elasticsearch-prod-leccion-14.html">14. Relevancia y scoring (BM25)</a>
+      <a href="elasticsearch-prod-leccion-15.html">15. Optimización de queries lentas</a>
+      <a href="elasticsearch-prod-leccion-16.html">16. Autenticación y usuarios (X-Pack Security)</a>
+      <a href="elasticsearch-prod-leccion-17.html">17. RBAC en Elasticsearch — roles e índices</a>
+      <a href="elasticsearch-prod-leccion-18.html">18. TLS y cifrado en tránsito</a>
+      <a href="elasticsearch-prod-leccion-19.html">19. Field-level y document-level security</a>
+      <a href="elasticsearch-prod-leccion-20.html">20. Auditoría de acceso</a>
+      <a href="elasticsearch-prod-leccion-21.html">21. Shard allocation y balanceo del cluster</a>
+      <a href="elasticsearch-prod-leccion-22.html">22. Hot-warm-cold architecture</a>
+      <a href="elasticsearch-prod-leccion-23.html">23. Snapshot y restore</a>
+      <a href="elasticsearch-prod-leccion-24.html">24. Monitoreo con Elastic Stack (Kibana, Metricbeat)</a>
+      <a href="elasticsearch-prod-leccion-25.html">25. Troubleshooting de cluster en estado yellow/red</a>
+      <a href="elasticsearch-prod-leccion-26.html">26. Cross-cluster replication</a>
+      <a href="elasticsearch-prod-leccion-27.html">27. Disaster recovery</a>
+      <a href="elasticsearch-prod-leccion-28.html">28. Rolling upgrades sin downtime</a>
+      <a href="elasticsearch-prod-leccion-29.html">29. Capacity planning y costos</a>
+      <a href="elasticsearch-prod-leccion-30.html">30. Proyecto final: cluster Elasticsearch completo listo para producción</a>
+      <a href="Elasticsearch_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Loki en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="loki-prod-leccion-01.html">01. Qué es Loki y filosofía 'like Prometheus, but for logs'</a>
+      <a href="loki-prod-leccion-02.html">02. Arquitectura de Loki — componentes</a>
+      <a href="loki-prod-leccion-03.html">03. Loki monolithic vs simple scalable vs microservices mode</a>
+      <a href="loki-prod-leccion-04.html">04. Instalación de Loki (Helm, single binary)</a>
+      <a href="loki-prod-leccion-05.html">05. LogQL — fundamentos del lenguaje de consulta</a>
+      <a href="loki-prod-leccion-06.html">06. Promtail — agente de recolección de logs</a>
+      <a href="loki-prod-leccion-07.html">07. Labels — diseño de labels eficiente</a>
+      <a href="loki-prod-leccion-08.html">08. Cardinalidad de labels — el error más común</a>
+      <a href="loki-prod-leccion-09.html">09. Pipelines de Promtail — parsing y transformación</a>
+      <a href="loki-prod-leccion-10.html">10. Alternativas a Promtail: Fluent Bit, Vector, Grafana Agent</a>
+      <a href="loki-prod-leccion-11.html">11. Chunks e índices — cómo almacena Loki los datos</a>
+      <a href="loki-prod-leccion-12.html">12. Backend de almacenamiento (S3, GCS, filesystem)</a>
+      <a href="loki-prod-leccion-13.html">13. TSDB index — el índice moderno de Loki</a>
+      <a href="loki-prod-leccion-14.html">14. Retención de logs y compactación</a>
+      <a href="loki-prod-leccion-15.html">15. Costos de almacenamiento vs Elasticsearch</a>
+      <a href="loki-prod-leccion-16.html">16. Filtros de línea (line filters)</a>
+      <a href="loki-prod-leccion-17.html">17. Parsers en LogQL (json, logfmt, regexp)</a>
+      <a href="loki-prod-leccion-18.html">18. Métricas desde logs con LogQL</a>
+      <a href="loki-prod-leccion-19.html">19. Agregaciones y funciones de rango</a>
+      <a href="loki-prod-leccion-20.html">20. Optimización de queries lentas en Loki</a>
+      <a href="loki-prod-leccion-21.html">21. Escalado horizontal de Loki (simple scalable mode)</a>
+      <a href="loki-prod-leccion-22.html">22. Multi-tenancy en Loki</a>
+      <a href="loki-prod-leccion-23.html">23. Rate limiting y protección contra sobrecarga</a>
+      <a href="loki-prod-leccion-24.html">24. Monitoreo del propio Loki (metamonitoring)</a>
+      <a href="loki-prod-leccion-25.html">25. Troubleshooting de ingesta fallida</a>
+      <a href="loki-prod-leccion-26.html">26. Integración con Grafana — exploración y dashboards</a>
+      <a href="loki-prod-leccion-27.html">27. Alerting basado en logs (Loki Ruler)</a>
+      <a href="loki-prod-leccion-28.html">28. Integración con Kubernetes (labels automáticos)</a>
+      <a href="loki-prod-leccion-29.html">29. Migración desde Elasticsearch/ELK a Loki</a>
+      <a href="loki-prod-leccion-30.html">30. Proyecto final: stack de logging completo con Loki listo para producción</a>
+      <a href="Loki_en_Produccion.pdf">📄 PDF completo</a>
+    </div>
+  </div>
+  <div class="adv-course">
+    <div class="adv-course-title" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      Grafana Alloy en Producción <span class="arrow">▶</span>
+    </div>
+    <div class="adv-lessons">
+      <a href="alloy-prod-leccion-01.html">01. Qué es Grafana Alloy y su rol como colector unificado</a>
+      <a href="alloy-prod-leccion-02.html">02. Arquitectura de componentes — el modelo de pipeline de Alloy</a>
+      <a href="alloy-prod-leccion-03.html">03. Alloy configuration language (River/HCL-like syntax)</a>
+      <a href="alloy-prod-leccion-04.html">04. Instalación de Alloy (binario, Helm, Docker)</a>
+      <a href="alloy-prod-leccion-05.html">05. Alloy vs Grafana Agent vs OpenTelemetry Collector</a>
+      <a href="alloy-prod-leccion-06.html">06. Componentes prometheus.scrape y discovery</a>
+      <a href="alloy-prod-leccion-07.html">07. Relabeling en Alloy</a>
+      <a href="alloy-prod-leccion-08.html">08. Remote write hacia Prometheus/Mimir</a>
+      <a href="alloy-prod-leccion-09.html">09. Recolección de métricas de Kubernetes con Alloy</a>
+      <a href="alloy-prod-leccion-10.html">10. Componentes de procesamiento (prometheus.relabel, prometheus.remote_write)</a>
+      <a href="alloy-prod-leccion-11.html">11. Componentes loki.source — recolección de logs</a>
+      <a href="alloy-prod-leccion-12.html">12. Pipelines de procesamiento de logs (loki.process)</a>
+      <a href="alloy-prod-leccion-13.html">13. Envío de logs hacia Loki (loki.write)</a>
+      <a href="alloy-prod-leccion-14.html">14. Migración de configuración de Promtail a Alloy</a>
+      <a href="alloy-prod-leccion-15.html">15. Recolección de logs de Kubernetes con Alloy</a>
+      <a href="alloy-prod-leccion-16.html">16. Componentes OTel — otelcol.receiver, otelcol.processor</a>
+      <a href="alloy-prod-leccion-17.html">17. Recolección de trazas distribuidas con Alloy</a>
+      <a href="alloy-prod-leccion-18.html">18. Exportación hacia Tempo</a>
+      <a href="alloy-prod-leccion-19.html">19. Correlación de logs, métricas y trazas (LGTM stack)</a>
+      <a href="alloy-prod-leccion-20.html">20. Alloy como Collector OpenTelemetry nativo</a>
+      <a href="alloy-prod-leccion-21.html">21. Clustering de Alloy — modo distribuido</a>
+      <a href="alloy-prod-leccion-22.html">22. Escalado horizontal y balanceo de carga de recolección</a>
+      <a href="alloy-prod-leccion-23.html">23. Alta disponibilidad de Alloy</a>
+      <a href="alloy-prod-leccion-24.html">24. Monitoreo del propio Alloy (self-monitoring)</a>
+      <a href="alloy-prod-leccion-25.html">25. Troubleshooting de pipelines de Alloy</a>
+      <a href="alloy-prod-leccion-26.html">26. Gestión de secretos en configuración de Alloy</a>
+      <a href="alloy-prod-leccion-27.html">27. Despliegue de Alloy con GitOps</a>
+      <a href="alloy-prod-leccion-28.html">28. Migración completa desde stack legacy a Alloy</a>
+      <a href="alloy-prod-leccion-29.html">29. Rendimiento y tuning de componentes</a>
+      <a href="alloy-prod-leccion-30.html">30. Proyecto final: pipeline de observabilidad completo con Grafana Alloy</a>
+      <a href="Alloy_en_Produccion.pdf">📄 PDF completo</a>
     </div>
   </div>
 </div>
