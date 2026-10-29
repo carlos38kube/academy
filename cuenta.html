@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jivops - Mi cuenta</title>
+<style>
+  body { background:#0a0e1a; color:#e2e8f0; font-family: monospace; display:flex; justify-content:center; align-items:center; min-height:100vh; margin:0; padding:16px; box-sizing:border-box; }
+  .box { background:#131824; padding:40px; border-radius:12px; width:100%; max-width:380px; box-sizing:border-box; }
+  h1 { color:#5b8def; font-size:22px; margin-top:0; }
+  .dato { margin:14px 0; font-size:14px; }
+  .etiqueta { color:#8899aa; font-size:12px; display:block; margin-bottom:4px; }
+  .estado-ok { color:#4ade80; font-weight:bold; }
+  .estado-no { color:#fbbf24; font-weight:bold; }
+  button, .btn { display:block; width:100%; padding:10px; margin-top:12px; background:#5b8def; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:bold; font-family:monospace; font-size:14px; text-align:center; text-decoration:none; box-sizing:border-box; }
+  .secundario { background:transparent; border:1px solid #2a3244; color:#e2e8f0; }
+  #msg { margin-top:10px; font-size:13px; color:#ff6b6b; }
+  .volver { display:block; text-align:center; margin-top:16px; font-size:13px; color:#8899aa; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>Mi cuenta</h1>
+  <div class="dato"><span class="etiqueta">Email</span><span id="email">Cargando...</span></div>
+  <div class="dato"><span class="etiqueta">Suscripción</span><span id="estado">...</span></div>
+  <button id="btnGestionar" style="display:none" onclick="gestionar()">Gestionar suscripción</button>
+  <a id="btnSuscribir" class="btn" style="display:none" href="suscripcion.html">Suscribirme</a>
+  <button class="secundario" onclick="cerrarSesion()">Cerrar sesión</button>
+  <div id="msg"></div>
+  <a class="volver" href="index.html">← Volver a los cursos</a>
+</div>
+
+<script>
+const API_URL = "https://api.jivops.com";
+const token = localStorage.getItem("jivops_token");
+
+if (!token) {
+  window.location.href = "login.html";
+}
+
+fetch(API_URL + "/me", { headers: { "Authorization": "Bearer " + token } })
+  .then(function (res) {
+    if (!res.ok) throw new Error("sesion");
+    return res.json();
+  })
+  .then(function (user) {
+    document.getElementById("email").textContent = user.email;
+    const estado = document.getElementById("estado");
+    if (user.is_subscribed) {
+      estado.textContent = "Activa";
+      estado.className = "estado-ok";
+      document.getElementById("btnGestionar").style.display = "block";
+    } else {
+      estado.textContent = "Sin suscripción";
+      estado.className = "estado-no";
+      document.getElementById("btnSuscribir").style.display = "block";
+    }
+  })
+  .catch(function () {
+    localStorage.removeItem("jivops_token");
+    window.location.href = "login.html";
+  });
+
+async function gestionar() {
+  const msg = document.getElementById("msg");
+  msg.textContent = "";
+  try {
+    const res = await fetch(API_URL + "/billing-portal", {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + token }
+    });
+    const data = await res.json();
+    if (!res.ok) { msg.textContent = data.detail || "No se pudo abrir el portal"; return; }
+    window.location.href = data.url;
+  } catch (e) {
+    msg.textContent = "Error de conexión. Inténtalo de nuevo.";
+  }
+}
+
+async function cerrarSesion() {
+  try {
+    await fetch(API_URL + "/logout", { method: "POST", credentials: "include" });
+  } catch (e) {}
+  localStorage.removeItem("jivops_token");
+  window.location.href = "index.html";
+}
+</script>
+</body>
+</html>
