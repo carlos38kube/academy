@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificado · Jivops</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b1120; --surface: #121a2e; --border: #23304a; --text: #e8edf5; --text-dim: #7c8aab;
+    --accent: #4d8fe6; --green: #4ade80; --amber: #e6b34d; --red: #e5484d;
+    --papel: #fbf8f1; --tinta: #14213d; --tinta-suave: #5b6478; --oro: #b8862b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, 'Segoe UI', Arial, sans-serif; min-height: 100vh; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; border-bottom: 1px solid var(--border); }
+  header a { color: var(--text); text-decoration: none; font-family: 'IBM Plex Mono', monospace; font-weight: 600; }
+  header a.volver { color: var(--text-dim); font-weight: 400; font-size: 14px; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 80px; }
+  .panel { max-width: 560px; margin: 24px auto; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px; }
+  .panel h1 { font-size: 22px; margin-bottom: 10px; }
+  .panel p { color: var(--text-dim); line-height: 1.6; margin-bottom: 14px; overflow-wrap: anywhere; }
+  .panel label { display: block; font-size: 14px; margin: 18px 0 8px; }
+  .panel input { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); font: inherit; font-size: 16px; padding: 12px 14px; border-radius: 8px; }
+  .aviso { font-size: 13px; color: var(--amber); margin-top: 10px; }
+  .error { color: var(--red); font-size: 14px; margin-top: 12px; min-height: 18px; }
+  .barra { height: 8px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin: 6px 0 18px; }
+  .barra div { height: 100%; background: var(--green); }
+  .btn { display: inline-block; border: 0; cursor: pointer; background: var(--accent); color: #fff; font: inherit; font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 10px; text-decoration: none; text-align: center; }
+  .btn.oro { background: var(--amber); color: #0b1120; }
+  .btn.sec { background: transparent; border: 1px solid var(--border); color: var(--text); }
+  .btn:disabled { opacity: .6; cursor: default; }
+  .acciones { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 22px 0 6px; }
+  .verificado { text-align: center; color: var(--green); font-size: 14px; margin-bottom: 18px; }
+
+  /* El certificado */
+  .cert { background: var(--papel); color: var(--tinta); border-radius: 6px; padding: 14px; box-shadow: 0 20px 50px rgba(0,0,0,.45); }
+  .cert-in { border: 2px solid var(--oro); outline: 1px solid var(--oro); outline-offset: -8px; padding: 48px 40px 36px; text-align: center; position: relative; }
+  .cert .marca { font-family: 'IBM Plex Mono', monospace; font-weight: 600; letter-spacing: .08em; font-size: 15px; color: var(--tinta); }
+  .cert .marca span { color: var(--oro); }
+  .cert .tit { font-family: 'Playfair Display', Georgia, serif; font-size: 40px; margin: 22px 0 6px; letter-spacing: .02em; }
+  .cert .sub { font-size: 13px; text-transform: uppercase; letter-spacing: .22em; color: var(--tinta-suave); }
+  .cert .otorga { margin-top: 30px; font-size: 15px; color: var(--tinta-suave); }
+  .cert .nombre { font-family: 'Playfair Display', Georgia, serif; font-size: 36px; margin: 10px auto 6px; padding-bottom: 10px; border-bottom: 1px solid #d9cfb8; max-width: 620px; overflow-wrap: anywhere; }
+  .cert .curso { font-size: 15px; color: var(--tinta-suave); margin-top: 18px; }
+  .cert .curso strong { display: block; color: var(--tinta); font-size: 24px; margin-top: 6px; overflow-wrap: anywhere; }
+  .cert .datos { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; margin-top: 30px; font-size: 13px; color: var(--tinta-suave); }
+  .cert .datos b { display: block; color: var(--tinta); font-size: 15px; margin-top: 4px; }
+  .cert .pie { margin-top: 32px; font-size: 11px; color: var(--tinta-suave); font-family: 'IBM Plex Mono', monospace; overflow-wrap: anywhere; }
+  .cert .sello { position: absolute; top: 26px; right: 30px; width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--oro); color: var(--oro); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; transform: rotate(-12deg); }
+
+  @media (max-width: 640px) {
+    .cert-in { padding: 34px 16px 26px; }
+    .cert .tit { font-size: 28px; }
+    .cert .nombre { font-size: 26px; }
+    .cert .curso strong { font-size: 19px; }
+    .cert .sello { width: 46px; height: 46px; font-size: 9px; top: 16px; right: 14px; }
+    .cert .datos { gap: 18px; }
+  }
+  @media print {
+    @page { size: A4 landscape; margin: 10mm; }
+    body { background: #fff; }
+    header, .acciones, .verificado, .no-print { display: none !important; }
+    main { padding: 0; max-width: none; }
+    .cert { box-shadow: none; border-radius: 0; padding: 0; }
+    .cert-in { padding: 46px 40px 34px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html">jivops<span style="color:var(--accent)">_</span></a>
+  <a class="volver" href="index.html">&larr; Volver a los cursos</a>
+</header>
+<main id="app">
+  <div class="panel"><p>Cargando…</p></div>
+</main>
+
+<script>
+(function () {
+  var API = "https://api.jivops.com";
+  var app = document.getElementById("app");
+  var q = new URLSearchParams(location.search);
+
+  function el(tag, attrs, hijos) {
+    var e = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (k) {
+      if (k === "text") e.textContent = attrs[k];
+      else if (k === "class") e.className = attrs[k];
+      else e.setAttribute(k, attrs[k]);
+    });
+    (hijos || []).forEach(function (h) { if (h) e.appendChild(h); });
+    return e;
+  }
+  function panel(titulo, textos, extra) {
+    app.innerHTML = "";
+    var p = el("div", { class: "panel" }, [el("h1", { text: titulo })]);
+    (textos || []).forEach(function (t) { p.appendChild(el("p", { text: t })); });
+    (extra || []).forEach(function (x) { p.appendChild(x); });
+    app.appendChild(p);
+    return p;
+  }
+  function fecha(iso) {
+    var d = new Date(iso);
+    return d.toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
+  }
+
+  // ---------- Vista pública: ?id=CODIGO ----------
+  function verCertificado(code) {
+    fetch(API + "/certificados/publico/" + encodeURIComponent(code))
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (c) {
+        document.title = "Certificado de " + c.full_name + " · " + c.course_title + " · Jivops";
+        var url = "https://jivops.com/certificado.html?id=" + encodeURIComponent(c.code);
+        app.innerHTML = "";
+        app.appendChild(el("div", { class: "verificado", text: "✓ Certificado auténtico emitido por Jivops" }));
+        var cert = el("div", { class: "cert" }, [el("div", { class: "cert-in" }, [
+          el("div", { class: "sello", text: "JIVOPS" }),
+          (function () { var m = el("div", { class: "marca" }); m.innerHTML = "jivops<span>_</span>"; return m; })(),
+          el("div", { class: "tit", text: "Certificado" }),
+          el("div", { class: "sub", text: "de finalización" }),
+          el("div", { class: "otorga", text: "Se otorga a" }),
+          el("div", { class: "nombre", text: c.full_name }),
+          el("div", { class: "curso", text: "por completar con éxito el curso" }, []),
+          el("div", { class: "datos" }, [
+            el("div", { text: "Fecha" }, [el("b", { text: fecha(c.issued_at) })]),
+            el("div", { text: "Lecciones" }, [el("b", { text: String(c.lessons) })]),
+            el("div", { text: "Duración estimada" }, [el("b", { text: c.hours + " h" })])
+          ]),
+          el("div", { class: "pie", text: "Código de verificación: " + c.code + " · " + url })
+        ])]);
+        cert.querySelector(".curso").appendChild(el("strong", { text: c.course_title }));
+        app.appendChild(cert);
+
+        var d = new Date(c.issued_at);
+        var li = "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME" +
+          "&name=" + encodeURIComponent(c.course_title) +
+          "&organizationName=" + encodeURIComponent("Jivops") +
+          "&issueYear=" + d.getFullYear() + "&issueMonth=" + (d.getMonth() + 1) +
+          "&certUrl=" + encodeURIComponent(url) + "&certId=" + encodeURIComponent(c.code);
+
+        var bImp = el("button", { class: "btn", text: "Imprimir o guardar en PDF" });
+        bImp.onclick = function () { window.print(); };
+        var bLi = el("a", { class: "btn oro", href: li, target: "_blank", rel: "noopener", text: "Añadir a LinkedIn" });
+        var bCop = el("button", { class: "btn sec", text: "Copiar enlace" });
+        bCop.onclick = function () {
+          (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject())
+            .then(function () { bCop.textContent = "Enlace copiado"; })
+            .catch(function () { prompt("Copia el enlace:", url); });
+        };
+        app.appendChild(el("div", { class: "acciones" }, [bImp, bLi, bCop]));
+      })
+      .catch(function () {
+        panel("Certificado no encontrado", ["El código «" + code + "» no corresponde a ningún certificado emitido por Jivops. Revisa que el enlace esté completo."]);
+      });
+  }
+
+  // ---------- Emitir: ?curso=slug (requiere sesión) ----------
+  function emitir(slug) {
+    var token = localStorage.getItem("jivops_token");
+    if (!token) { location.href = "login.html"; return; }
+    var H = { "Authorization": "Bearer " + token };
+    fetch(API + "/progreso", { headers: H })
+      .then(function (r) {
+        if (r.status === 401) { localStorage.removeItem("jivops_token"); location.href = "login.html"; throw new Error("401"); }
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      })
+      .then(function (p) {
+        var c = (p.courses || []).filter(function (x) { return x.slug === slug; })[0];
+        if (!c) { panel("Curso no encontrado", ["No existe ningún curso con ese nombre."]); return; }
+        if (c.certificate) { location.replace("certificado.html?id=" + encodeURIComponent(c.certificate)); return; }
+        if (c.done < c.total) {
+          var pct = Math.round(c.done * 100 / c.total);
+          var b = el("div", { class: "barra" }, [el("div", { style: "width:" + pct + "%" })]);
+          panel(c.title, ["Llevas " + c.done + " de " + c.total + " lecciones. Completa todas para obtener el certificado."], [b,
+            el("a", { class: "btn", href: "index.html", text: "Seguir con el curso" })]);
+          return;
+        }
+        var input = el("input", { type: "text", id: "nombre", autocomplete: "name", maxlength: "120", placeholder: "Nombre y apellidos" });
+        var err = el("div", { class: "error" });
+        var btn = el("button", { class: "btn oro", text: "Emitir mi certificado" });
+        var hijos = [];
+        if (p.full_name) {
+          hijos.push(el("p", { text: "Se emitirá a nombre de: " + p.full_name }));
+        } else {
+          hijos.push(el("label", { for: "nombre", text: "Tu nombre completo, tal como quieres que aparezca" }));
+          hijos.push(input);
+          hijos.push(el("div", { class: "aviso", text: "Revísalo bien: una vez emitido, el nombre no se puede cambiar." }));
+        }
+        hijos.push(err);
+        hijos.push(el("div", { class: "acciones", style: "justify-content:flex-start" }, [btn]));
+        panel("¡Enhorabuena! Has completado " + c.title, ["Has terminado las " + c.total + " lecciones del curso."], hijos);
+        btn.onclick = function () {
+          var nombre = p.full_name ? null : input.value.trim().replace(/\s+/g, " ");
+          if (!p.full_name && (nombre.length < 5 || nombre.indexOf(" ") < 0)) { err.textContent = "Escribe tu nombre y al menos un apellido."; return; }
+          btn.disabled = true; err.textContent = "";
+          fetch(API + "/certificados/" + encodeURIComponent(slug), {
+            method: "POST", headers: Object.assign({ "Content-Type": "application/json" }, H),
+            body: JSON.stringify({ full_name: nombre })
+          }).then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.detail || "Error"); return j; }); })
+            .then(function (j) { location.replace("certificado.html?id=" + encodeURIComponent(j.code)); })
+            .catch(function (e) { err.textContent = e.message; btn.disabled = false; });
+        };
+      })
+      .catch(function (e) { if (e.message !== "401") panel("No se pudo cargar", ["Inténtalo de nuevo en unos minutos."]); });
+  }
+
+  if (q.get("id")) verCertificado(q.get("id"));
+  else if (q.get("curso")) emitir(q.get("curso"));
+  else panel("Verificar un certificado", ["Abre el enlace completo del certificado (certificado.html?id=…) para comprobar que es auténtico."]);
+})();
+</script>
+</body>
+</html>
