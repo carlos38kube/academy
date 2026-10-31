@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estadísticas · Jivops</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0b1120; --surface:#121a2e; --border:#23304a; --text:#e8edf5; --dim:#7c8aab; --accent:#4d8fe6; --green:#4ade80; --amber:#e6b34d; --red:#e5484d; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Inter',-apple-system,'Segoe UI',Arial,sans-serif; }
+  header { display:flex; justify-content:space-between; align-items:center; padding:18px 24px; border-bottom:1px solid var(--border); }
+  header a { color:var(--text); text-decoration:none; font-family:'IBM Plex Mono',monospace; font-weight:700; }
+  header span { color:var(--dim); font-size:14px; }
+  main { max-width:1100px; margin:0 auto; padding:32px 16px 80px; }
+  h1 { font-family:'IBM Plex Mono',monospace; font-size:26px; margin-bottom:6px; }
+  .sub { color:var(--dim); font-size:14px; margin-bottom:28px; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:12px; margin-bottom:32px; }
+  .kpi { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 18px; }
+  .kpi .v { font-family:'IBM Plex Mono',monospace; font-size:28px; font-weight:700; }
+  .kpi .l { color:var(--dim); font-size:12.5px; margin-top:4px; }
+  h2 { font-size:17px; margin:8px 0 14px; }
+  .panel { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px; margin-bottom:28px; overflow-x:auto; }
+  .barras { display:flex; align-items:flex-end; gap:4px; height:140px; min-width:420px; }
+  .barras div { flex:1; background:var(--accent); border-radius:3px 3px 0 0; min-height:2px; position:relative; }
+  .barras div:hover::after { content:attr(data-t); position:absolute; bottom:100%; left:50%; transform:translateX(-50%); background:#000; color:#fff; font-size:11px; padding:3px 6px; border-radius:4px; white-space:nowrap; }
+  .ejes { display:flex; justify-content:space-between; color:var(--dim); font-size:11px; margin-top:6px; min-width:420px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; min-width:640px; }
+  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--border); }
+  th { color:var(--dim); font-weight:500; font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+  td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; }
+  tr.cl { cursor:pointer; }
+  tr.cl:hover td { background:#182238; }
+  .mini { display:inline-block; width:60px; height:6px; background:var(--bg); border:1px solid var(--border); border-radius:3px; overflow:hidden; vertical-align:middle; margin-left:6px; }
+  .mini i { display:block; height:100%; background:var(--green); }
+  .embudo .fila { display:flex; align-items:center; gap:10px; font-size:13px; margin:5px 0; }
+  .embudo .fila span:first-child { width:30px; color:var(--dim); text-align:right; }
+  .embudo .fila .b { flex:1; height:14px; background:var(--bg); border-radius:3px; overflow:hidden; }
+  .embudo .fila .b i { display:block; height:100%; background:var(--accent); }
+  .embudo .fila span:last-child { width:40px; text-align:right; font-variant-numeric:tabular-nums; }
+  .msg { color:var(--dim); padding:24px 0; }
+</style>
+</head>
+<body>
+<header><a href="index.html">Jivops</a><span>Panel interno</span></header>
+<main id="app"><p class="msg">Cargando…</p></main>
+<script>
+(function () {
+  var API = "https://api.jivops.com";
+  var token = localStorage.getItem("jivops_token");
+  var app = document.getElementById("app");
+  if (!token) { location.href = "login.html"; return; }
+  var H = { "Authorization": "Bearer " + token };
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+  fetch(API + "/admin/estadisticas", { headers: H })
+    .then(function (r) {
+      if (r.status === 401) { location.href = "login.html"; throw 0; }
+      if (r.status === 403) { app.innerHTML = '<p class="msg">Esta página es solo para administradores.</p>'; throw 0; }
+      return r.json();
+    })
+    .then(function (d) {
+      app.innerHTML = "";
+      app.appendChild(el("h1", null, "Estadísticas"));
+      app.appendChild(el("p", "sub", "Datos de progreso de los alumnos. Actualizado al cargar la página."));
+      var k = el("div", "kpis");
+      [[d.usuarios, "Usuarios registrados"], [d.suscritos, "Suscriptores activos"], [d.nuevos_30d, "Registros (30 días)"],
+       [d.activos_7d, "Alumnos activos (7 días)"], [d.activos_30d, "Alumnos activos (30 días)"],
+       [d.lecciones_30d, "Lecciones completadas (30 días)"], [d.certificados, "Certificados emitidos"]].forEach(function (x) {
+        var c = el("div", "kpi"); c.appendChild(el("div", "v", String(x[0]))); c.appendChild(el("div", "l", x[1])); k.appendChild(c);
+      });
+      app.appendChild(k);
+
+      app.appendChild(el("h2", null, "Lecciones completadas por día (últimos 30 días)"));
+      var p = el("div", "panel"), b = el("div", "barras"), mapa = {};
+      d.por_dia.forEach(function (x) { mapa[x.dia] = x.lecciones; });
+      var dias = [], max = 1;
+      for (var i = 29; i >= 0; i--) {
+        var f = new Date(Date.now() - i * 86400000).toISOString().slice(0, 10);
+        dias.push([f, mapa[f] || 0]); max = Math.max(max, mapa[f] || 0);
+      }
+      dias.forEach(function (x) { var c = el("div"); c.style.height = (x[1] * 100 / max) + "%"; c.setAttribute("data-t", x[0].slice(5) + ": " + x[1]); b.appendChild(c); });
+      p.appendChild(b);
+      var ej = el("div", "ejes"); ej.appendChild(el("span", null, dias[0][0].slice(5))); ej.appendChild(el("span", null, dias[29][0].slice(5))); p.appendChild(ej);
+      app.appendChild(p);
+
+      app.appendChild(el("h2", null, "Cursos (pulsa uno para ver dónde abandonan)"));
+      var pt = el("div", "panel");
+      if (!d.cursos.length) { pt.appendChild(el("p", "msg", "Todavía no hay alumnos con lecciones completadas.")); }
+      else {
+        var t = el("table"), th = el("tr");
+        ["Curso", "Empezaron", "Terminaron", "% fin", "Media lecciones", "Certificados"].forEach(function (h, i) { th.appendChild(el("th", i ? "n" : null, h)); });
+        t.appendChild(th);
+        d.cursos.forEach(function (c) {
+          var tr = el("tr", "cl");
+          tr.appendChild(el("td", null, c.title));
+          tr.appendChild(el("td", "n", String(c.empezaron)));
+          tr.appendChild(el("td", "n", String(c.terminaron)));
+          var td = el("td", "n", c.tasa_fin + " %"), m = el("span", "mini"), mi = el("i"); mi.style.width = c.tasa_fin + "%"; m.appendChild(mi); td.appendChild(m); tr.appendChild(td);
+          tr.appendChild(el("td", "n", c.media_lecciones + " / " + c.total));
+          tr.appendChild(el("td", "n", String(c.certificados)));
+          tr.onclick = function () { embudo(c.slug); };
+          t.appendChild(tr);
+        });
+        pt.appendChild(t);
+      }
+      app.appendChild(pt);
+      var em = el("div"); em.id = "embudo"; app.appendChild(em);
+    })
+    .catch(function (e) { if (e !== 0) app.innerHTML = '<p class="msg">No se pudieron cargar los datos.</p>'; });
+
+  function embudo(slug) {
+    fetch(API + "/admin/estadisticas/" + encodeURIComponent(slug), { headers: H }).then(function (r) { return r.json(); }).then(function (d) {
+      var box = document.getElementById("embudo"); box.innerHTML = "";
+      box.appendChild(el("h2", null, "Alumnos por lección: " + d.title));
+      var p = el("div", "panel embudo"), max = Math.max.apply(null, d.lecciones.map(function (x) { return x.alumnos; }).concat([1]));
+      d.lecciones.forEach(function (x) {
+        var f = el("div", "fila"); f.appendChild(el("span", null, String(x.n)));
+        var b = el("div", "b"), i = el("i"); i.style.width = (x.alumnos * 100 / max) + "%"; b.appendChild(i); f.appendChild(b);
+        f.appendChild(el("span", null, String(x.alumnos))); p.appendChild(f);
+      });
+      box.appendChild(p); box.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+})();
+</script>
+</body>
+</html>
