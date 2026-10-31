@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Preparación de certificaciones · Jivops</title>
-<meta name="description" content="Prepara los exámenes CKA, CKAD, CKS, KCNA, PCA y CAPA con los cursos avanzados de Jivops.">
+<meta name="description" content="Prepara los exámenes CKA, CKAD, CKS, KCNA, PCA, CAPA, AWS, Azure y Google Cloud con los cursos avanzados de Jivops.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -45,8 +45,10 @@
   .cursos a:hover { border-color: var(--accent); }
   .cursos .pronto { font-size: 13px; color: var(--text-dim); border: 1px dashed var(--border); border-radius: 8px; padding: 6px 10px; }
   .pie { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; padding-top: 14px; border-top: 1px solid var(--border); font-size: 13px; }
-  .pie .sim { color: var(--amber); }
+  .pie a.empieza { color: var(--amber); font-weight: 600; }
   .pie a { color: var(--accent); text-decoration: none; }
+  .seccion { font-family: 'IBM Plex Mono', monospace; font-size: 20px; margin: 44px 0 18px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .seccion:first-of-type { margin-top: 0; }
   .aviso { margin-top: 44px; padding: 18px 20px; border: 1px solid var(--border); border-radius: 12px; color: var(--text-dim); font-size: 13.5px; }
   @media (max-width: 520px) {
     header { padding: 14px 16px; }
@@ -69,9 +71,10 @@
   <section class="hero">
     <div class="kicker">Certificaciones oficiales</div>
     <h1>Prepara tu certificación cloud native</h1>
-    <p>Cursos avanzados alineados con los temarios de los exámenes de la Linux Foundation y la CNCF. Aprende con casos de producción y llega al examen sabiendo resolver, no memorizando.</p>
+    <p>Cursos avanzados alineados con los temarios de los exámenes de la Linux Foundation, la CNCF, AWS, Microsoft y Google. Aprende con casos de producción y llega al examen sabiendo resolver, no memorizando.</p>
   </section>
 
+  <h2 class="seccion">Kubernetes y cloud native</h2>
   <section class="grid">
 
     <article class="card">
@@ -87,13 +90,13 @@
         <li>Almacenamiento</li>
         <li>Resolución de problemas</li>
       </ul>
-      <h3>Cursos de Jivops</h3>
+      <h3>Cursos de Jivops que te preparan</h3>
       <div class="cursos">
         <a href="https://cursos.jivops.com/k8s-prod-leccion-01.html">Kubernetes en Producción</a>
         <a href="https://cursos.jivops.com/linux-prod-leccion-01.html">Linux en Producción</a>
         <a href="https://cursos.jivops.com/velero-prod-leccion-01.html">Velero</a>
       </div>
-      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/" target="_blank" rel="noopener">Examen oficial →</a></div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/k8s-prod-leccion-01.html">Empieza por Kubernetes en Producción →</a><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/" target="_blank" rel="noopener">Examen oficial →</a></div>
     </article>
 
     <article class="card">
@@ -109,13 +112,13 @@
         <li>Configuración, entorno y seguridad</li>
         <li>Servicios y redes</li>
       </ul>
-      <h3>Cursos de Jivops</h3>
+      <h3>Cursos de Jivops que te preparan</h3>
       <div class="cursos">
         <a href="https://cursos.jivops.com/k8s-prod-leccion-01.html">Kubernetes en Producción</a>
         <a href="https://cursos.jivops.com/docker-prod-leccion-01.html">Docker en Producción</a>
         <a href="https://cursos.jivops.com/kustomize-prod-leccion-01.html">Kustomize</a>
       </div>
-      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/" target="_blank" rel="noopener">Examen oficial →</a></div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/k8s-prod-leccion-01.html">Empieza por Kubernetes en Producción →</a><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/" target="_blank" rel="noopener">Examen oficial →</a></div>
     </article>
 
     <article class="card">
@@ -131,14 +134,14 @@
         <li>Seguridad de la cadena de suministro</li>
         <li>Monitorización, logs y seguridad en ejecución</li>
       </ul>
-      <h3>Cursos de Jivops</h3>
+      <h3>Cursos de Jivops que te preparan</h3>
       <div class="cursos">
         <a href="https://cursos.jivops.com/kyverno-prod-leccion-01.html">Kyverno</a>
         <a href="https://cursos.jivops.com/falco-prod-leccion-01.html">Falco</a>
         <a href="https://cursos.jivops.com/trivy-prod-leccion-01.html">Trivy</a>
         <a href="https://cursos.jivops.com/cilium-prod-leccion-01.html">Cilium</a>
       </div>
-      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/" target="_blank" rel="noopener">Examen oficial →</a></div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/kyverno-prod-leccion-01.html">Empieza por Kyverno →</a><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/" target="_blank" rel="noopener">Examen oficial →</a></div>
     </article>
 
     <article class="card">
@@ -153,13 +156,13 @@
         <li>Arquitectura cloud native</li>
         <li>Entrega de aplicaciones cloud native</li>
       </ul>
-      <h3>Cursos de Jivops</h3>
+      <h3>Cursos de Jivops que te preparan</h3>
       <div class="cursos">
         <a href="https://cursos.jivops.com/k8s-prod-leccion-01.html">Kubernetes en Producción</a>
         <a href="https://cursos.jivops.com/docker-prod-leccion-01.html">Docker en Producción</a>
         <a href="https://cursos.jivops.com/monitoreo-prod-leccion-01.html">Monitorización</a>
       </div>
-      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/" target="_blank" rel="noopener">Examen oficial →</a></div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/k8s-prod-leccion-01.html">Empieza por Kubernetes en Producción →</a><a href="https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/" target="_blank" rel="noopener">Examen oficial →</a></div>
     </article>
 
     <article class="card">
@@ -175,13 +178,13 @@
         <li>Alertas y dashboards (18 %)</li>
         <li>Instrumentación y exporters (16 %)</li>
       </ul>
-      <h3>Cursos de Jivops</h3>
+      <h3>Cursos de Jivops que te preparan</h3>
       <div class="cursos">
         <a href="https://cursos.jivops.com/monitoreo-prod-leccion-01.html">Monitorización en Producción</a>
         <a href="https://cursos.jivops.com/alloy-prod-leccion-01.html">Grafana Alloy</a>
         <a href="https://cursos.jivops.com/loki-prod-leccion-01.html">Loki</a>
       </div>
-      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://www.cncf.io/training/certification/pca/" target="_blank" rel="noopener">Examen oficial →</a></div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/monitoreo-prod-leccion-01.html">Empieza por Monitorización en Producción →</a><a href="https://www.cncf.io/training/certification/pca/" target="_blank" rel="noopener">Examen oficial →</a></div>
     </article>
 
     <article class="card">
@@ -196,17 +199,154 @@
         <li>Argo Rollouts (18 %)</li>
         <li>Argo Events (12 %)</li>
       </ul>
-      <h3>Cursos de Jivops</h3>
+      <h3>Cursos de Jivops que te preparan</h3>
       <div class="cursos">
         <a href="https://cursos.jivops.com/argocd-prod-leccion-01.html">ArgoCD en Producción</a>
         <span class="pronto">Workflows, Rollouts y Events: próximamente</span>
       </div>
-      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://www.cncf.io/training/certification/capa/" target="_blank" rel="noopener">Examen oficial →</a></div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/argocd-prod-leccion-01.html">Empieza por ArgoCD en Producción →</a><a href="https://www.cncf.io/training/certification/capa/" target="_blank" rel="noopener">Examen oficial →</a></div>
     </article>
 
   </section>
 
-  <p class="aviso">Jivops es una plataforma de formación independiente y no está afiliada, patrocinada ni respaldada por la Linux Foundation ni por la Cloud Native Computing Foundation. CKA, CKAD, CKS, KCNA, PCA y CAPA son marcas de sus respectivos propietarios. El precio, la duración y el temario de cada examen pueden cambiar: consulta siempre la página oficial antes de reservarlo.</p>
+  <h2 class="seccion">Nube pública: AWS, Azure y Google Cloud</h2>
+  <section class="grid">
+
+    <article class="card">
+      <div class="top"><span class="sigla">SAA</span><span class="tag test">Tipo test</span></div>
+      <h2>AWS Certified Solutions Architect – Associate</h2>
+      <p class="desc">Diseño de arquitecturas seguras, resilientes y eficientes en AWS. La certificación de AWS más demandada.</p>
+      <div class="meta"><span><b>Formato:</b> preguntas de opción múltiple</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>Arquitecturas seguras</li>
+        <li>Arquitecturas resilientes</li>
+        <li>Arquitecturas de alto rendimiento</li>
+        <li>Optimización de costes</li>
+      </ul>
+      <h3>Cursos de Jivops que te preparan</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/eks-prod-leccion-01.html">EKS en Producción</a>
+        <a href="https://cursos.jivops.com/ecs-leccion-01.html">Amazon ECS</a>
+        <a href="https://cursos.jivops.com/aws-elb-leccion-01.html">AWS ELB</a>
+        <a href="https://cursos.jivops.com/terraform-prod-leccion-01.html">Terraform</a>
+      </div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/eks-prod-leccion-01.html">Empieza por EKS en Producción →</a><a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="sigla">DOP</span><span class="tag test">Profesional</span></div>
+      <h2>AWS Certified DevOps Engineer – Professional</h2>
+      <p class="desc">Automatización, CI/CD, observabilidad y operación de sistemas en AWS a nivel avanzado.</p>
+      <div class="meta"><span><b>Formato:</b> preguntas de opción múltiple</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>Ciclo de vida de desarrollo (SDLC) y CI/CD</li>
+        <li>Configuración e infraestructura como código</li>
+        <li>Soluciones resilientes en la nube</li>
+        <li>Monitorización, logs y respuesta a incidentes</li>
+        <li>Seguridad y cumplimiento</li>
+      </ul>
+      <h3>Cursos de Jivops que te preparan</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/eks-prod-leccion-01.html">EKS en Producción</a>
+        <a href="https://cursos.jivops.com/cicd-prod-leccion-01.html">CI/CD en Producción</a>
+        <a href="https://cursos.jivops.com/terraform-prod-leccion-01.html">Terraform</a>
+        <a href="https://cursos.jivops.com/monitoreo-prod-leccion-01.html">Monitorización</a>
+      </div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/eks-prod-leccion-01.html">Empieza por EKS en Producción →</a><a href="https://aws.amazon.com/certification/certified-devops-engineer-professional/" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="sigla">AZ-104</span><span class="tag test">Tipo test</span></div>
+      <h2>Microsoft Azure Administrator</h2>
+      <p class="desc">Administración de identidades, almacenamiento, cómputo y redes en Azure.</p>
+      <div class="meta"><span><b>Formato:</b> preguntas y casos prácticos</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>Identidades y gobierno</li>
+        <li>Almacenamiento</li>
+        <li>Cómputo (máquinas virtuales, contenedores, AKS)</li>
+        <li>Redes virtuales</li>
+        <li>Monitorización y copias de seguridad</li>
+      </ul>
+      <h3>Cursos de Jivops que te preparan</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/azure-prod-leccion-01.html">Azure en Producción</a>
+        <a href="https://cursos.jivops.com/azure-lb-agw-leccion-01.html">Azure Load Balancer y App Gateway</a>
+        <a href="https://cursos.jivops.com/aca-leccion-01.html">Azure Container Apps</a>
+      </div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/azure-prod-leccion-01.html">Empieza por Azure en Producción →</a><a href="https://learn.microsoft.com/credentials/certifications/azure-administrator/" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="sigla">AZ-400</span><span class="tag test">Experto</span></div>
+      <h2>Microsoft DevOps Engineer Expert</h2>
+      <p class="desc">Procesos DevOps, CI/CD, control de código y seguridad en Azure. Requiere una certificación asociada previa.</p>
+      <div class="meta"><span><b>Formato:</b> preguntas y casos prácticos</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>Procesos y comunicación</li>
+        <li>Control de código fuente</li>
+        <li>Pipelines de compilación y despliegue</li>
+        <li>Seguridad y cumplimiento</li>
+        <li>Estrategia de instrumentación</li>
+      </ul>
+      <h3>Cursos de Jivops que te preparan</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/azure-prod-leccion-01.html">Azure en Producción</a>
+        <a href="https://cursos.jivops.com/cicd-prod-leccion-01.html">CI/CD en Producción</a>
+        <a href="https://cursos.jivops.com/github-prod-leccion-01.html">GitHub en Producción</a>
+      </div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/azure-prod-leccion-01.html">Empieza por Azure en Producción →</a><a href="https://learn.microsoft.com/credentials/certifications/devops-engineer/" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="sigla">ACE</span><span class="tag test">Tipo test</span></div>
+      <h2>Google Cloud Associate Cloud Engineer</h2>
+      <p class="desc">Despliegue y operación de soluciones en Google Cloud: proyectos, cómputo, GKE, redes e IAM.</p>
+      <div class="meta"><span><b>Formato:</b> preguntas de opción múltiple</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>Preparar el entorno de Google Cloud</li>
+        <li>Planificar y configurar soluciones</li>
+        <li>Desplegar e implementar</li>
+        <li>Operar y mantener</li>
+        <li>Acceso y seguridad</li>
+      </ul>
+      <h3>Cursos de Jivops que te preparan</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/gke-prod-leccion-01.html">GKE en Producción</a>
+        <a href="https://cursos.jivops.com/cloudrun-leccion-01.html">Google Cloud Run</a>
+        <a href="https://cursos.jivops.com/gcp-lb-leccion-01.html">Google Cloud Load Balancing</a>
+      </div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/gke-prod-leccion-01.html">Empieza por GKE en Producción →</a><a href="https://cloud.google.com/learn/certification/cloud-engineer" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="sigla">PCDOE</span><span class="tag test">Profesional</span></div>
+      <h2>Google Cloud Professional Cloud DevOps Engineer</h2>
+      <p class="desc">SRE, CI/CD, observabilidad y optimización de servicios en Google Cloud.</p>
+      <div class="meta"><span><b>Formato:</b> preguntas de opción múltiple</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>Organización y prácticas SRE</li>
+        <li>CI/CD y entrega de software</li>
+        <li>Observabilidad</li>
+        <li>Optimización del rendimiento y los costes</li>
+        <li>Respuesta a incidentes</li>
+      </ul>
+      <h3>Cursos de Jivops que te preparan</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/gke-prod-leccion-01.html">GKE en Producción</a>
+        <a href="https://cursos.jivops.com/cicd-prod-leccion-01.html">CI/CD en Producción</a>
+        <a href="https://cursos.jivops.com/monitoreo-prod-leccion-01.html">Monitorización</a>
+      </div>
+      <div class="pie"><a class="empieza" href="https://cursos.jivops.com/gke-prod-leccion-01.html">Empieza por GKE en Producción →</a><a href="https://cloud.google.com/learn/certification/cloud-devops-engineer" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+  </section>
+
+  <p class="aviso">Jivops es una plataforma de formación independiente y no está afiliada, patrocinada ni respaldada por la Linux Foundation la Cloud Native Computing Foundation, Amazon Web Services, Microsoft ni Google. Los nombres de los exámenes y certificaciones son marcas de sus respectivos propietarios. El precio, la duración y el temario de cada examen pueden cambiar: consulta siempre la página oficial antes de reservarlo.</p>
 </main>
 </body>
 </html>
