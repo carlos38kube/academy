@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparación de certificaciones · Jivops</title>
+<meta name="description" content="Prepara los exámenes CKA, CKAD, CKS, KCNA, PCA y CAPA con los cursos avanzados de Jivops.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b1120; --surface: #121a2e; --surface-hover: #182238; --border: #23304a;
+    --text: #e8edf5; --text-dim: #7c8aab; --accent: #4d8fe6; --green: #4ade80; --amber: #e6b34d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, 'Segoe UI', Arial, sans-serif; line-height: 1.6; }
+  a { color: inherit; }
+  header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 24px; border-bottom: 1px solid var(--border); }
+  header .logo { font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 18px; text-decoration: none; }
+  header nav a { color: var(--text-dim); text-decoration: none; font-size: 14px; margin-left: 18px; }
+  header nav a:hover { color: var(--text); }
+  main { max-width: 1080px; margin: 0 auto; padding: 56px 16px 80px; }
+  .hero { text-align: center; max-width: 760px; margin: 0 auto 48px; }
+  .hero .kicker { font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero h1 { font-family: 'IBM Plex Mono', monospace; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; margin-bottom: 16px; }
+  .hero p { color: var(--text-dim); font-size: 17px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px 22px; display: flex; flex-direction: column; }
+  .card .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+  .card .sigla { font-family: 'IBM Plex Mono', monospace; font-size: 26px; font-weight: 700; color: var(--accent); }
+  .tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; padding: 4px 8px; border-radius: 6px; white-space: nowrap; }
+  .tag.prac { background: rgba(77,143,230,.15); color: var(--accent); }
+  .tag.test { background: rgba(230,179,77,.15); color: var(--amber); }
+  .card h2 { font-size: 17px; margin-bottom: 10px; }
+  .card .desc { color: var(--text-dim); font-size: 14.5px; margin-bottom: 14px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--text-dim); margin-bottom: 16px; }
+  .meta b { color: var(--text); font-weight: 600; }
+  .card h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-dim); margin: 4px 0 8px; }
+  .temas { list-style: none; margin-bottom: 16px; font-size: 14px; }
+  .temas li { padding: 3px 0 3px 16px; position: relative; overflow-wrap: anywhere; }
+  .temas li::before { content: "›"; position: absolute; left: 0; color: var(--accent); }
+  .cursos { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .cursos a { font-size: 13px; text-decoration: none; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; }
+  .cursos a:hover { border-color: var(--accent); }
+  .cursos .pronto { font-size: 13px; color: var(--text-dim); border: 1px dashed var(--border); border-radius: 8px; padding: 6px 10px; }
+  .pie { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; padding-top: 14px; border-top: 1px solid var(--border); font-size: 13px; }
+  .pie .sim { color: var(--amber); }
+  .pie a { color: var(--accent); text-decoration: none; }
+  .aviso { margin-top: 44px; padding: 18px 20px; border: 1px solid var(--border); border-radius: 12px; color: var(--text-dim); font-size: 13.5px; }
+  @media (max-width: 520px) {
+    header { padding: 14px 16px; }
+    header nav a { margin-left: 12px; }
+    .grid { grid-template-columns: 1fr; }
+    main { padding-top: 36px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">Jivops</a>
+  <nav>
+    <a href="index.html">Cursos</a>
+    <a href="cuenta.html">Mi cuenta</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="kicker">Certificaciones oficiales</div>
+    <h1>Prepara tu certificación cloud native</h1>
+    <p>Cursos avanzados alineados con los temarios de los exámenes de la Linux Foundation y la CNCF. Aprende con casos de producción y llega al examen sabiendo resolver, no memorizando.</p>
+  </section>
+
+  <section class="grid">
+
+    <article class="card">
+      <div class="top"><span class="sigla">CKA</span><span class="tag prac">Práctico</span></div>
+      <h2>Certified Kubernetes Administrator</h2>
+      <p class="desc">Para quien instala, opera y resuelve problemas en clusters de Kubernetes.</p>
+      <div class="meta"><span><b>Formato:</b> tareas en terminal</span><span><b>Duración:</b> 2 h</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>Arquitectura, instalación y configuración del cluster</li>
+        <li>Workloads y planificación</li>
+        <li>Servicios y redes</li>
+        <li>Almacenamiento</li>
+        <li>Resolución de problemas</li>
+      </ul>
+      <h3>Cursos de Jivops</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/k8s-prod-leccion-01.html">Kubernetes en Producción</a>
+        <a href="https://cursos.jivops.com/linux-prod-leccion-01.html">Linux en Producción</a>
+        <a href="https://cursos.jivops.com/velero-prod-leccion-01.html">Velero</a>
+      </div>
+      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="sigla">CKAD</span><span class="tag prac">Práctico</span></div>
+      <h2>Certified Kubernetes Application Developer</h2>
+      <p class="desc">Para quien diseña, despliega y mantiene aplicaciones en Kubernetes.</p>
+      <div class="meta"><span><b>Formato:</b> tareas en terminal</span><span><b>Duración:</b> 2 h</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>Diseño y construcción de aplicaciones</li>
+        <li>Despliegue de aplicaciones</li>
+        <li>Observabilidad y mantenimiento</li>
+        <li>Configuración, entorno y seguridad</li>
+        <li>Servicios y redes</li>
+      </ul>
+      <h3>Cursos de Jivops</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/k8s-prod-leccion-01.html">Kubernetes en Producción</a>
+        <a href="https://cursos.jivops.com/docker-prod-leccion-01.html">Docker en Producción</a>
+        <a href="https://cursos.jivops.com/kustomize-prod-leccion-01.html">Kustomize</a>
+      </div>
+      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="sigla">CKS</span><span class="tag prac">Práctico</span></div>
+      <h2>Certified Kubernetes Security Specialist</h2>
+      <p class="desc">Seguridad de clusters y cargas de trabajo. Requiere tener el CKA en vigor.</p>
+      <div class="meta"><span><b>Formato:</b> tareas en terminal</span><span><b>Duración:</b> 2 h</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>Configuración y endurecimiento del cluster</li>
+        <li>Endurecimiento del sistema</li>
+        <li>Vulnerabilidades de microservicios</li>
+        <li>Seguridad de la cadena de suministro</li>
+        <li>Monitorización, logs y seguridad en ejecución</li>
+      </ul>
+      <h3>Cursos de Jivops</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/kyverno-prod-leccion-01.html">Kyverno</a>
+        <a href="https://cursos.jivops.com/falco-prod-leccion-01.html">Falco</a>
+        <a href="https://cursos.jivops.com/trivy-prod-leccion-01.html">Trivy</a>
+        <a href="https://cursos.jivops.com/cilium-prod-leccion-01.html">Cilium</a>
+      </div>
+      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="sigla">KCNA</span><span class="tag test">Tipo test</span></div>
+      <h2>Kubernetes and Cloud Native Associate</h2>
+      <p class="desc">Fundamentos de Kubernetes y del ecosistema cloud native. Buen primer paso antes del CKA.</p>
+      <div class="meta"><span><b>Formato:</b> preguntas de opción múltiple</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>Fundamentos de Kubernetes</li>
+        <li>Orquestación de contenedores</li>
+        <li>Arquitectura cloud native</li>
+        <li>Entrega de aplicaciones cloud native</li>
+      </ul>
+      <h3>Cursos de Jivops</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/k8s-prod-leccion-01.html">Kubernetes en Producción</a>
+        <a href="https://cursos.jivops.com/docker-prod-leccion-01.html">Docker en Producción</a>
+        <a href="https://cursos.jivops.com/monitoreo-prod-leccion-01.html">Monitorización</a>
+      </div>
+      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="sigla">PCA</span><span class="tag test">Tipo test</span></div>
+      <h2>Prometheus Certified Associate</h2>
+      <p class="desc">Observabilidad con Prometheus: métricas, PromQL, exporters y alertas.</p>
+      <div class="meta"><span><b>Formato:</b> preguntas de opción múltiple</span><span><b>Incluye:</b> una repetición gratis</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>PromQL (28 %)</li>
+        <li>Fundamentos de Prometheus (20 %)</li>
+        <li>Conceptos de observabilidad (18 %)</li>
+        <li>Alertas y dashboards (18 %)</li>
+        <li>Instrumentación y exporters (16 %)</li>
+      </ul>
+      <h3>Cursos de Jivops</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/monitoreo-prod-leccion-01.html">Monitorización en Producción</a>
+        <a href="https://cursos.jivops.com/alloy-prod-leccion-01.html">Grafana Alloy</a>
+        <a href="https://cursos.jivops.com/loki-prod-leccion-01.html">Loki</a>
+      </div>
+      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://www.cncf.io/training/certification/pca/" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="sigla">CAPA</span><span class="tag test">Tipo test</span></div>
+      <h2>Certified Argo Project Associate</h2>
+      <p class="desc">El ecosistema Argo: GitOps, flujos de trabajo, despliegues progresivos y eventos.</p>
+      <div class="meta"><span><b>Formato:</b> preguntas de opción múltiple</span><span><b>Incluye:</b> una repetición gratis</span></div>
+      <h3>Temario</h3>
+      <ul class="temas">
+        <li>Argo Workflows (36 %)</li>
+        <li>Argo CD (34 %)</li>
+        <li>Argo Rollouts (18 %)</li>
+        <li>Argo Events (12 %)</li>
+      </ul>
+      <h3>Cursos de Jivops</h3>
+      <div class="cursos">
+        <a href="https://cursos.jivops.com/argocd-prod-leccion-01.html">ArgoCD en Producción</a>
+        <span class="pronto">Workflows, Rollouts y Events: próximamente</span>
+      </div>
+      <div class="pie"><span class="sim">Simulacros: próximamente</span><a href="https://www.cncf.io/training/certification/capa/" target="_blank" rel="noopener">Examen oficial →</a></div>
+    </article>
+
+  </section>
+
+  <p class="aviso">Jivops es una plataforma de formación independiente y no está afiliada, patrocinada ni respaldada por la Linux Foundation ni por la Cloud Native Computing Foundation. CKA, CKAD, CKS, KCNA, PCA y CAPA son marcas de sus respectivos propietarios. El precio, la duración y el temario de cada examen pueden cambiar: consulta siempre la página oficial antes de reservarlo.</p>
+</main>
+</body>
+</html>
